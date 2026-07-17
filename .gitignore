@@ -1,0 +1,16 @@
+# AI/agent workspace files
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.pi/
+.claude/
+.cursor/
+.github/copilot-instructions.md
+
+# Local/editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/
+.idea/

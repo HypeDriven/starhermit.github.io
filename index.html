@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarHermit — Your Library. Your Crew. Your Universe.</title>
+<meta name="description" content="StarHermit is the digital distribution platform PC gamers call home. Tens of thousands of games, legendary sales, cloud saves, community mods — and a publishing pipeline for developers that starts with a single GitHub repo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%237fe7ff' d='M16 2l3.2 9.1 9.8.5-7.6 6.1 2.5 9.5L16 21.8 8.1 27.2l2.5-9.5-7.6-6.1 9.8-.5z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top">
+    <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16 2l3.2 9.1 9.8.5-7.6 6.1 2.5 9.5L16 21.8 8.1 27.2l2.5-9.5-7.6-6.1 9.8-.5z"/></svg>
+    <span>STARHERMIT</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#players">Players</a>
+    <a href="#developers">Developers</a>
+    <a href="#join" class="nav-cta">Launch</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <p class="tag reveal">// PC GAME DISTRIBUTION PLATFORM</p>
+    <h1 class="hero-title reveal">STAR<span class="grad">HERMIT</span></h1>
+    <p class="hero-sub reveal">Tens of thousands of games. Legendary sales. One library that follows
+    you across every machine you own — and a community that turns a store into a home.</p>
+    <div class="hero-actions reveal">
+      <a class="btn btn-primary" href="#players">Explore the Platform</a>
+      <a class="btn btn-ghost" href="#developers">Publish a Game</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><span class="stat-num">50,000+</span><span class="stat-label">titles in the catalog</span></div>
+      <div class="stat"><span class="stat-num">50–90%</span><span class="stat-label">off in seasonal sales</span></div>
+      <div class="stat"><span class="stat-num">1 click</span><span class="stat-label">to install community mods</span></div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ PLAYERS ============ -->
+  <section class="section" id="players">
+    <p class="tag reveal">SYS.01 // FOR PLAYERS</p>
+    <h2 class="reveal">Your collection, at the center<br>of the <span class="grad">universe</span>.</h2>
+    <p class="section-sub reveal">StarHermit treats your game library as the heart of a social
+    ecosystem — not just a storefront. Convenience, trust, and community, in one launcher.</p>
+
+    <div class="grid grid-3">
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v16H4zM14 4h6v10h-6zM14 18h6v2h-6z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3>Massive Game Library</h3>
+        <p>Blockbuster AAA releases, indie gems, and experimental passion projects. Strategy, shooters,
+        RPGs, cozy sims, obscure horror — whatever your taste, the catalog delivers.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-9h9v9l-9 9z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
+        <h3>Legendary Sales</h3>
+        <p>Summer and winter sales are cultural events. Publisher weekends and daily deals slash prices
+        50–90%. Wishlist a game and get notified the moment it goes on sale.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18a4 4 0 010-8 5.5 5.5 0 0110.7-1.6A4.5 4.5 0 0117.5 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3>One Library, Everywhere</h3>
+        <p>Buy once, own forever. Install on any machine you're logged into, pick up where you left off
+        with cloud saves, and stream games from your home PC to other devices.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="9" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.7-4.5 5-4.5s4.4 1.5 5 4.5M13.5 19c.4-2.3 1.6-3.5 3-3.5s2.7 1.2 3.1 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h3>Built on Community</h3>
+        <p>Friends, voice chat, and rich presence. One-click Workshop mods and maps. Real user reviews
+        and guides. Profiles, badges, rare achievements, and playtime worth showing off.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Refunds Without the Runaround</h3>
+        <p>If a game doesn't click, return it within a reasonable window — no questions asked. That
+        safety net makes it easy to take a chance on new genres and unknown indies.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h3>The Extras</h3>
+        <p>Early Access, family sharing, Remote Play Together with friends who don't own the game,
+        Big Picture couch mode, trading cards, badges, and the Community Market.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DEVELOPERS ============ -->
+  <section class="section" id="developers">
+    <p class="tag reveal">SYS.02 // FOR CREATORS</p>
+    <h2 class="reveal">Publish in minutes.<br><span class="grad">Own it forever.</span></h2>
+    <p class="section-sub reveal">No SDK to integrate before you ship. No storefront approval queue.
+    No build-upload ritual. If your game lives on GitHub, it's already one step away from being playable
+    on StarHermit.</p>
+
+    <div class="grid grid-3 steps">
+      <article class="card hud reveal">
+        <span class="step-num">01</span>
+        <h3>Paste a Repo</h3>
+        <p>Add any GitHub repository URL. StarHermit ingests the repo, builds the game, and generates a
+        public store page — automatically. Anyone can do it: fans can surface abandoned open-source gems,
+        archivists can preserve forgotten projects. Every page shows its source repository, so provenance
+        is always transparent.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <span class="step-num">02</span>
+        <h3>Claim Your Game</h3>
+        <p>Link your GitHub account and StarHermit verifies you control the source repo. Then take the
+        reins: customize artwork, trailers, screenshots, and tags; control builds, branches, and release
+        channels (stable / beta / experimental); set pricing and permissions for your team.</p>
+      </article>
+
+      <article class="card hud reveal">
+        <span class="step-num">03</span>
+        <h3>Get Paid</h3>
+        <p>Set a price, run sales, offer pay-what-you-want, or stay free with supporter tiers. Revenue
+        flows directly to you — whether players pay in dollars, euros, or digital assets, it lands in
+        one unified revenue stream.</p>
+      </article>
+    </div>
+
+    <div class="split reveal">
+      <div class="split-head">
+        <p class="tag">// PAYMENTS, HANDLED END-TO-END</p>
+        <h3>The entire payments stack, built in.</h3>
+        <p>No merchant accounts, no gateway integration, no compliance homework.</p>
+      </div>
+      <div class="grid grid-2">
+        <article class="card hud">
+          <h4>Cards &amp; Regional</h4>
+          <p>Players check out with major credit and debit cards in their local currency — regional
+          pricing support, saved payment methods, and instant receipts included.</p>
+        </article>
+        <article class="card hud">
+          <h4>Cryptocurrency</h4>
+          <p>Accept major cryptocurrencies at checkout. Players pay from their wallet; you choose to
+          settle in crypto or auto-convert to fiat — your call, per payout.</p>
+        </article>
+      </div>
+      <ul class="tick-list">
+        <li>Refunds &amp; chargebacks processed by the platform — you never fight disputes alone</li>
+        <li>Scheduled payouts with exportable records for your accountant</li>
+        <li>Sales tax, VAT, and crypto reporting calculated at the platform level</li>
+        <li>Dashboard breakdowns by region, currency, and payment method</li>
+      </ul>
+    </div>
+
+    <div class="infra">
+      <p class="tag reveal">// MANAGED BACKEND, ZERO DEVOPS</p>
+      <h3 class="reveal">Console-grade infrastructure, out of the box.</h3>
+      <p class="section-sub reveal">Claimed games gain access to managed services that usually take
+      months of engineering and a server bill to match.</p>
+      <div class="grid grid-3">
+        <article class="card mini hud reveal">
+          <h4>Multiplayer Relay &amp; Hosting</h4>
+          <p>Low-latency data relaying — no port forwarding, no dedicated servers, no netcode headaches.
+          Sessions just work.</p>
+        </article>
+        <article class="card mini hud reveal">
+          <h4>Leaderboards</h4>
+          <p>Global, friends-only, and seasonal boards with anti-cheat-aware submission. A few API calls
+          and you're done.</p>
+        </article>
+        <article class="card mini hud reveal">
+          <h4>Matchmaking</h4>
+          <p>Skill-based lobbies, party support, and region-aware matching — all managed for you.</p>
+        </article>
+        <article class="card mini hud reveal">
+          <h4>Cloud Saves</h4>
+          <p>Per-player save storage that follows users across devices, with version history and
+          conflict resolution built in.</p>
+        </article>
+        <article class="card mini hud reveal">
+          <h4>Achievements &amp; Stats</h4>
+          <p>Track player milestones, progression, and aggregate analytics out of the box.</p>
+        </article>
+        <article class="card mini hud reveal">
+          <h4>Presence &amp; Friends</h4>
+          <p>Rich status, invites, and join-game hooks wired into the StarHermit social graph
+          automatically.</p>
+        </article>
+      </div>
+    </div>
+
+    <blockquote class="manifesto reveal">
+      <p>Hobbyists get a storefront for free just by pushing code. Indies get console-grade
+      infrastructure and a global payments stack — no publisher deal, no server bill, no finance
+      department. And because ownership is anchored to the repository itself, credit always flows to
+      the people who wrote the code.</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section cta" id="join">
+    <p class="tag reveal">// TRANSMISSION ENDS</p>
+    <h2 class="reveal">Build your library<br>among the <span class="grad">stars</span>.</h2>
+    <p class="section-sub reveal">Players stick with StarHermit for decades — and proudly call it home.</p>
+    <div class="hero-actions reveal">
+      <a class="btn btn-primary" href="#top">Create an Account</a>
+      <a class="btn btn-ghost" href="#developers">Read the Developer Docs</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="nav-brand" href="#top">
+      <svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16 2l3.2 9.1 9.8.5-7.6 6.1 2.5 9.5L16 21.8 8.1 27.2l2.5-9.5-7.6-6.1 9.8-.5z"/></svg>
+      <span>STARHERMIT</span>
+    </a>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#players">Players</a>
+      <a href="#developers">Developers</a>
+      <a href="#join">Join</a>
+    </nav>
+    <p class="footer-note">© <span id="year">2026</span> StarHermit. One launcher, one library, one universe.</p>
+  </div>
+</footer>
+
+<script src="bg.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
