@@ -466,6 +466,18 @@ h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; }
 
 /* ============ Responsive ============ */
 
+/* Mobile: skip expensive compositing (backdrop blur, blend modes) */
+@media (max-width: 768px), (pointer: coarse) {
+  .card, .nav.scrolled, .footer {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .card { background: rgba(9, 12, 24, 0.9); }
+  .card:hover { background: rgba(11, 15, 30, 0.94); }
+  .nav.scrolled, .footer { background: rgba(3, 5, 12, 0.94); }
+  .scanlines { display: none; }
+}
+
 @media (max-width: 900px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
 }

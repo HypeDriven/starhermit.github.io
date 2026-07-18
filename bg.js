@@ -21,12 +21,17 @@
     return;
   }
 
+  // Low-intensity mode for phones/tablets: cheaper shader, smaller render
+  // target, capped frame rate. Desktop gets the full shader.
+  var LITE = window.matchMedia("(pointer: coarse)").matches
+          || Math.min(window.screen.width, window.screen.height) < 768;
+
   var VERT = [
     "attribute vec2 aPos;",
     "void main() { gl_Position = vec4(aPos, 0.0, 1.0); }"
   ].join("\n");
 
-  var FRAG = [
+  var FRAG_SRC = [
     "#ifdef GL_FRAGMENT_PRECISION_HIGH",
     "precision highp float;",
     "#else",
@@ -59,7 +64,11 @@
     "    float v = 0.0;",
     "    float a = 0.5;",
     "    mat2 m = mat2(1.6, 1.2, -1.2, 1.6);",
+    "#ifdef LITE",
+    "    for (int i = 0; i < 3; i++) {",
+    "#else",
     "    for (int i = 0; i < 5; i++) {",
+    "#endif",
     "        v += a * vnoise(p);",
     "        p = m * p;",
     "        a *= 0.5;",
@@ -137,7 +146,9 @@
     "    col += starLayer(wuv + cam * 0.15, 60.0, 0.10, 0.35, uTime);",
     "    col += starLayer(wuv + cam * 0.45, 34.0, 0.07, 0.60, uTime);",
     "    col += starLayer(wuv + cam * 0.80, 18.0, 0.05, 1.00, uTime);",
+    "#ifndef LITE",
     "    col += starLayer(wuv + cam * 0.60, 7.0, 0.35, 0.45, uTime);",
+    "#endif",
     "",
     "    // One bright hero star with a cross flare",
     "    vec2 bs = vec2(-0.52, 0.26) - 0.35 * cam;",
@@ -150,7 +161,8 @@
     "    vec2 gx = vec2(0.66, -0.62) - 0.60 * cam;",
     "    col += spiralGalaxy(wuv, gx, uTime) * 0.9;",
     "",
-    "    // Occasional shooting star",
+    "    // Occasional shooting star (skipped in LITE mode)",
+    "#ifndef LITE",
     "    float tseg = floor(uTime / 7.0);",
     "    float ft = fract(uTime / 7.0);",
     "    if (hash21(vec2(tseg, 9.3)) > 0.35) {",
@@ -166,6 +178,7 @@
     "                     * (1.0 - smoothstep(0.15, 0.35, ft));",
     "        col += vec3(0.8, 0.9, 1.0) * streak * 1.5;",
     "    }",
+    "#endif",
     "",
     "    // ---- Black hole ----",
     "    vec2 dp = uv - bh;",
@@ -201,6 +214,8 @@
     "    gl_FragColor = vec4(col, 1.0);",
     "}"
   ].join("\n");
+
+  var FRAG = (LITE ? "#define LITE 1\n" : "") + FRAG_SRC;
 
   function compile(type, src) {
     var sh = gl.createShader(type);
@@ -247,7 +262,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function resize() {
-    var scale = Math.min(window.devicePixelRatio || 1, 1.75) * 0.8;
+    var scale = Math.min(window.devicePixelRatio || 1, LITE ? 1.2 : 1.75) * (LITE ? 0.6 : 0.8);
     var w = Math.max(1, Math.round(window.innerWidth * scale));
     var h = Math.max(1, Math.round(window.innerHeight * scale));
     if (canvas.width !== w || canvas.height !== h) {
@@ -299,9 +314,13 @@
     renderOnce();
   } else {
     var rafId = null;
+    var lastFrame = 0;
+    var FRAME_MS = LITE ? 33 : 0; // cap mobile at ~30fps
     var loop = function (now) {
-      frame(now);
       rafId = requestAnimationFrame(loop);
+      if (FRAME_MS && now - lastFrame < FRAME_MS) return;
+      lastFrame = now;
+      frame(now);
     };
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) {
