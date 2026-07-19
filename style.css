@@ -299,6 +299,8 @@ h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; }
 
 .card p { color: var(--ink-dim); font-size: 0.94rem; margin-top: 10px; }
 
+.card .btn { display: inline-block; margin-top: 22px; }
+
 /* HUD corner brackets */
 .hud::before,
 .hud::after {
