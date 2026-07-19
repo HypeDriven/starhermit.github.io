@@ -8,23 +8,24 @@
   var canvas = document.getElementById("bg");
   if (!canvas) return;
 
+  // Low-intensity mode for phones/tablets: cheaper shader, smaller render
+  // target, capped frame rate that drops further when idle. Desktop gets
+  // the full shader.
+  var LITE = window.matchMedia("(pointer: coarse)").matches
+          || Math.min(window.screen.width, window.screen.height) < 768;
+
   var gl = canvas.getContext("webgl", {
     alpha: false,
     depth: false,
     stencil: false,
     antialias: false,
-    powerPreference: "high-performance"
+    powerPreference: LITE ? "low-power" : "high-performance"
   }) || canvas.getContext("experimental-webgl");
 
   if (!gl) {
     document.body.classList.add("no-webgl");
     return;
   }
-
-  // Low-intensity mode for phones/tablets: cheaper shader, smaller render
-  // target, capped frame rate. Desktop gets the full shader.
-  var LITE = window.matchMedia("(pointer: coarse)").matches
-          || Math.min(window.screen.width, window.screen.height) < 768;
 
   var VERT = [
     "attribute vec2 aPos;",
@@ -65,7 +66,7 @@
     "    float a = 0.5;",
     "    mat2 m = mat2(1.6, 1.2, -1.2, 1.6);",
     "#ifdef LITE",
-    "    for (int i = 0; i < 3; i++) {",
+    "    for (int i = 0; i < 2; i++) {",
     "#else",
     "    for (int i = 0; i < 5; i++) {",
     "#endif",
@@ -103,7 +104,11 @@
     "    float ang = atan(p.y, p.x);",
     "    float spiral = cos(ang * 2.0 - r * 16.0 + t * 0.015);",
     "    spiral = smoothstep(-0.2, 1.0, spiral);",
+    "#ifdef LITE",
+    "    float clump = vnoise(vec2(ang * 1.5, r * 9.0));",
+    "#else",
     "    float clump = fbm(vec2(ang * 1.5, r * 9.0));",
+    "#endif",
     "    float arms = spiral * (0.35 + 0.65 * clump) * exp(-r * 4.2);",
     "    float core = exp(-r * 13.0);",
     "    vec3 col = vec3(0.0);",
@@ -200,7 +205,11 @@
     "    vec2 dq = vec2(dp.x, dp.y / 0.30);",
     "    float rr = length(dq);",
     "    float diskMask = smoothstep(0.105, 0.135, rr) * (1.0 - smoothstep(0.22, 0.46, rr));",
+    "#ifdef LITE",
+    "    float sw = vnoise(vec2(atan(dq.y, dq.x) * 2.0 - rr * 10.0 + uTime * 0.5, rr * 14.0 - uTime * 0.9));",
+    "#else",
     "    float sw = fbm(vec2(atan(dq.y, dq.x) * 2.0 - rr * 10.0 + uTime * 0.5, rr * 14.0 - uTime * 0.9));",
+    "#endif",
     "    vec3 diskCol = mix(vec3(1.0, 0.95, 0.85), vec3(1.0, 0.42, 0.10), smoothstep(0.12, 0.42, rr));",
     "    float dop = clamp(1.0 - dp.x * 2.2, 0.35, 2.4);",
     "    col += diskCol * diskMask * (0.3 + 0.7 * sw) * dop * 1.1;",
@@ -262,7 +271,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function resize() {
-    var scale = Math.min(window.devicePixelRatio || 1, LITE ? 1.2 : 1.75) * (LITE ? 0.6 : 0.8);
+    var scale = Math.min(window.devicePixelRatio || 1, LITE ? 1.2 : 1.75) * (LITE ? 0.5 : 0.8);
     var w = Math.max(1, Math.round(window.innerWidth * scale));
     var h = Math.max(1, Math.round(window.innerHeight * scale));
     if (canvas.width !== w || canvas.height !== h) {
@@ -282,14 +291,21 @@
   var scroll = scrollTarget();
   var mouse = [0, 0];
   var mouseTarget = [0, 0];
+  // Treat page load as activity; used to drop the mobile frame rate when idle.
+  var lastActive = performance.now();
 
   window.addEventListener("mousemove", function (e) {
+    lastActive = performance.now();
     mouseTarget[0] = (e.clientX / window.innerWidth) * 2 - 1;
     mouseTarget[1] = -((e.clientY / window.innerHeight) * 2 - 1);
   }, { passive: true });
 
   var start = performance.now();
 
+  // Render one frame. Scheduling is owned by the callers below — frame()
+  // must never schedule itself, or it would spawn a second, uncapped
+  // requestAnimationFrame chain that ignores the mobile frame-rate cap and
+  // the hidden-tab pause.
   function frame(now) {
     // Ease scroll and mouse for buttery parallax
     var t = scrollTarget();
@@ -302,8 +318,6 @@
     gl.uniform1f(uScroll, scroll);
     gl.uniform2f(uMouse, mouse[0], mouse[1]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
-
-    if (!reduceMotion) requestAnimationFrame(frame);
   }
 
   if (reduceMotion) {
@@ -315,11 +329,21 @@
   } else {
     var rafId = null;
     var lastFrame = 0;
-    var FRAME_MS = LITE ? 33 : 0; // cap mobile at ~30fps
+    if (LITE) {
+      var bump = function () { lastActive = performance.now(); };
+      window.addEventListener("scroll", bump, { passive: true });
+      window.addEventListener("touchmove", bump, { passive: true });
+    }
     var loop = function (now) {
       rafId = requestAnimationFrame(loop);
-      if (FRAME_MS && now - lastFrame < FRAME_MS) return;
-      lastFrame = now;
+      if (LITE) {
+        // ~30fps while the user is interacting, ~15fps when idle. The scene
+        // drifts slowly on its own, so the idle rate is barely visible but
+        // roughly halves sustained GPU load (heat, battery, scroll jank).
+        var budget = now - lastActive < 1200 ? 33 : 66;
+        if (now - lastFrame < budget) return;
+        lastFrame = now;
+      }
       frame(now);
     };
     document.addEventListener("visibilitychange", function () {
