@@ -1,7 +1,8 @@
 /* StarHermit — WebGL deep-space background.
    Single fullscreen shader pass: Hubble-palette nebula, parallax starfields,
    a spiral galaxy, and a black hole with accretion disk + gravitational
-   lensing. The camera pans through the scene as the page scrolls. */
+   lensing. The camera pans through the scene as the page scrolls, and
+   keeps gliding slowly on its own when the page is idle. */
 (function () {
   "use strict";
 
@@ -268,8 +269,6 @@
   var uScroll = gl.getUniformLocation(prog, "uScroll");
   var uMouse = gl.getUniformLocation(prog, "uMouse");
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   function resize() {
     var scale = Math.min(window.devicePixelRatio || 1, LITE ? 1.2 : 1.75) * (LITE ? 0.5 : 0.8);
     var w = Math.max(1, Math.round(window.innerWidth * scale));
@@ -291,6 +290,11 @@
   var scroll = scrollTarget();
   var mouse = [0, 0];
   var mouseTarget = [0, 0];
+  // Autonomous camera drift (in scroll units) so the scene keeps moving
+  // slowly when the user isn't scrolling.
+  var AUTO_PAN = 0.005; // scroll units per second — full pan takes minutes
+  var drift = 0;
+  var prevNow = null;
   // Treat page load as activity; used to drop the mobile frame rate when idle.
   var lastActive = performance.now();
 
@@ -313,46 +317,43 @@
     mouse[0] += (mouseTarget[0] - mouse[0]) * 0.05;
     mouse[1] += (mouseTarget[1] - mouse[1]) * 0.05;
 
+    // Accumulate the idle drift. dt is clamped so returning from a hidden
+    // tab doesn't make the camera jump.
+    if (prevNow !== null) drift += Math.min(now - prevNow, 100) * (AUTO_PAN / 1000);
+    prevNow = now;
+
     gl.uniform2f(uRes, canvas.width, canvas.height);
-    gl.uniform1f(uTime, reduceMotion ? 12.0 : (now - start) / 1000);
-    gl.uniform1f(uScroll, scroll);
+    gl.uniform1f(uTime, (now - start) / 1000);
+    gl.uniform1f(uScroll, scroll + drift);
     gl.uniform2f(uMouse, mouse[0], mouse[1]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
 
-  if (reduceMotion) {
-    // Static frame; re-render only when the view changes
-    var renderOnce = function () { requestAnimationFrame(frame); };
-    window.addEventListener("scroll", renderOnce, { passive: true });
-    window.addEventListener("resize", renderOnce);
-    renderOnce();
-  } else {
-    var rafId = null;
-    var lastFrame = 0;
-    if (LITE) {
-      var bump = function () { lastActive = performance.now(); };
-      window.addEventListener("scroll", bump, { passive: true });
-      window.addEventListener("touchmove", bump, { passive: true });
-    }
-    var loop = function (now) {
-      rafId = requestAnimationFrame(loop);
-      if (LITE) {
-        // ~30fps while the user is interacting, ~15fps when idle. The scene
-        // drifts slowly on its own, so the idle rate is barely visible but
-        // roughly halves sustained GPU load (heat, battery, scroll jank).
-        var budget = now - lastActive < 1200 ? 33 : 66;
-        if (now - lastFrame < budget) return;
-        lastFrame = now;
-      }
-      frame(now);
-    };
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) {
-        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
-      } else if (rafId === null) {
-        rafId = requestAnimationFrame(loop);
-      }
-    });
-    rafId = requestAnimationFrame(loop);
+  var rafId = null;
+  var lastFrame = 0;
+  if (LITE) {
+    var bump = function () { lastActive = performance.now(); };
+    window.addEventListener("scroll", bump, { passive: true });
+    window.addEventListener("touchmove", bump, { passive: true });
   }
+  var loop = function (now) {
+    rafId = requestAnimationFrame(loop);
+    if (LITE) {
+      // ~30fps while the user is interacting, ~15fps when idle. The scene
+      // drifts slowly on its own, so the idle rate is barely visible but
+      // roughly halves sustained GPU load (heat, battery, scroll jank).
+      var budget = now - lastActive < 1200 ? 33 : 66;
+      if (now - lastFrame < budget) return;
+      lastFrame = now;
+    }
+    frame(now);
+  };
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+    } else if (rafId === null) {
+      rafId = requestAnimationFrame(loop);
+    }
+  });
+  rafId = requestAnimationFrame(loop);
 })();
