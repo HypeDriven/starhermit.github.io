@@ -112,13 +112,16 @@ body.no-webgl {
 .nav-links a:hover { color: var(--cyan); }
 
 .nav-cta {
-  border: 1px solid rgba(127, 231, 255, 0.45);
-  padding: 8px 18px;
+  border: 1px solid rgba(127, 231, 255, 0.65);
+  padding: 9px 20px;
   border-radius: 3px;
   color: var(--cyan) !important;
+  font-weight: 700;
+  background: rgba(127, 231, 255, 0.08);
+  box-shadow: 0 0 16px rgba(127, 231, 255, 0.22);
 }
 
-.nav-cta:hover { background: rgba(127, 231, 255, 0.1); }
+.nav-cta:hover { background: rgba(127, 231, 255, 0.16); box-shadow: 0 0 24px rgba(127, 231, 255, 0.35); }
 
 /* ============ Shared ============ */
 
@@ -486,9 +489,12 @@ h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; }
 }
 
 @media (max-width: 640px) {
-  .nav { padding: 14px 20px; }
-  .nav.scrolled { padding: 10px 20px; }
-  .nav-links { gap: 16px; }
+  .nav { padding: 14px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
+  .nav-brand span { display: none; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.14em; }
+  .nav-cta { padding: 7px 12px; }
   .grid-3, .grid-2, .tick-list { grid-template-columns: 1fr; }
   .hero-stats { gap: 34px; }
   .section { padding: 13vh 20px 7vh; }
