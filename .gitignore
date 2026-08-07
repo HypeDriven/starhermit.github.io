@@ -14,3 +14,6 @@ GEMINI.md
 .DS_Store
 .vscode/
 .idea/
+
+# Windows/WSL alternate-data-stream artifacts
+*:Zone.Identifier
