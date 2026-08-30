@@ -56,9 +56,13 @@ the operating company.
 ### Every path leads to sign-up
 
 The page's single conversion goal is an account on `dashboard.starhermit.com`, so no part of it is a
-link dead end and nothing offers a way around the gate. The fixed nav carries a filled **Sign Up
-Free** pill at all widths; the hero leads with **Create Free Account**; `#play`, `#players` and
-`#developers` each close on a `.section-cta` band; the footer's first link is **Sign Up / Sign In**.
+link dead end and nothing offers a way around the gate. The fixed nav carries a filled **Play Now**
+pill at all widths — deliberately not sign-up wording, because the persistent nav is the one control
+a *returning* account holder uses, and "Sign Up Free" reads as not-for-me to them; it still lands on
+the same gate, which signs up and signs in through one Google button. The hero, which speaks to
+first-time visitors, carries the explicit ask instead: **Create Free Account**. `#play`, `#players`
+and `#developers` each close on a `.section-cta` band; the footer's first link is
+**Sign Up / Sign In**.
 Every outbound link on the page goes to the dashboard except the developer docs
 (`wiki.starhermit.com`) and the Windows client download, which needs an account of its own.
 
