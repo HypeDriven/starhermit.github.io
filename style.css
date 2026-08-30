@@ -434,7 +434,7 @@ h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; }
   flex-wrap: wrap;
 }
 
-.footer-links { display: flex; gap: 22px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
 
 .footer-links a {
   color: var(--ink-dim);
@@ -501,6 +501,8 @@ h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; }
   .section-cta { padding: 24px 20px; }
   .section-cta .btn { width: 100%; text-align: center; }
   .section-cta-actions { width: 100%; }
+  .footer-inner { justify-content: flex-start; }
+  .footer-links { gap: 10px 16px; }
   .grid-3, .grid-2, .tick-list { grid-template-columns: 1fr; }
   .hero-stats { gap: 34px; }
   .section { padding: 13vh 20px 7vh; }

@@ -66,9 +66,17 @@ and `#developers` each close on a `.section-cta` band; the footer's first link i
 Every outbound link on the page goes to the dashboard except the developer docs
 (`wiki.starhermit.com`) and the Windows client download, which needs an account of its own.
 
-The Discord button that used to sit in the hero was removed — its invite (`discord.gg/shugC9fMg`)
-had expired, so the loudest control on the page led to Discord's "Invite Invalid" screen. Re-add it
-in the footer, never the hero, and only with a never-expiring invite or a server vanity URL.
+**Discord lives in the footer, never the hero.** It was a hero button once, on an invite
+(`discord.gg/shugC9fMg`) that had expired — so the loudest control on the page led to Discord's
+"Invite Invalid" screen, and nothing in this repo could notice.
+
+> ⚠️ **The current invite `discord.gg/2GPYgGfBX` expires 2026-09-29.** Discord reports
+> `expires_at` for it and the server has no `vanity_url_code`, so it will die on that date and the
+> footer link will 404 silently. Replace it before then with a real never-expiring invite (Server
+> Settings → Invites → Edit → *Expire After: Never*, *Max Uses: No Limit*) or a server vanity URL,
+> and update this line. Verify any replacement before committing:
+> `curl -s "https://discord.com/api/v10/invites/<CODE>?with_expiration=true"` — it must return a
+> guild object with `"expires_at": null`, not `{"code": 50270}`.
 
 ## Constraints
 
