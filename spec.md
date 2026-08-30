@@ -70,13 +70,17 @@ Every outbound link on the page goes to the dashboard except the developer docs
 (`discord.gg/shugC9fMg`) that had expired — so the loudest control on the page led to Discord's
 "Invite Invalid" screen, and nothing in this repo could notice.
 
-> ⚠️ **The current invite `discord.gg/2GPYgGfBX` expires 2026-09-29.** Discord reports
-> `expires_at` for it and the server has no `vanity_url_code`, so it will die on that date and the
-> footer link will 404 silently. Replace it before then with a real never-expiring invite (Server
-> Settings → Invites → Edit → *Expire After: Never*, *Max Uses: No Limit*) or a server vanity URL,
-> and update this line. Verify any replacement before committing:
-> `curl -s "https://discord.com/api/v10/invites/<CODE>?with_expiration=true"` — it must return a
-> guild object with `"expires_at": null`, not `{"code": 50270}`.
+The current invite is `discord.gg/pJ9QPGW9Tt`, verified against the Discord API as permanent:
+`expires_at: null`, `max_uses: null`, guild `1531881098232070165` ("Starhermit.com"). **Verify any
+replacement the same way before committing** — a default Discord invite lasts 7 days, and neither
+GitHub Pages nor anything else here will ever fail a build over a dead one:
+
+```
+curl -s "https://discord.com/api/v10/invites/<CODE>?with_expiration=true"
+```
+
+It must return a guild object with `"expires_at": null` — not a non-null date, and not
+`{"code": 50270}` ("Invite is expired").
 
 ## Constraints
 
