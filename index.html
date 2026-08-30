@@ -6,7 +6,7 @@
 <title>StarHermit — Your Library. Your Crew. Your Universe.</title>
 <meta name="description" content="StarHermit is the digital distribution platform PC gamers call home. Countless games, legendary sales, cloud saves, community mods — and a publishing pipeline for developers that starts with a single GitHub repo.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%237fe7ff' d='M16 2l3.2 9.1 9.8.5-7.6 6.1 2.5 9.5L16 21.8 8.1 27.2l2.5-9.5-7.6-6.1 9.8-.5z'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -19,9 +19,10 @@
     <span>STARHERMIT</span>
   </a>
   <nav class="nav-links" aria-label="Primary">
-    <a href="#players">Players</a>
-    <a href="#developers">Developers</a>
-    <a href="https://dashboard.starhermit.com" target="_blank" rel="noopener" class="nav-cta">Launch</a>
+    <a href="#play" class="nav-secondary">Games</a>
+    <a href="#players" class="nav-secondary nav-hide-sm">Players</a>
+    <a href="#developers" class="nav-secondary nav-hide-sm">Developers</a>
+    <a href="https://dashboard.starhermit.com" target="_blank" rel="noopener" class="nav-cta">Sign Up Free</a>
   </nav>
 </header>
 
@@ -34,16 +35,61 @@
     <p class="hero-sub reveal">Countless games. Legendary sales. One library that follows
     you across every machine you own — and a community that turns a platform into a home.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-primary" href="#players">Explore the Platform</a>
+      <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create Free Account</a>
+      <a class="btn btn-ghost" href="#play">See the Games</a>
       <a class="btn btn-ghost" href="#developers">Publish a Game</a>
-      <a class="btn btn-discord" href="https://discord.gg/shugC9fMg" target="_blank" rel="noopener">Join Our Developer Discord</a>
     </div>
+    <p class="hero-note reveal">Free. One Google sign-in — no password, no card, nothing to install.</p>
     <div class="hero-stats reveal">
-      <div class="stat"><span class="stat-num">Infinity + 1</span><span class="stat-label">titles in catalog</span></div>
-      <div class="stat"><span class="stat-num">50–90%</span><span class="stat-label">off in seasonal sales</span></div>
-      <div class="stat"><span class="stat-num">1 click</span><span class="stat-label">to install community mods</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">installs to start playing</span></div>
+      <div class="stat"><span class="stat-num">1 repo</span><span class="stat-label">is the whole publishing step</span></div>
+      <div class="stat"><span class="stat-num">$0</span><span class="stat-label">to put your game online</span></div>
     </div>
     <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ PLAY NOW ============ -->
+  <section class="section" id="play">
+    <p class="tag reveal">SYS.00 // IN THE LIBRARY NOW</p>
+    <h2 class="reveal">Real games, <span class="grad">already running</span>.</h2>
+    <p class="section-sub reveal">Built straight from their source repositories and playing in the
+    browser right now. Sign in with Google and they're in your library in seconds — free, no card,
+    nothing to install.</p>
+
+    <div class="grid grid-3">
+      <article class="card hud reveal">
+        <img class="game-art" src="img/crown-and-chasm.webp" alt="Crown &amp; Chasm — a fortified city above a vast excavated chasm"
+             width="800" height="450" loading="lazy" decoding="async">
+        <h3>Crown &amp; Chasm</h3>
+        <p>Build a kingdom above, dig into the dark below. A strategy sim that runs on a WebAssembly
+        simulation in your browser tab.</p>
+        <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Sign In to Play</a>
+      </article>
+
+      <article class="card hud reveal">
+        <img class="game-art" src="img/blind-magus.webp" alt="Blind Magus — pixel-art title screen with a robed wizard"
+             width="800" height="450" loading="lazy" decoding="async">
+        <h3>Blind Magus</h3>
+        <p>A pixel-art dungeon crawler of light and dark. Build a party, raid the depths, and hope the
+        artifact vault is kind to you.</p>
+        <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Sign In to Play</a>
+      </article>
+
+      <article class="card hud reveal">
+        <img class="game-art" src="img/null-range.webp" alt="Null Range — orange and black hangar interface with ship loadout"
+             width="800" height="450" loading="lazy" decoding="async">
+        <h3>Null Range</h3>
+        <p>Pick a hull, fit a weapon loadout, take a callsign and deploy. Tactical ship combat with a
+        terminal-green soul.</p>
+        <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Sign In to Play</a>
+      </article>
+    </div>
+
+    <div class="section-cta reveal">
+      <p>One Google click puts all of these — plus the rest of the catalog, friends, chat and voice
+      while you play — in your library. It's free and there's nothing to install.</p>
+      <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create Your Free Account</a>
+    </div>
   </section>
 
   <!-- ============ PLAYERS ============ -->
@@ -95,6 +141,11 @@
         <p>Early Access, family sharing, Remote Play Together with friends who don't own the game,
         Big Picture couch mode, trading cards, badges, and the Community Market.</p>
       </article>
+    </div>
+
+    <div class="section-cta reveal">
+      <p>All of it is one Google click away — free, in the browser, nothing to install.</p>
+      <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create Your Free Account</a>
     </div>
   </section>
 
@@ -202,6 +253,14 @@
       department. And because ownership is anchored to the repository itself, credit always flows to
       the people who wrote the code.</p>
     </blockquote>
+
+    <div class="section-cta reveal">
+      <p>Bring a repo. Add Game → paste the URL → your page is built and hosted.</p>
+      <div class="section-cta-actions">
+        <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Publish from the Dashboard</a>
+        <a class="btn btn-ghost" href="https://wiki.starhermit.com" target="_blank" rel="noopener">Read the Docs</a>
+      </div>
+    </div>
   </section>
 
   <!-- ============ DOWNLOAD ============ -->
@@ -213,19 +272,20 @@
 
     <div class="grid grid-2">
       <article class="card hud reveal">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.4l6-0.9v7H4zM11 4.3l9-1.3v8.5h-9zM4 12h6v7l-6-0.9zM11 12h9v8.5l-9-1.3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        <h3>Windows</h3>
-        <p>The full native client: downloads, cloud saves, mods, friends, and streaming —
-        all from your desktop.</p>
-        <a class="btn btn-primary" href="downloads/StarHermit.exe" download>Download for Windows</a>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.8 2.6 4 5.7 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.7-4-9s1.2-6.4 4-9z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3>Web <span class="pill">Start here</span></h3>
+        <p>Nothing to install. Your library, friends, chat and voice in any browser — sign in with
+        Google and you're in.</p>
+        <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create Free Account</a>
       </article>
 
       <article class="card hud reveal">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.8 2.6 4 5.7 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.7-4-9s1.2-6.4 4-9z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        <h3>Web</h3>
-        <p>No install needed. Jump into your library and community from any browser with
-        the StarHermit dashboard.</p>
-        <a class="btn btn-ghost" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Open Web Dashboard</a>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.4l6-0.9v7H4zM11 4.3l9-1.3v8.5h-9zM4 12h6v7l-6-0.9zM11 12h9v8.5l-9-1.3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3>Windows</h3>
+        <p>The full native client: local installs, cloud saves, mods, friends, and streaming from your
+        desktop.</p>
+        <a class="btn btn-ghost" href="downloads/StarHermit.exe" download>Download for Windows</a>
+        <p class="fine">1.5&nbsp;MB · Windows 10/11 · unsigned build, so SmartScreen will ask you to confirm</p>
       </article>
     </div>
   </section>
@@ -234,9 +294,10 @@
   <section class="section cta" id="join">
     <p class="tag reveal">// TRANSMISSION ENDS</p>
     <h2 class="reveal">Build your library<br>among the <span class="grad">stars</span>.</h2>
-    <p class="section-sub reveal">Players stick with StarHermit for their entire lives — it becomes their family legacy.</p>
+    <p class="section-sub reveal">Signing in with Google creates your account. It takes one click, it's
+    free, and there's nothing to install.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create an Account</a>
+      <a class="btn btn-primary" href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Create Your Free Account</a>
       <a class="btn btn-ghost" href="https://wiki.starhermit.com" target="_blank" rel="noopener">Read the Developer Docs</a>
     </div>
   </section>
@@ -250,15 +311,16 @@
       <span>STARHERMIT</span>
     </a>
     <nav class="footer-links" aria-label="Footer">
-      <a href="#players">Players</a>
-      <a href="#developers">Developers</a>
-      <a href="#join">Join</a>
+      <a href="https://dashboard.starhermit.com" target="_blank" rel="noopener">Sign Up / Sign In</a>
+      <a href="https://wiki.starhermit.com" target="_blank" rel="noopener">Developer Docs</a>
+      <a href="downloads/StarHermit.exe" download>Windows Client</a>
+      <a href="StarHermit_Terms_of_Service.docx">Terms of Service</a>
     </nav>
-    <p class="footer-note">© <span id="year">2026</span> StarHermit. One launcher, one library, one universe.</p>
+    <p class="footer-note">© <span id="year">2026</span> StarHermit — Hype Driven Development Inc., Vancouver, BC.</p>
   </div>
 </footer>
 
-<script src="bg.js"></script>
-<script src="main.js"></script>
+<script defer src="main.js"></script>
+<script defer src="bg.js"></script>
 </body>
 </html>

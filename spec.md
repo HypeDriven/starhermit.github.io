@@ -1,0 +1,101 @@
+# starhermit.com — running specification
+
+> **This is the running specification: it describes what this site is today.** It is loaded into every
+> Claude Code session at start. Any task that changes the site must update this document in the same
+> change — see [Keeping this document current](#keeping-this-document-current).
+
+The public marketing site for StarHermit, served at **starhermit.com** (GitHub Pages; `CNAME` carries
+the hostname). It is the front door: it pitches the platform to players and to developers, hands out the
+Windows client, and links to the web dashboard and the developer wiki. It holds no account state and
+calls no API.
+
+## What's in the repo
+
+| Path | What it is |
+|---|---|
+| `index.html` | The whole site: one page, six sections, no framework |
+| `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
+| `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
+| `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
+| `img/*.webp` | Artwork for the three games in the **Play now** section — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range. Committed as static assets rather than hotlinked from the API: the API's `/cover` 404s for games without one, and the one cover that exists is a 1.4 MB PNG. |
+| `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-windows-client`), committed here so the download link is a static asset |
+| `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
+
+## Sections
+
+1. **Hero** — the platform pitch. Its primary action is **Create Free Account** →
+   `dashboard.starhermit.com`; **See the Games** jumps to `#play`, **Publish a Game** to `#developers`.
+   A note under the buttons states the cost of clicking ("one Google sign-in — no password, no card,
+   nothing to install"), then three headline stats that are true of the shipped platform rather than
+   invented catalog figures.
+2. **In the library now** (`#play`) — three real games hosted on StarHermit, shown with their
+   artwork and named. This section is the site's only pre-signup proof that the platform hosts real
+   games: the dashboard is a hard sign-in gate and `GET /api/v1/github-games` is 401 anonymously, so
+   nothing about the catalog is visible until after signup.
+
+   **It shows the games but never links to them.** Each card's button is *Sign In to Play* →
+   `dashboard.starhermit.com`, and the section closes on *Create Your Free Account*. The games are in
+   fact reachable anonymously at their own `<game-id>.starhermit.com` addresses, and this site
+   deliberately does not hand those out: a visitor who plays without an account is a visitor who
+   never makes one. Proof of the catalog is the job here; the account is the ask. Do not reintroduce
+   direct game links.
+3. **For players** (`#players`) — the library as the heart of a social ecosystem: catalog breadth, sales,
+   one-click community mods, friends and community. Closes on a dashboard CTA.
+4. **For creators** (`#developers`) — the three-step publishing story (paste a repo → claim your game →
+   get paid), and the built-in payments stack (cards with regional pricing, plus cryptocurrency).
+   Closes on a dashboard CTA plus the developer docs.
+5. **Download** (`#download`) — two launchpads, **web dashboard first** and carrying the primary
+   button, with the native **Windows** client (`downloads/StarHermit.exe`) second and its real cost
+   disclosed (size, OS, unsigned build → SmartScreen prompt).
+6. **Join** (`#join`) — open the dashboard (signing in with Google *is* the account creation; the
+   dashboard has no separate sign-up form), or read the developer docs at `wiki.starhermit.com`.
+
+The footer links off-page — dashboard, developer docs, Windows client, Terms of Service — and names
+the operating company.
+
+### Every path leads to sign-up
+
+The page's single conversion goal is an account on `dashboard.starhermit.com`, so no part of it is a
+link dead end and nothing offers a way around the gate. The fixed nav carries a filled **Sign Up
+Free** pill at all widths; the hero leads with **Create Free Account**; `#play`, `#players` and
+`#developers` each close on a `.section-cta` band; the footer's first link is **Sign Up / Sign In**.
+Every outbound link on the page goes to the dashboard except the developer docs
+(`wiki.starhermit.com`) and the Windows client download, which needs an account of its own.
+
+The Discord button that used to sit in the hero was removed — its invite (`discord.gg/shugC9fMg`)
+had expired, so the loudest control on the page led to Discord's "Invite Invalid" screen. Re-add it
+in the footer, never the hero, and only with a never-expiring invite or a server vanity URL.
+
+## Constraints
+
+- **No build step and no dependencies.** Plain HTML/CSS/JS, deployed as-is by GitHub Pages. The site
+  still calls no API at runtime; the game artwork it shows is committed to `img/`.
+- **The page must be readable without JavaScript.** `.reveal` starts hidden only under
+  `html.js`, and `main.js` adds that class as its first statement — so a blocked, 404'd or failed
+  `main.js` leaves every word and every CTA visible instead of a blank starfield. `main.js` also
+  loads *before* `bg.js`, and both are `defer`red, so the WebGL shader compile never delays the
+  content. Do not reintroduce a bare `.reveal { opacity: 0 }`.
+- **Outbound links rot silently.** Nothing here has a build step that could fail on a dead link —
+  an expired Discord invite shipped as the hero's loudest button and stayed there. Re-check every
+  outbound link whenever the site is touched.
+- **The `#play` artwork can go stale.** `img/*.webp` is a committed snapshot of three specific games;
+  if one is removed from the platform the section is advertising something that no longer exists.
+  Re-check the three titles when the catalog changes.
+- **Marketing copy is forward-looking by nature**, and some of it describes intent rather than shipped
+  behaviour (payments and revenue flows in particular do not exist in the backend yet). That is fine for
+  this site — but keep the *platform's* specs (`../starhermit/spec.md` and the sibling clients') strictly
+  descriptive, and never cite this page as evidence a feature exists.
+- The Windows client binary is a **published artefact**: replace it by publishing a new build from
+  `../starhermit-windows-client`, not by hand-editing anything here.
+
+## Keeping this document current
+
+**Every task that changes the site updates this file as part of the same change** — a new or removed
+section, a changed download or link target, a change to the background renderer's modes, a new asset
+committed for distribution. A change is not done until the spec matches it.
+
+1. Describe the site's structure and what each part is for; the copy itself lives in `index.html` and
+   does not need mirroring here.
+2. When the Terms of Service document changes, say so in the same pass in
+   `../starhermit-com-dashboard/spec.md` — the dashboard's gate re-prompts every user off its hash.
+3. Edit in place, don't append a changelog; delete what stopped being true.

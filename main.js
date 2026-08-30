@@ -2,6 +2,11 @@
 (function () {
   "use strict";
 
+  // Content is only allowed to start hidden once this file is running: style.css
+  // scopes .reveal under .js, so a blocked, 404'd or failed main.js leaves the
+  // page fully readable instead of blank.
+  document.documentElement.classList.add("js");
+
   // Reveal-on-scroll
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
