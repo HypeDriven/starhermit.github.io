@@ -7,13 +7,14 @@
 The public marketing site for StarHermit, served at **starhermit.com** (GitHub Pages; `CNAME` carries
 the hostname). It is the front door: it pitches the platform to players and to developers, hands out the
 Windows client, and links to the web dashboard and the developer wiki. It holds no account state and
-calls no API.
+calls no API of its own; the only third-party runtime dependency is Google Analytics.
 
 ## What's in the repo
 
 | Path | What it is |
 |---|---|
-| `index.html` | The whole site: one page, six sections, no framework |
+| `index.html` | The marketing site: one page, six sections, no framework |
+| `privacy.html` | The privacy policy, linked from the footer — same shell (nav, background, styles), prose only |
 | `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
@@ -85,7 +86,12 @@ It must return a guild object with `"expires_at": null` — not a non-null date,
 ## Constraints
 
 - **No build step and no dependencies.** Plain HTML/CSS/JS, deployed as-is by GitHub Pages. The site
-  still calls no API at runtime; the game artwork it shows is committed to `img/`.
+  calls no StarHermit API at runtime; the game artwork it shows is committed to `img/`.
+- **Google Analytics (GA4 `G-W4D9C5NP9G`) is the one third-party script**, the standard `gtag.js`
+  snippet in the `<head>` of *both* `index.html` and `privacy.html` — a page added later that omits it
+  is a page with no traffic data. It loads `async` and nothing else depends on it, so a blocked tag
+  costs measurement and nothing else. The privacy policy already discloses analytics cookies and
+  analytics service providers; keep it that way if the tag is ever replaced or removed.
 - **The page must be readable without JavaScript.** `.reveal` starts hidden only under
   `html.js`, and `main.js` adds that class as its first statement — so a blocked, 404'd or failed
   `main.js` leaves every word and every CTA visible instead of a blank starfield. `main.js` also
