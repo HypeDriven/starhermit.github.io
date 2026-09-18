@@ -18,7 +18,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
-| `img/*.webp` | Artwork for the three games in the **Play now** section — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range. Committed as static assets rather than hotlinked from the API: the API's `/cover` 404s for games without one, and the one cover that exists is a 1.4 MB PNG. |
+| `img/*.webp` | Artwork for the six games in the **Play now** section — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` 404s for games without one, and original covers can be large PNGs. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-windows-client`), committed here so the download link is a static asset |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
 
@@ -29,7 +29,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
    A note under the buttons states the cost of clicking ("one Google sign-in — no password, no card,
    nothing to install"), then three headline stats that are true of the shipped platform rather than
    invented catalog figures.
-2. **In the library now** (`#play`) — three real games hosted on StarHermit, shown with their
+2. **In the library now** (`#play`) — six real games hosted on StarHermit, shown with their
    artwork and named. This section is the site's only pre-signup proof that the platform hosts real
    games: the dashboard is a hard sign-in gate and `GET /api/v1/github-games` is 401 anonymously, so
    nothing about the catalog is visible until after signup.
@@ -100,9 +100,9 @@ It must return a guild object with `"expires_at": null` — not a non-null date,
 - **Outbound links rot silently.** Nothing here has a build step that could fail on a dead link —
   an expired Discord invite shipped as the hero's loudest button and stayed there. Re-check every
   outbound link whenever the site is touched.
-- **The `#play` artwork can go stale.** `img/*.webp` is a committed snapshot of three specific games;
+- **The `#play` artwork can go stale.** `img/*.webp` is a committed snapshot of six specific games;
   if one is removed from the platform the section is advertising something that no longer exists.
-  Re-check the three titles when the catalog changes.
+  Re-check the featured titles when the catalog changes.
 - **Marketing copy is forward-looking by nature**, and some of it describes intent rather than shipped
   behaviour (payments and revenue flows in particular do not exist in the backend yet). That is fine for
   this site — but keep the *platform's* specs (`../starhermit/spec.md` and the sibling clients') strictly
