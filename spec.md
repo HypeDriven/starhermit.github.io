@@ -18,28 +18,35 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
-| `img/*.webp` | Artwork for the six games in the **Play now** section — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` 404s for games without one, and original covers can be large PNGs. |
+| `img/*.webp` | Artwork for the six featured games in `#play` — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
+| `img/games/*.webp` | The 24 game-wall covers, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-windows-client`), committed here so the download link is a static asset |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
 
 ## Sections
 
 1. **Hero** — the platform pitch. Its primary action is **Create Free Account** →
-   `dashboard.starhermit.com`; **See the Games** jumps to `#play`, **Publish a Game** to `#developers`.
+   `dashboard.starhermit.com`; **Play Free Games** jumps to `#play`, **Publish a Game** to `#developers`.
    A note under the buttons states the cost of clicking ("one Google sign-in — no password, no card,
    nothing to install"), then three headline stats that are true of the shipped platform rather than
    invented catalog figures.
-2. **In the library now** (`#play`) — six real games hosted on StarHermit, shown with their
-   artwork and named. This section is the site's only pre-signup proof that the platform hosts real
-   games: the dashboard is a hard sign-in gate and `GET /api/v1/github-games` is 401 anonymously, so
-   nothing about the catalog is visible until after signup.
+2. **In the library now** (`#play`) — real games hosted on StarHermit, each one a single click from
+   playing. It has six featured cards (art, name, pitch, **Play Free Now**), then a wall of 24 more
+   cover tiles ("Play free" on hover; a ▶ badge on touch screens, where only the first 12 show). It
+   closes on *Browse the Full Library* → the dashboard, citing the library's size (130+). This
+   section is the site's only pre-signup proof of the catalog: the dashboard is a hard sign-in gate
+   and `GET /api/v1/github-games` is 401 anonymously.
 
-   **It shows the games but never links to them.** Each card's button is *Sign In to Play* →
-   `dashboard.starhermit.com`, and the section closes on *Create Your Free Account*. The games are in
-   fact reachable anonymously at their own `<game-id>.starhermit.com` addresses, and this site
-   deliberately does not hand those out: a visitor who plays without an account is a visitor who
-   never makes one. Proof of the catalog is the job here; the account is the ask. Do not reintroduce
-   direct game links.
+   **Every game link is a dashboard play link, never the game's own address.** Each card's button
+   and art, and each tile, go to `https://dashboard.starhermit.com/play/<game-id>`. The dashboard
+   holds that link through Google sign-in and its Terms gate, shows the game's cover on the sign-in
+   card, then launches the game (`../starhermit-com-dashboard/spec.md`, *Play links*). The games
+   are also reachable anonymously at `<game-id>.starhermit.com`, and this site deliberately does
+   not hand those out: a visitor who plays without an account is a visitor who never makes one. The
+   play link gets them into the game *and* the account in one motion. Never link a game's own host.
+
+   Null Range is the exception that does not auto-launch: it runs on its own site rather than a
+   StarHermit host, so its play link opens its page in the library, one click from a new tab.
 3. **For players** (`#players`) — the library as the heart of a social ecosystem: catalog breadth, sales,
    one-click community mods, friends and community. Closes on a dashboard CTA.
 4. **For creators** (`#developers`) — the three-step publishing story (paste a repo → claim your game →
@@ -64,8 +71,9 @@ the same gate, which signs up and signs in through one Google button. The hero, 
 first-time visitors, carries the explicit ask instead: **Create Free Account**. `#play`, `#players`
 and `#developers` each close on a `.section-cta` band; the footer's first link is
 **Sign Up / Sign In**.
-Every outbound link on the page goes to the dashboard except the developer docs
-(`wiki.starhermit.com`) and the Windows client download, which needs an account of its own.
+Every outbound link on the page goes to the dashboard (its home, or a game's `/play/<game-id>`)
+except the developer docs (`wiki.starhermit.com`) and the Windows client download, which needs an
+account of its own.
 
 **Discord lives in the footer, never the hero.** It was a hero button once, on an invite
 (`discord.gg/shugC9fMg`) that had expired — so the loudest control on the page led to Discord's
@@ -100,9 +108,12 @@ It must return a guild object with `"expires_at": null` — not a non-null date,
 - **Outbound links rot silently.** Nothing here has a build step that could fail on a dead link —
   an expired Discord invite shipped as the hero's loudest button and stayed there. Re-check every
   outbound link whenever the site is touched.
-- **The `#play` artwork can go stale.** `img/*.webp` is a committed snapshot of six specific games;
-  if one is removed from the platform the section is advertising something that no longer exists.
-  Re-check the featured titles when the catalog changes.
+- **The `#play` games can go stale.** The 30 games and their IDs are a committed snapshot of the
+  catalog. A removed or redeployed-as-new game leaves a play link that ends on a "no longer in the
+  library" toast, and nothing here will notice. Re-check them when the catalog changes against
+  `GET /api/v1/github-games`, which needs a session. Every linked game must be `deployStatus: live`
+  on its own `<game-id>.starhermit.com` host, except Null Range (see `#play` above). The "130+"
+  library figure comes from the same snapshot.
 - **Marketing copy is forward-looking by nature**, and some of it describes intent rather than shipped
   behaviour (payments and revenue flows in particular do not exist in the backend yet). That is fine for
   this site — but keep the *platform's* specs (`../starhermit/spec.md` and the sibling clients') strictly
