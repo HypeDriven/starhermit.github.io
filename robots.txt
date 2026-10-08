@@ -1,0 +1,10 @@
+# Public pages and assets are crawlable by search engines and AI search crawlers.
+# Concept pages remain crawlable so their existing noindex directives can be read.
+User-agent: *
+Disallow: /tools/
+Disallow: /spec.md
+Disallow: /CLAUDE.md
+Disallow: /AGENTS.md
+Allow: /
+
+Sitemap: https://starhermit.com/sitemap.xml

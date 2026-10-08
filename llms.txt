@@ -1,0 +1,27 @@
+# StarHermit
+
+> StarHermit is a game distribution and hosting platform for free browser games and independent game publishing, operated by Hype Driven Development Inc. in Vancouver, British Columbia, Canada.
+
+## Playing
+
+The homepage lists free browser games including Crown & Chasm, Blind Magus, Null Range, Turds, Sky Lobby, and Iron Curtain: 1983. Game links go through the dashboard sign-in and Terms of Service flow. Most featured games launch in the browser; Null Range opens its library page and links to its external game site. No payment card or browser-game installation is needed. An optional Windows 10/11 client is available.
+
+Accounts use supported sign-in providers, including Google and GitHub. The platform is for people who are at least 18 and have reached the age of legal majority where they live.
+
+## Publishing
+
+Sign in to the dashboard, choose Add Game, then submit a GitHub repository URL or upload a local browser-game build. The developer documentation covers supported formats, hosting, and game services. Paid checkout and publisher payouts are planned and are not available yet; payment descriptions on the marketing site describe the roadmap.
+
+## Official pages
+
+- [Homepage and browser games](https://starhermit.com/): Public game collection and platform overview.
+- [Frequently asked questions](https://starhermit.com/#faq): Playing, sign-in, publishing, payments, and account eligibility.
+- [Web dashboard](https://dashboard.starhermit.com): Sign in to browse, play, or add a game; account content requires authentication.
+- [Developer documentation](https://wiki.starhermit.com): Game publishing and integration documentation.
+- [Windows client](https://starhermit.com/#download): Optional client download and system requirements.
+- [Privacy policy](https://starhermit.com/privacy.html): Personal information practices and contact details.
+- [Terms of Service](https://starhermit.com/StarHermit_Terms_of_Service.docx): Authoritative terms in Word format.
+
+## Scope
+
+This guide describes the public production site. Pages under /concepts/ are design prototypes, carry noindex directives, and are not product documentation. Refer to the homepage for the current featured game links and to the developer documentation for technical details.
