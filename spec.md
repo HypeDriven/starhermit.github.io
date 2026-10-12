@@ -119,35 +119,22 @@ It must return a guild object with `"expires_at": null` — not a non-null date,
 
 ## Homepage A/B experiment
 
-`experiment.js?v=1` runs before `main.js` and assigns eligible public visitors 50/50 to
-`hero_v1`: the original hero or a Crown & Chasm hero with artwork and a direct game-launch CTA.
+`experiment.js?v=2` runs before `main.js` and assigns new eligible visitors equally to four
+`hero_v2` treatments: `control` (original), `crown` (Crown & Chasm and direct play), `variety`
+(three linked games), and `quick_start` (simple account benefits). Each receives 25% of traffic.
+Existing exposed `hero_v1` browsers retain their original treatment and attribution without
+entering the new experiment. Namespaced `sh2_` events keep new data separate from legacy `sh_`.
 The shared parent-domain cookie persists for 90 days; known signed-in browsers are excluded
 from new enrollment. Enrollment closes November 9, 2026 UTC and attribution lasts seven days
-after first exposure. Preview either variant with `?ab_preview=control` or `game_first`; previews
-emit no experiment events and write no assignment cookies. Without JS the original hero remains.
-Stylesheets use version 9. GA4 events use variant-specific names so comparison needs no custom
-dimensions. Dashboard attribution initializes Analytics after OAuth fragment scrubbing and counts
-conversion only after authenticated profile retrieval and Terms acceptance. Account creation dates
-separate new accounts from existing-account sign-ins. Focused time uses 15-second ticks; launches
-confirm iframe URL assignment. Privacy discloses experiment cookies and the signed-in marker.
-`experiments.md` defines event semantics, reporting, the fixed analysis plan, and rollback;
-`tools/analyze-experiment.py` analyzes a GA4 event CSV and guards against early winner claims.
-
-## Homepage A/B experiment
-
-`experiment.js?v=1` runs before `main.js` and assigns eligible public visitors 50/50 to
-`hero_v1`: the original hero or a Crown & Chasm hero with artwork and a direct game-launch CTA.
-The shared parent-domain cookie persists for 90 days; known signed-in browsers are excluded
-from new enrollment. Enrollment closes November 9, 2026 UTC and attribution lasts seven days
-after first exposure. Preview either variant with `?ab_preview=control` or `game_first`; previews
-emit no experiment events and write no assignment cookies. Without JS the original hero remains.
-Stylesheets use version 9. GA4 events use variant-specific names so comparison needs no custom
-dimensions. Dashboard attribution initializes Analytics after OAuth fragment scrubbing and counts
-conversion only after authenticated profile retrieval and Terms acceptance. Account creation dates
-separate new accounts from existing-account sign-ins. Focused time uses 15-second ticks; launches
-confirm iframe URL assignment. Privacy discloses experiment cookies and the signed-in marker.
-`experiments.md` defines event semantics, reporting, the fixed analysis plan, and rollback;
-`tools/analyze-experiment.py` analyzes a GA4 event CSV and guards against early winner claims.
+from first exposure. Preview any arm with `?ab_preview=<variant>`; `game_first` aliases `crown`.
+Previews emit no experiment events and write no assignment cookies. Without JS the original
+hero remains. Stylesheets use version 10. Dashboard conversion requires an authenticated
+profile and Terms acceptance. Account creation dates separate new and existing-account sign-ins.
+Focused time uses 15-second ticks; launch events confirm iframe URL assignment. Privacy
+continues to disclose experiment cookies and the signed-in marker. `experiments.md` describes
+reporting, Bonferroni correction for three treatment-vs-control comparisons, a planned 11,000
+visitors per arm, and rollback. `tools/analyze-experiment.py` analyzes four-arm GA4 CSV exports;
+`--experiment hero_v1` handles the retired two-arm experiment separately.
 
 ## Constraints
 

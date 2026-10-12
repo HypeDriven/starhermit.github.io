@@ -201,6 +201,16 @@ section[id] { scroll-margin-top: 90px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 .hero-feature-art { display: block; width: min(100%, 640px); height: auto; margin: 0 auto 24px; border-radius: 12px; border: 1px solid var(--line); }
 .hero-title.hero-game-title { max-width: 900px; font-size: clamp(2.2rem, 5.5vw, 4.6rem); letter-spacing: 0.02em; }
+.hero-game-choices { width: min(100%, 840px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 28px; }
+.hero-game-choices a { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); color: var(--ink); text-decoration: none; }
+.hero-game-choices a:hover { border-color: var(--cyan); }
+.hero-game-choices img { display: block; width: 100%; height: auto; }
+.hero-game-choices span { display: block; padding: 12px 8px; font-size: 0.9rem; }
+.hero-feature-note { padding: 20px 24px; margin-bottom: 28px; border: 1px solid var(--line); border-radius: 12px; color: var(--cyan); }
+@media (max-width: 600px) {
+  .hero-game-choices { gap: 8px; }
+  .hero-game-choices span { padding: 9px 4px; font-size: 0.75rem; }
+}
 
 .btn {
   display: inline-block;
