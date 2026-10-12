@@ -117,6 +117,38 @@ curl -s "https://discord.com/api/v10/invites/<CODE>?with_expiration=true"
 It must return a guild object with `"expires_at": null` — not a non-null date, and not
 `{"code": 50270}` ("Invite is expired").
 
+## Homepage A/B experiment
+
+`experiment.js?v=1` runs before `main.js` and assigns eligible public visitors 50/50 to
+`hero_v1`: the original hero or a Crown & Chasm hero with artwork and a direct game-launch CTA.
+The shared parent-domain cookie persists for 90 days; known signed-in browsers are excluded
+from new enrollment. Enrollment closes November 9, 2026 UTC and attribution lasts seven days
+after first exposure. Preview either variant with `?ab_preview=control` or `game_first`; previews
+emit no experiment events and write no assignment cookies. Without JS the original hero remains.
+Stylesheets use version 9. GA4 events use variant-specific names so comparison needs no custom
+dimensions. Dashboard attribution initializes Analytics after OAuth fragment scrubbing and counts
+conversion only after authenticated profile retrieval and Terms acceptance. Account creation dates
+separate new accounts from existing-account sign-ins. Focused time uses 15-second ticks; launches
+confirm iframe URL assignment. Privacy discloses experiment cookies and the signed-in marker.
+`experiments.md` defines event semantics, reporting, the fixed analysis plan, and rollback;
+`tools/analyze-experiment.py` analyzes a GA4 event CSV and guards against early winner claims.
+
+## Homepage A/B experiment
+
+`experiment.js?v=1` runs before `main.js` and assigns eligible public visitors 50/50 to
+`hero_v1`: the original hero or a Crown & Chasm hero with artwork and a direct game-launch CTA.
+The shared parent-domain cookie persists for 90 days; known signed-in browsers are excluded
+from new enrollment. Enrollment closes November 9, 2026 UTC and attribution lasts seven days
+after first exposure. Preview either variant with `?ab_preview=control` or `game_first`; previews
+emit no experiment events and write no assignment cookies. Without JS the original hero remains.
+Stylesheets use version 9. GA4 events use variant-specific names so comparison needs no custom
+dimensions. Dashboard attribution initializes Analytics after OAuth fragment scrubbing and counts
+conversion only after authenticated profile retrieval and Terms acceptance. Account creation dates
+separate new accounts from existing-account sign-ins. Focused time uses 15-second ticks; launches
+confirm iframe URL assignment. Privacy discloses experiment cookies and the signed-in marker.
+`experiments.md` defines event semantics, reporting, the fixed analysis plan, and rollback;
+`tools/analyze-experiment.py` analyzes a GA4 event CSV and guards against early winner claims.
+
 ## Constraints
 
 - **No build step and no dependencies.** Plain HTML/CSS/JS, deployed as-is by GitHub Pages. The site

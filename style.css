@@ -199,6 +199,8 @@ section[id] { scroll-margin-top: 90px; }
 }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.hero-feature-art { display: block; width: min(100%, 640px); height: auto; margin: 0 auto 24px; border-radius: 12px; border: 1px solid var(--line); }
+.hero-title.hero-game-title { max-width: 900px; font-size: clamp(2.2rem, 5.5vw, 4.6rem); letter-spacing: 0.02em; }
 
 .btn {
   display: inline-block;
