@@ -17,3 +17,6 @@ GEMINI.md
 
 # Windows/WSL alternate-data-stream artifacts
 *:Zone.Identifier
+
+node_modules/
+__pycache__/

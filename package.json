@@ -1,0 +1,16 @@
+{
+  "name": "starhermit-com",
+  "private": true,
+  "scripts": {
+    "localize": "python3 tools/localize.py",
+    "localize:refresh": "python3 tools/localize.py --translate",
+    "test": "node tools/check-localization.mjs",
+    "test:browser": "node tools/localization-browser.mjs"
+  },
+  "devDependencies": {
+    "acorn": "^8.15.0",
+    "linkedom": "^0.18.13",
+    "playwright-core": "^1.64.0"
+  },
+  "engines": { "node": ">=22" }
+}

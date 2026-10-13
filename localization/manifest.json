@@ -1,0 +1,26 @@
+{
+  "languages": [
+    "en",
+    "zh-CN",
+    "hi",
+    "es",
+    "ar",
+    "fr",
+    "bn",
+    "pt",
+    "id",
+    "ur"
+  ],
+  "engine": "Google Translate; static machine translations",
+  "pages": {
+    "index.html": {
+      "url": "/",
+      "hash": "34370def7d5eaa729335c671cab4b292e2b9adfe80ccf18af7cf1255de970fde"
+    },
+    "privacy.html": {
+      "url": "/privacy.html",
+      "hash": "a22446963b7785dd82177093b64feb40214dad7297bc77f1fde2537b3d40076a"
+    }
+  },
+  "experiment_hash": "a7951bade7ea6e67ef55869254ecd6e37c7d385b50a6bd11bedb91bf9526aacb"
+}

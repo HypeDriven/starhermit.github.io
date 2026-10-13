@@ -17,7 +17,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `privacy.html` | The privacy policy, linked from the footer — same shell (nav, background, styles), prose only |
 | `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
 | `robots.txt` | Allows public pages and assets to search engines and AI search crawlers; excludes development tools and workspace documentation, and advertises the sitemap. Concept pages remain crawlable so their existing `noindex` directives can be read. |
-| `sitemap.xml` | Lists the canonical homepage and privacy policy; excludes prototypes, downloads, fragment links and authenticated subdomains. |
+| `sitemap.xml` | Lists the English homepage/privacy policy and all 18 translated URLs; excludes prototypes, downloads, fragment links and authenticated subdomains. |
 | `llms.txt` | A concise public site guide with factual playing/publishing information and official links, including sign-in, age requirements and the payment roadmap. Supplementary discovery information, not an indexing or ranking guarantee. |
 | `img/starhermit-social.svg`, `img/starhermit-social.png` | Native brand artwork and its 1200 × 630 PNG export for social previews. Regenerate with `rsvg-convert img/starhermit-social.svg -o img/starhermit-social.png`. |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
@@ -73,7 +73,7 @@ the operating company.
 
 ### Search and AI discoverability
 
-Both production pages have unique titles/descriptions, absolute HTTPS canonical URLs, index/follow
+Both English production pages and their translations have unique titles/descriptions, absolute HTTPS canonical URLs, index/follow
 directives with large image previews, Open Graph/Twitter metadata and static JSON-LD. The homepage
 describes the Organization, WebSite, CollectionPage and six featured VideoGame items in an ItemList;
 the privacy page describes the same Organization/WebSite and its WebPage. Game names, descriptions,
@@ -135,6 +135,42 @@ continues to disclose experiment cookies and the signed-in marker. `experiments.
 reporting, Bonferroni correction for three treatment-vs-control comparisons, a planned 11,000
 visitors per arm, and rollback. `tools/analyze-experiment.py` analyzes four-arm GA4 CSV exports;
 `--experiment hero_v1` handles the retired two-arm experiment separately.
+
+## Localization
+
+The homepage and privacy policy support the same ten languages as the developer wiki: English,
+Simplified Chinese (Mandarin), Hindi, Spanish, Arabic, French, Bengali, Portuguese, Indonesian, and
+Urdu. English keeps `/` and `/privacy.html`; nine translated pairs live at `/<language>/` and
+`/<language>/privacy.html`. Development concept showcases are separate from these production pages.
+
+The header uses a keyboard-accessible disclosure dropdown with local SVG flags under `img/flags/`.
+It works without JavaScript. Language switching preserves the current page, query parameters
+(including `ab_preview`), and section anchor. `localization.js` saves the selection; an early script
+restores it on the English homepage before analytics and experiment enrollment. Explicit deep links
+retain their language. Translated footers identify machine translation and link to the English original.
+Arabic and Urdu use right-to-left layouts; country flags are image assets, independent of emoji fonts.
+
+`localization/languages.json` supplies names, directions, and flag paths. `tools/localize.mjs` generates
+static translated prose, metadata, JSON-LD, canonical and hreflang links, and a sitemap of all 20 public
+URLs. English HTML is the source of truth; generated additions have `localization` comment markers.
+`tools/localization-cache.json` stores translations, and `localization/manifest.json` records clean
+English source hashes and the experiment script's hash. Game titles, brands, IDs, dashboard play links,
+Windows downloads, and the authoritative Terms document retain their original values.
+
+All four homepage hero variants and the legacy game-first hero are localized. The shared
+`experiment.js` remains unchanged and byte-identical to the dashboard's copy. A translation dictionary
+and a scoped text/attribute observer localize copy that the experiment inserts; they do not alter
+assignment cookies, enrollment, attribution, event names, or dashboard destinations. Relative artwork
+paths still resolve to the original root assets on translated pages. No browser translation service,
+API key, or new third-party runtime dependency is required.
+
+Development tooling uses Node.js 22+, Python 3, and `npm ci`. `npm run localize` rebuilds offline from
+the cache; `npm run localize:refresh` sends changed public prose to Google Translate and updates it.
+`npm test` checks all pages, links, anchors, downloads, metadata, game names, source freshness, and
+unchanged analytics/experiment code. `npm run test:browser` checks desktop/mobile, all languages and
+hero variants, privacy, image flags, keyboard controls, saved preferences, and no-JavaScript access.
+Commit generated translations with any public copy changes. The site still publishes static files
+through GitHub Pages without an application build.
 
 ## Constraints
 

@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://starhermit.com/</loc>
-  </url>
-  <url>
-    <loc>https://starhermit.com/privacy.html</loc>
-  </url>
+  <url><loc>https://starhermit.com/</loc></url>
+  <url><loc>https://starhermit.com/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/zh-CN/</loc></url>
+  <url><loc>https://starhermit.com/zh-CN/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/hi/</loc></url>
+  <url><loc>https://starhermit.com/hi/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/es/</loc></url>
+  <url><loc>https://starhermit.com/es/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/ar/</loc></url>
+  <url><loc>https://starhermit.com/ar/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/fr/</loc></url>
+  <url><loc>https://starhermit.com/fr/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/bn/</loc></url>
+  <url><loc>https://starhermit.com/bn/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/pt/</loc></url>
+  <url><loc>https://starhermit.com/pt/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/id/</loc></url>
+  <url><loc>https://starhermit.com/id/privacy.html</loc></url>
+  <url><loc>https://starhermit.com/ur/</loc></url>
+  <url><loc>https://starhermit.com/ur/privacy.html</loc></url>
 </urlset>
