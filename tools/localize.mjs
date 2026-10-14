@@ -79,7 +79,7 @@ function decorate(source,lang,url,strings,t){
   const notice=`<p class="localization-notice" data-locale-control>${escape(t(ui.notice))} <a class="english-original" href="${url}" lang="en">${escape(t(ui.original))}</a></p>`;
   source=source.replace('</footer>',block('notice',notice)+'</footer>');
  }
- const script='<script defer src="/localization.js?v=1"></script>';
+ const script='<script defer src="/localization.js?v=2"></script>';
  source=source.replace(/<script defer src="(?:\/)?(?:experiment|main)\.js[^\"]*"><\/script>/,match=>block('script',script)+match);
  return source;
 }

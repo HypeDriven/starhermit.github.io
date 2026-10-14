@@ -2,6 +2,35 @@
 (function () {
   'use strict';
   var config = JSON.parse(document.getElementById('locale-data').textContent);
+  // Share the chosen language across landing pages, dashboard and API signup.
+  // Local storage is origin-specific; a parent-domain cookie also reaches OAuth callbacks.
+  try {
+    localStorage.setItem('starhermit-language', config.code);
+    document.cookie = 'starhermit-language=' + encodeURIComponent(config.code) +
+      '; Path=/; Max-Age=31536000; SameSite=Lax' +
+      (location.hostname === 'starhermit.com' || location.hostname.endsWith('.starhermit.com') ? '; Domain=starhermit.com' : '') +
+      (location.protocol === 'https:' ? '; Secure' : '');
+  } catch (_) {}
+  function dashboardLanguage(link) {
+    try {
+      var url = new URL(link.href);
+      if (url.hostname !== 'dashboard.starhermit.com') return;
+      if (url.searchParams.get('lang') === config.code) return;
+      url.searchParams.set('lang', config.code);
+      link.href = url.href;
+    } catch (_) {}
+  }
+  document.querySelectorAll('a[href]').forEach(dashboardLanguage);
+  new MutationObserver(function (changes) {
+    changes.forEach(function (change) {
+      if (change.type === 'attributes') { dashboardLanguage(change.target); return; }
+      change.addedNodes.forEach(function (node) {
+        if (node.nodeType !== 1) return;
+        if (node.matches('a[href]')) dashboardLanguage(node);
+        node.querySelectorAll('a[href]').forEach(dashboardLanguage);
+      });
+    });
+  }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
   var picker = document.querySelector('.language-picker');
   var options = Array.from(document.querySelectorAll('.language-option'));
   options.forEach(function (option) {
