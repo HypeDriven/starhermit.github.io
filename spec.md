@@ -25,6 +25,8 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `img/*.webp` | Artwork for the six featured games in `#play` — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
 | `img/games/*.webp` | The 24 game-wall covers, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-windows-client`), committed here so the download link is a static asset |
+| `downloads/version.json` | The client's self-update manifest — `{"version","url","size","sha256"}` for `StarHermit.exe` beside it, written by the production deploy script with each build. A production client reads it at every start; when it names a newer version it downloads the exe, checks size and SHA-256, and replaces itself. Publish the two together: a manifest whose hash does not match the exe is ignored until they agree. |
+| `tools/stamp_client_version.py` | Run by the deploy script with each build: writes the version and size into the download card's `<span class="client-build">v0.2.0 · 4.5</span>` on `index.html` — digits and dots only, so the localizer never treats it as prose — then re-renders the translated pages offline from the cache (`tools/localize.py`), so no translation service is called. |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
 
 ## Sections
@@ -61,7 +63,8 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
    CTA plus the developer docs.
 5. **Download** (`#download`) — two launchpads, **web dashboard first** and carrying the primary
    button, with the native **Windows** client (`downloads/StarHermit.exe`) second and its real cost
-   disclosed (size, OS, unsigned build → SmartScreen prompt).
+   disclosed (version, size, OS, unsigned build → SmartScreen prompt — the version and size are
+   stamped per build by `tools/stamp_client_version.py`).
 6. **FAQ** (`#faq`) — visible HTML answers about the platform/operator, free featured games, sign-in
    and Terms gate, optional installation, publishing, payment availability and account eligibility.
    It links to games, downloads, dashboard, docs and legal documents, and is linked from the footer.
