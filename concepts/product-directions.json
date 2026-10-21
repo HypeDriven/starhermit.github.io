@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "platform",
+    "number": "01",
+    "name": "Open Platform",
+    "description": "Clear, confident and product-led. Equal space for players and creators."
+  },
+  {
+    "slug": "playground",
+    "number": "02",
+    "name": "After Hours",
+    "description": "A premium game destination that makes the first play feel immediate."
+  },
+  {
+    "slug": "workshop",
+    "number": "03",
+    "name": "Creator Studio",
+    "description": "A creator-first platform, with publishing as the shortest path into the product."
+  },
+  {
+    "slug": "network",
+    "number": "04",
+    "name": "Connected Worlds",
+    "description": "A precise, technical direction that makes the platform\u2019s infrastructure tangible."
+  },
+  {
+    "slug": "collective",
+    "number": "05",
+    "name": "The Collective",
+    "description": "A warmer independent-games identity, with playful but disciplined art direction."
+  }
+]

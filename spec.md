@@ -24,6 +24,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
 | `img/*.webp` | Artwork for the six featured games in `#play` — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
 | `img/games/*.webp` | The 24 game-wall covers, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
+| `concepts/` | Five standalone, responsive platform redesigns. The active `index.html` displays actual pages in a native-resolution iframe with direction tabs, a mobile viewport, keyboard shortcuts 1–5, and full-page links. `platform.html` (Open Platform) balances players and creators; `playground.html` (After Hours) leads with the top-rated game; `workshop.html` (Creator Studio) leads with publishing; `network.html` (Connected Worlds) illustrates shared infrastructure; `collective.html` (The Collective) uses a warmer independent-games identity. `product.css` supplies their themes and responsive layouts; `product.js` handles publishing guides, library preview modes and game filters. `platform-gl.js` draws subtle pointer-responsive atmospheric effects and an animated infrastructure network at device pixel density, with a 10-million-pixel ceiling, reduced-motion support, offscreen suspension and CSS fallbacks. `assets/` holds original-resolution official game artwork and an actual SkiGame capture; `fonts/` bundles licensed open fonts. All concepts are `noindex`, link to the actual dashboard sign-in and game-launch routes, and explain how to add a project after sign-in. The product previews are design illustrations with real game names and ratings, not live account data. Earlier rounds are retained at `round-one.html` and `round-two.html`; their scripts and pages remain available. `/tmp/sh-concepts/index.html` is an offline working copy; previous reviews are preserved under `/tmp/sh-concepts/round-one/` and `/tmp/sh-concepts/round-two/`. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-windows-client`), committed here so the download link is a static asset |
 | `downloads/version.json` | The client's self-update manifest — `{"version","url","size","sha256"}` for `StarHermit.exe` beside it, written by the production deploy script with each build. A production client reads it at every start; when it names a newer version it downloads the exe, checks size and SHA-256, and replaces itself. Publish the two together: a manifest whose hash does not match the exe is ignored until they agree. |
 | `tools/stamp_client_version.py` | Run by the deploy script with each build: writes the version and size into the download card's `<span class="client-build">v0.2.0 · 4.5</span>` on `index.html` — digits and dots only, so the localizer never treats it as prose — then re-renders the translated pages offline from the cache (`tools/localize.py`), so no translation service is called. |
@@ -89,6 +90,42 @@ Primary content, the FAQ and JSON-LD are present in the initial HTML and need no
 The sitemap and `llms.txt` remain static files, without build dependencies. The wildcard robots policy
 allows AI search crawling along with conventional search; it does not introduce separate training
 permissions. Google AI search uses the same SEO fundamentals rather than special AI markup.
+
+### Redesign concept showcases
+
+The active five concepts use the **production rating snapshot** in
+`concepts/showcase-ratings.json`, captured on 8 October 2026. Only non-removed, live,
+platform-hosted browser games qualify. Ordering matches the dashboard: average stars
+descending, rating count descending, then name. The active game sections show the top
+five: Turds, SkiGame, Turd Karts, TURDS-3D, and Iron Curtain: 1983. Actual scores and
+rating counts accompany each game, and the section identifies the snapshot date.
+Sky Lobby and Chess remain in the seven-game data snapshot.
+
+`python3 tools/build_product_concepts.py` regenerates the five product pages and
+`product-games.js` from that snapshot and copies the generated files to
+`/tmp/sh-concepts/`. CSS, WebGL, review HTML and browser scripts are maintained directly
+in `concepts/` and mirrored to that destination. The older
+`tools/update_concept_showcase.py` rebuilds round two only and copies its review to
+`/tmp/sh-concepts/round-two/`, keeping the active review intact. New snapshots must come
+from actual platform rating aggregates, with artwork added for newly selected games.
+
+Official covers are kept at their source dimensions (1024–1080 pixels square), with
+high-quality WebP encoding. SkiGame uses an actual 1280 × 800 title-screen capture.
+Typography and UI remain native HTML/SVG; the gallery shows interactive pages rather
+than scaled screenshot thumbnails. Retina PNG captures in `previews/` provide visual
+verification but are not used to render the review. All local assets are bundled, so
+the gallery works from `file://` without a server or external dependency.
+
+Sign-in buttons use provider-neutral labels and no provider logos. They enter the real
+dashboard, where visitors choose from the available OAuth providers, including Google
+and GitHub; additional providers need no marketing-page changes. Game links use
+`/play/<game-id>`, preserving
+launch intent through authentication. **Add your game** opens a source-choice guide
+(repository, local build, dedicated server image), then sends the visitor to sign in;
+the guide tells them to choose **Add Game** in the dashboard. The prototype does not
+upload files or pretend to carry source selection into the live product. Infrastructure
+copy covers actual hosting, matchmaking, player state, leaderboards, achievements,
+friends, invitations, chat and voice. The current production homepage is separate.
 
 ### Every path leads to sign-up
 
