@@ -24,4 +24,4 @@ Sign in to the dashboard, choose Add Game, then submit a GitHub repository URL o
 
 ## Scope
 
-This guide describes the public production site. Pages under /concepts/ are design prototypes, carry noindex directives, and are not product documentation. Refer to the homepage for the current featured game links and to the developer documentation for technical details.
+This guide describes the public production site. Refer to the homepage for the current featured game links and to the developer documentation for technical details.
