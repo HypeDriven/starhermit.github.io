@@ -8,7 +8,7 @@ export const root=resolve(import.meta.dirname,'..');
 export const normalize=s=>s.trim().replace(/\s+/g,' ');
 export const sha=s=>createHash('sha256').update(s).digest('hex');
 export const languages=JSON.parse(await readFile(resolve(root,'localization/languages.json'),'utf8'));
-const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows']);
+const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux']);
 const ui={notice:'Machine-translated from English.',original:'Read the English original'};
 export const clean=s=>s.replace(/(<head>)\n(?=<!-- localization:head -->)/i,'$1').replace(/<!-- localization:[\w-]+ -->[\s\S]*?<!-- \/localization:[\w-]+ -->\n?/g,'');
 function fields(document){
