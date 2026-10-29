@@ -27,8 +27,9 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-client/starhermit-windows-client`), committed here so the download link is a static asset |
 | `downloads/StarHermit-linux-x86_64.tar.gz` | The published production build of the Linux client (`../starhermit-client/starhermit-linux-client`) as a tarball, which keeps the executable bit a browser download would drop. This is what the Linux download card links to. |
 | `downloads/starhermit-client-linux-x86_64` | The same Linux build as a bare executable: the file the Linux client's self-updater downloads and swaps in. Not linked from the page. |
+| `downloads/StarHermit-macos-universal.zip` | The published production build of the macOS client (`../starhermit-client/starhermit-osx-client`, `tools/bundle.sh --production` on a Mac): `StarHermit.app`, universal (Apple silicon and Intel), ad-hoc signed, zipped with `ditto`. It has no entry in `version.json` yet, so the macOS client does not update itself. |
 | `downloads/version.json` | The clients' self-update manifest, written by the production deploy script with each build: `{"version","url","size","sha256"}` for `StarHermit.exe` at the top level (all the older C++ Windows clients can read), plus the same four members per platform under `platforms` (`windows-x86_64`, `linux-x86_64`), which the current clients read. A production client checks it at start and periodically; when its platform's entry names a newer version it downloads the build, checks size and SHA-256, and replaces itself. Publish manifest and builds together: an entry whose hash does not match its file is ignored until they agree. |
-| `tools/stamp_client_version.py` | Run by the deploy script with each build: writes each platform's version and size into its download card's `<span class="client-build" data-platform="windows">v0.2.0 · 4.5</span>` (and `data-platform="linux"`) on `index.html`; the Linux size is the tarball's — digits and dots only, so the localizer never treats it as prose — then re-renders the translated pages offline from the cache (`tools/localize.py`), so no translation service is called. |
+| `tools/stamp_client_version.py` | Run by the deploy script with each build: writes each platform's version and size into its download card's `<span class="client-build" data-platform="windows">v0.2.0 · 4.5</span>` (and `data-platform="linux"`, `data-platform="macos"`) on `index.html`; the Linux size is the tarball's — digits and dots only, so the localizer never treats it as prose — then re-renders the translated pages offline from the cache (`tools/localize.py`), so no translation service is called. |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
 
 ## Sections
@@ -63,12 +64,13 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
    management and shared game services. Paid checkout and publisher payouts are explicitly labelled
    as a roadmap, including the planned cards and cryptocurrency capabilities. Closes on a dashboard
    CTA plus the developer docs.
-5. **Download** (`#download`) — three launchpads, **web dashboard first** and carrying the primary
-   button, then the native **Windows** client (`downloads/StarHermit.exe`) and the native **Linux**
-   client (`downloads/StarHermit-linux-x86_64.tar.gz`), each with its real cost disclosed (version,
+5. **Download** (`#download`) — four launchpads in a two-by-two grid, **web dashboard first** and
+   carrying the primary button, then the native **Windows** client (`downloads/StarHermit.exe`), the
+   native **Linux** client (`downloads/StarHermit-linux-x86_64.tar.gz`) and the early native **macOS**
+   client (`downloads/StarHermit-macos-universal.zip`), each with its real cost disclosed (version,
    size, OS; Windows: unsigned build → SmartScreen prompt; Linux: x86_64, glibc 2.35+, extract and run
-   `./starhermit-client`). The versions and sizes are stamped per build by
-   `tools/stamp_client_version.py`. There is no macOS card: the macOS client is command-line only.
+   `./starhermit-client`; macOS: 11+, universal, ad-hoc signed only → Control-click Open the first
+   time). The versions and sizes are stamped per build by `tools/stamp_client_version.py`.
 6. **FAQ** (`#faq`) — visible HTML answers about the platform/operator, free featured games, sign-in
    and Terms gate, optional installation, publishing, payment availability and account eligibility.
    It links to games, downloads, dashboard, docs and legal documents, and is linked from the footer.
@@ -105,7 +107,7 @@ first-time visitors, carries the explicit ask instead: **Create Free Account**. 
 and `#developers` each close on a `.section-cta` band; the footer's first link is
 **Sign Up / Sign In**.
 Every outbound link on the page goes to the dashboard (its home, or a game's `/play/<game-id>`)
-except the developer docs (`wiki.starhermit.com`) and the Windows and Linux client downloads, which need an
+except the developer docs (`wiki.starhermit.com`) and the Windows, macOS and Linux client downloads, which need an
 account of their own.
 
 **Discord lives in the footer, never the hero.** It was a hero button once, on an invite

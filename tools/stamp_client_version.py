@@ -2,7 +2,7 @@
 """Stamp the published clients' versions and sizes into the landing pages.
 
 Usage: stamp_client_version.py <platform> <version> <size-in-bytes> [<platform> <version> <size> ...]
-       platform: windows | linux
+       platform: windows | linux | macos
 
 Run by ../deploy_starhermit_production.sh right after it copies new builds to downloads/
 (beside downloads/version.json, which the clients' self-updater reads). Only the English
@@ -18,7 +18,7 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PLATFORMS = ("windows", "linux")
+PLATFORMS = ("windows", "linux", "macos")
 
 
 def stamp(text: str, platform: str, version: str, size: int) -> str:
