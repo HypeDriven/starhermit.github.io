@@ -1,0 +1,607 @@
+{
+  "DE": {
+    "name": "Germany",
+    "flag": "/img/flags/de.svg",
+    "languages": [
+      "de"
+    ],
+    "regional_languages": [
+      "da",
+      "rom"
+    ],
+    "pending_languages": [
+      {
+        "code": "nds",
+        "name": "Low German",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "hsb",
+        "name": "Upper Sorbian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "dsb",
+        "name": "Lower Sorbian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "frr",
+        "name": "North Frisian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "stq",
+        "name": "Saterland Frisian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://rm.coe.int/min-lang-2022-7-germany-7th-er-en-final-/1680a81359"
+    ]
+  },
+  "JP": {
+    "name": "Japan",
+    "flag": "/img/flags/jp.svg",
+    "languages": [
+      "ja"
+    ],
+    "regional_languages": [],
+    "pending_languages": [],
+    "sources": [
+      "https://www.bunka.go.jp/english/policy/cultural_properties/ainu/index.html"
+    ],
+    "note": "Japanese is the widely used national language. Ainu is recognized and protected, but is not a widely used written website locale."
+  },
+  "BE": {
+    "name": "Belgium",
+    "flag": "/img/flags/be.svg",
+    "languages": [
+      "nl",
+      "fr",
+      "de"
+    ],
+    "regional_languages": [
+      "lb"
+    ],
+    "pending_languages": [
+      {
+        "code": "wa",
+        "name": "Walloon",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "pcd",
+        "name": "Picard",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.belgium.be/en/section_en/communities",
+      "https://alw.uliege.be/"
+    ]
+  },
+  "BR": {
+    "name": "Brazil",
+    "flag": "/img/flags/br.svg",
+    "languages": [
+      "pt"
+    ],
+    "regional_languages": [
+      "de",
+      "it",
+      "gn"
+    ],
+    "pending_languages": [
+      {
+        "code": "yrl",
+        "name": "Nheengatu",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "tqn",
+        "name": "Tukano",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "bwi",
+        "name": "Baniwa",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "hrx",
+        "name": "Hunsrik",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "nds-BR",
+        "name": "East Pomeranian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "vec-BR",
+        "name": "Talian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.gov.br/funai/pt-br/centrais-de-conteudo/publicacoes/Cartilha_de_Co_oficializacao___BRASIL.pdf"
+    ],
+    "note": "Municipal co-official and heritage recognition varies locally. Shared German and Italian do not substitute for Hunsrik, East Pomeranian or Talian."
+  },
+  "SG": {
+    "name": "Singapore",
+    "flag": "/img/flags/sg.svg",
+    "languages": [
+      "en",
+      "zh-CN",
+      "ms",
+      "ta"
+    ],
+    "regional_languages": [],
+    "pending_languages": [],
+    "sources": [
+      "https://sso.agc.gov.sg/Act/CONS1963?ProvIds=pr153A-"
+    ]
+  },
+  "FR": {
+    "name": "France",
+    "flag": "/img/flags/fr.svg",
+    "languages": [
+      "fr"
+    ],
+    "regional_languages": [
+      "br",
+      "co",
+      "oc",
+      "eu",
+      "ca",
+      "nl",
+      "lb",
+      "lij"
+    ],
+    "pending_languages": [
+      {
+        "code": "gsw-FR",
+        "name": "Alsatian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "frp",
+        "name": "Francoprovençal",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "pcd",
+        "name": "Picard",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "gallo",
+        "name": "Gallo",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "gcf",
+        "name": "Guadeloupean Creole",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "rcf",
+        "name": "Réunion Creole",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.culture.gouv.fr/en/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/promouvoir-les-langues-de-france/langues-regionales",
+      "https://www.culture.gouv.fr/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/panorama-des-langues-de-france"
+    ],
+    "note": "Regional recognition is heritage protection, not nationwide official status. Shared Dutch does not claim to translate West Flemish dialects."
+  },
+  "HK": {
+    "name": "Hong Kong",
+    "flag": "/img/flags/hk.svg",
+    "languages": [
+      "en",
+      "zh-HK"
+    ],
+    "regional_languages": [
+      "yue-HK",
+      "zh-CN"
+    ],
+    "pending_languages": [],
+    "sources": [
+      "https://www.hkengage.gov.hk/en/why-hk/work/multilingual-society"
+    ],
+    "note": "Traditional Chinese is the standard written locale; written Cantonese is offered separately. Simplified Chinese remains available for Mandarin readers."
+  },
+  "NL": {
+    "name": "The Netherlands",
+    "flag": "/img/flags/nl.svg",
+    "languages": [
+      "nl"
+    ],
+    "regional_languages": [
+      "fy",
+      "li"
+    ],
+    "pending_languages": [
+      {
+        "code": "nds",
+        "name": "Dutch Low Saxon",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://longreads.cbs.nl/the-netherlands-in-numbers-2022/what-is-the-most-spoken-language-or-dialect-at-home/"
+    ]
+  },
+  "CO": {
+    "name": "Colombia",
+    "flag": "/img/flags/co.svg",
+    "languages": [
+      "es"
+    ],
+    "regional_languages": [],
+    "pending_languages": [
+      {
+        "code": "guc",
+        "name": "Wayuunaiki",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "pbb",
+        "name": "Nasa Yuwe",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "cmi",
+        "name": "Emberá Chamí",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "icr",
+        "name": "San Andrés Creole",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://mng.mincultura.gov.co/areas/poblaciones/APP-de-lenguas-nativas/Paginas/default.aspx"
+    ]
+  },
+  "IT": {
+    "name": "Italy",
+    "flag": "/img/flags/it.svg",
+    "languages": [
+      "it"
+    ],
+    "regional_languages": [
+      "de",
+      "fr",
+      "sl",
+      "el",
+      "sq",
+      "hr",
+      "ca",
+      "oc",
+      "fur",
+      "vec",
+      "lij",
+      "lmo",
+      "scn"
+    ],
+    "pending_languages": [
+      {
+        "code": "sc",
+        "name": "Sardinian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "lld",
+        "name": "Ladin",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "frp",
+        "name": "Francoprovençal",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "nap",
+        "name": "Neapolitan",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "pms",
+        "name": "Piedmontese",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://libertaciviliimmigrazione.dlci.interno.gov.it/minoranze-linguistiche-storiche"
+    ],
+    "note": "Includes nationally protected historical minorities and widely used regional languages; recognition and local varieties differ. Standard Albanian, Greek and Croatian are shared language editions, not dedicated Arbëresh, Griko or Molise Croatian translations."
+  },
+  "FI": {
+    "name": "Finland",
+    "flag": "/img/flags/fi.svg",
+    "languages": [
+      "fi",
+      "sv"
+    ],
+    "regional_languages": [
+      "se",
+      "rom"
+    ],
+    "pending_languages": [
+      {
+        "code": "smn",
+        "name": "Inari Sámi",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "sms",
+        "name": "Skolt Sámi",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "krl",
+        "name": "Karelian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://infofinland.fi/en/finnish-and-swedish/swedish-language-in-finland"
+    ]
+  },
+  "CL": {
+    "name": "Chile",
+    "flag": "/img/flags/cl.svg",
+    "languages": [
+      "es"
+    ],
+    "regional_languages": [
+      "ay",
+      "qu"
+    ],
+    "pending_languages": [
+      {
+        "code": "arn",
+        "name": "Mapudungun",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "rap",
+        "name": "Rapa Nui",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.pueblosoriginarios.gob.cl/lenguas-indigenas-en-chile"
+    ]
+  },
+  "AR": {
+    "name": "Argentina",
+    "flag": "/img/flags/ar.svg",
+    "languages": [
+      "es"
+    ],
+    "regional_languages": [
+      "gn",
+      "qu"
+    ],
+    "pending_languages": [
+      {
+        "code": "arn",
+        "name": "Mapudungun",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "tob",
+        "name": "Qom",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "moc",
+        "name": "Moqoit",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "wichi",
+        "name": "Wichí",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.argentina.gob.ar/node/219955",
+      "https://www.argentina.gob.ar/chaco"
+    ]
+  },
+  "ES": {
+    "name": "Spain",
+    "flag": "/img/flags/es.svg",
+    "languages": [
+      "es"
+    ],
+    "regional_languages": [
+      "ca",
+      "eu",
+      "gl",
+      "oc"
+    ],
+    "pending_languages": [
+      {
+        "code": "oc-ES",
+        "name": "Aranese",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "ast",
+        "name": "Asturian",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "an",
+        "name": "Aragonese",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://mptmd.gob.es/en/portal/politica-territorial/autonomica/lenguas-cooficiales"
+    ],
+    "note": "Catalan and Valencian share one edition. The general Occitan edition is not an Aranese-specific translation."
+  },
+  "EE": {
+    "name": "Estonia",
+    "flag": "/img/flags/ee.svg",
+    "languages": [
+      "et"
+    ],
+    "regional_languages": [
+      "ru",
+      "sv",
+      "de",
+      "fi"
+    ],
+    "pending_languages": [
+      {
+        "code": "vro",
+        "name": "Võro",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "seto",
+        "name": "Seto",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://wi.ee/en/voro-language/",
+      "https://www.eesti.ee/en/artikkel/culture-leisure-and-hobbies/culture-museums-and-cultural-heritage/national-minorities-and-their-cultural-activity"
+    ],
+    "note": "Russian is offered for the recognized national minority, not as a second nationwide official language. Shared Swedish, German and Finnish editions are also available to historical minority communities."
+  },
+  "ID": {
+    "name": "Indonesia",
+    "flag": "/img/flags/id.svg",
+    "languages": [
+      "id"
+    ],
+    "regional_languages": [
+      "jv",
+      "su",
+      "ms",
+      "mad",
+      "min",
+      "ban",
+      "ace",
+      "bbc",
+      "mak",
+      "bew"
+    ],
+    "pending_languages": [
+      {
+        "code": "bug",
+        "name": "Buginese",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "bjn",
+        "name": "Banjarese",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "sas",
+        "name": "Sasak",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "ljp",
+        "name": "Lampung",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "rej",
+        "name": "Rejang",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://petabahasa.kemendikdasmen.go.id/",
+      "https://badanbahasa.kemendikdasmen.go.id/artikel-detail/792/kontribusi-kosakata-bahasa-daerah-dalam-bahasa-indonesia"
+    ],
+    "note": "Prioritizes widely spoken regional languages. Batak Toba is identified specifically, not as a translation for every Batak language."
+  },
+  "EC": {
+    "name": "Ecuador",
+    "flag": "/img/flags/ec.svg",
+    "languages": [
+      "es"
+    ],
+    "regional_languages": [],
+    "pending_languages": [
+      {
+        "code": "quw",
+        "name": "Ecuadorian Kichwa",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "jiv",
+        "name": "Shuar",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://www.asambleanacional.gob.ec/es/noticia/82344-jose-chimbo-propone-fortalecer-los-idiomas-de-pueblos-y"
+    ],
+    "note": "General Quechua is not a substitute for Ecuadorian Kichwa. Kichwa and Shuar need dedicated translations."
+  },
+  "VN": {
+    "name": "Vietnam",
+    "flag": "/img/flags/vn.svg",
+    "languages": [
+      "vi"
+    ],
+    "regional_languages": [
+      "hmn",
+      "km",
+      "zh-CN"
+    ],
+    "pending_languages": [
+      {
+        "code": "tyz",
+        "name": "Tày",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "nut",
+        "name": "Nùng",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "blt",
+        "name": "Tai Dam",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "cjm",
+        "name": "Eastern Cham",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "jra",
+        "name": "Jarai",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      },
+      {
+        "code": "rad",
+        "name": "Êđê",
+        "reason": "Dedicated translation unavailable in the configured service; requires a language-specific translation source."
+      }
+    ],
+    "sources": [
+      "https://mofa.gov.vn/dan-toc-ngon-ngu"
+    ],
+    "note": "Hmong uses the Latin script supported by the translator. Minority-language protection is distinct from nationwide official status."
+  }
+}

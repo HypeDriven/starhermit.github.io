@@ -17,7 +17,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `privacy.html` | The privacy policy, linked from the footer — same shell (nav, background, styles), prose only |
 | `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
 | `robots.txt` | Allows public pages and assets to search engines and AI search crawlers; excludes development tools and workspace documentation, and advertises the sitemap. |
-| `sitemap.xml` | Lists the English homepage/privacy policy and all 18 translated URLs; excludes prototypes, downloads, fragment links and authenticated subdomains. |
+| `sitemap.xml` | Lists the English homepage/privacy policy and all 114 translated URLs (58 languages, 116 URLs); excludes prototypes, downloads, fragment links and authenticated subdomains. |
 | `llms.txt` | A concise public site guide with factual playing/publishing information and official links, including sign-in, age requirements and the payment roadmap. Supplementary discovery information, not an indexing or ranking guarantee. |
 | `img/starhermit-social.svg`, `img/starhermit-social.png` | Native brand artwork and its 1200 × 630 PNG export for social previews. Regenerate with `rsvg-convert img/starhermit-social.svg -o img/starhermit-social.png`. |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
@@ -147,10 +147,32 @@ visitors per arm, and rollback. `tools/analyze-experiment.py` analyzes four-arm 
 
 ## Localization
 
-The homepage and privacy policy support the same ten languages as the developer wiki: English,
-Simplified Chinese (Mandarin), Hindi, Spanish, Arabic, French, Bengali, Portuguese, Indonesian, and
-Urdu. English keeps `/` and `/privacy.html`; nine translated pairs live at `/<language>/` and
-`/<language>/privacy.html`.
+The homepage and privacy policy have 58 language editions. English keeps `/` and `/privacy.html`;
+57 translated pairs live at `/<language>/` and `/<language>/privacy.html`. Existing URLs remain stable,
+including Brazilian Portuguese at `/pt/` and shared Spanish at `/es/` for Spain, Colombia, Chile,
+Argentina and Ecuador. Shared French, Dutch and German also cover Belgium; Singapore has English,
+Simplified Chinese, Malay and Tamil. Finnish and Swedish cover Finland. Hong Kong has separate
+Traditional Chinese (`zh-HK`) and written Cantonese (`yue-HK`) editions, alongside English and the
+existing Simplified Chinese edition. The remaining national-language additions are German, Japanese,
+Dutch, Italian, Finnish, Swedish, Estonian and Vietnamese.
+
+Recognized regional and Indigenous language editions include Catalan/Valencian, Basque, Galician,
+Occitan, West Frisian, Limburgish, Danish, Breton, Corsican, Friulian, Slovenian, Greek, Albanian,
+Croatian, Romani, Northern Sámi, Javanese, Sundanese, Madurese, Minangkabau, Balinese, Acehnese,
+Batak Toba, Makassarese, Betawi, Hmong, Khmer, Quechua, Guaraní, Aymara, Venetian, Ligurian,
+Lombard, Sicilian and Luxembourgish. Russian is also available for Estonia’s recognized Russian
+minority. Hindi, Arabic, Bengali and Urdu remain available.
+
+`localization/regions.json` records all 18 requested regions, available shared language editions,
+primary sources, and outstanding dedicated translations. Recognition includes national/co-official
+status and regional, minority or heritage protection; these are not equivalent legal statuses.
+The configured service does not cover every recognized language: examples include Low German,
+Sorbian, Sardinian, Ladin, Mapudungun, Wayuunaiki, Ecuadorian Kichwa and Shuar. Those languages are
+explicitly pending rather than published with English copy or a neighboring language. General Occitan
+does not claim Aranese localization, general Quechua does not claim Ecuadorian Kichwa localization,
+and standard Albanian/Greek/Croatian are not dialect-specific Arbëresh/Griko/Molise Croatian editions.
+The regional inventory prioritizes widely used written languages rather than listing every protected
+or endangered language. All generated translations are machine translations, not human-reviewed copy.
 
 The header uses a keyboard-accessible disclosure dropdown with local SVG flags under `img/flags/`.
 It works without JavaScript. Language switching preserves the current page, query parameters
@@ -159,12 +181,21 @@ restores it on the English homepage before analytics and experiment enrollment. 
 retain their language. Translated footers identify machine translation and link to the English original.
 Arabic and Urdu use right-to-left layouts; country flags are image assets, independent of emoji fonts.
 
-`localization/languages.json` supplies names, directions, and flag paths. `tools/localize.mjs` generates
-static translated prose, metadata, JSON-LD, canonical and hreflang links, and a sitemap of all 20 public
-URLs. English HTML is the source of truth; generated additions have `localization` comment markers.
+`localization/languages.json` supplies native names, directions, flag paths, localized play verbs,
+Open Graph locales, and translation-service identifiers when they differ from the public BCP 47 tag.
+`tools/localize.mjs` generates static translated prose, metadata, JSON-LD, canonical and hreflang links,
+and a sitemap of all 116 public URLs. English HTML is the source of truth; generated additions have
+`localization` comment markers.
 `tools/localization-cache.json` stores translations, and `localization/manifest.json` records clean
 English source hashes and the experiment script's hash. Game titles, brands, IDs, dashboard play links,
 client downloads, and the authoritative Terms document retain their original values.
+The translation fetcher masks game and brand names with opaque tokens, validates that the service
+preserved them, and restores their exact spelling. A cache protection hash refreshes older unprotected
+entries on the next online translation run. `localization/overrides.json` holds explicit UI corrections
+and Hong Kong terminology; offline generation applies these after the service cache.
+The separately deployed developer wiki still has the original ten language editions. Links use its
+existing localized routes for those languages and its English root for other editions; this change
+does not invent missing wiki routes or add translations to the dashboard/client repositories.
 
 All four homepage hero variants and the legacy game-first hero are localized. The shared
 `experiment.js` remains unchanged and byte-identical to the dashboard's copy. A translation dictionary
@@ -175,11 +206,21 @@ API key, or new third-party runtime dependency is required.
 
 Development tooling uses Node.js 22+, Python 3, and `npm ci`. `npm run localize` rebuilds offline from
 the cache; `npm run localize:refresh` sends changed public prose to Google Translate and updates it.
+Missing cache entries fail generation instead of falling back to English. Translation work uses the
+configured service identifier (Traditional Chinese uses `zh-TW`; Cantonese uses `yue`) while generated
+URLs, document language, preferences, dashboard handoff and hreflang retain `zh-HK` and `yue-HK`.
 `npm test` checks all pages, links, anchors, downloads, metadata, game names, source freshness, and
-unchanged analytics/experiment code. `npm run test:browser` checks desktop/mobile, all languages and
+unchanged analytics/experiment code, plus region coverage, locale metadata, picker entries and sitemap
+parity. `npm run test:browser` checks desktop/mobile, all languages and
 hero variants, privacy, image flags, keyboard controls, saved preferences, and no-JavaScript access.
 Commit generated translations with any public copy changes. The site still publishes static files
 through GitHub Pages without an application build.
+
+The test command also runs offline translation-service regression checks for opaque name tokens,
+altered identifiers, dropped-name recovery, and unsupported-language errors without network calls.
+Translated legal copy allows long compound words to wrap on mobile screens. Browser checks can be
+narrowed with `LOCALES=se,ru`, `WIDTHS=390`, or
+`PRIVACY_ONLY=1` for focused regression checks; the default covers every locale and all four heroes.
 
 ## Constraints
 

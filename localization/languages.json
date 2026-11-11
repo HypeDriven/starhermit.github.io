@@ -39,7 +39,9 @@
     "scroll_table": "Scrollable documentation table",
     "scroll_diagram": "Scrollable diagram",
     "translation_notice": "Machine translation. Code examples and API identifiers are preserved in English.",
-    "original": "Read the English original"
+    "original": "Read the English original",
+    "og_locale": "en_US",
+    "play": "Play"
   },
   "zh-CN": {
     "code": "zh-CN",
@@ -81,7 +83,9 @@
     "scroll_table": "可滚动文档表",
     "scroll_diagram": "可横向滚动的示意图",
     "translation_notice": "机器翻译。代码示例和 API 标识符以英文保留。",
-    "original": "阅读英文原文"
+    "original": "阅读英文原文",
+    "og_locale": "zh_CN",
+    "play": "游玩"
   },
   "hi": {
     "code": "hi",
@@ -123,7 +127,9 @@
     "scroll_table": "स्क्रॉल करने योग्य दस्तावेज़ तालिका",
     "scroll_diagram": "स्क्रॉल करने योग्य आरेख",
     "translation_notice": "मशीनी अनुवाद. कोड उदाहरण और एपीआई पहचानकर्ता अंग्रेजी में संरक्षित हैं।",
-    "original": "अंग्रेजी मूल पढ़ें"
+    "original": "अंग्रेजी मूल पढ़ें",
+    "og_locale": "hi_IN",
+    "play": "खेलें"
   },
   "es": {
     "code": "es",
@@ -165,7 +171,9 @@
     "scroll_table": "Mesa de documentación desplazable",
     "scroll_diagram": "Diagrama desplazable",
     "translation_notice": "Traducción automática. Los ejemplos de código y los identificadores de API se conservan en inglés.",
-    "original": "Leer el original en inglés"
+    "original": "Leer el original en inglés",
+    "og_locale": "es_ES",
+    "play": "Jugar"
   },
   "ar": {
     "code": "ar",
@@ -207,7 +215,9 @@
     "scroll_table": "جدول وثائق قابل للتمرير",
     "scroll_diagram": "مخطط قابل للتمرير",
     "translation_notice": "الترجمة الآلية. يتم الاحتفاظ بأمثلة التعليمات البرمجية ومعرفات واجهة برمجة التطبيقات باللغة الإنجليزية.",
-    "original": "قراءة النسخة الإنجليزية الأصلية"
+    "original": "قراءة النسخة الإنجليزية الأصلية",
+    "og_locale": "ar_SA",
+    "play": "العب"
   },
   "fr": {
     "code": "fr",
@@ -249,7 +259,9 @@
     "scroll_table": "Tableau de documentation déroulant",
     "scroll_diagram": "Schéma défilable",
     "translation_notice": "Traduction automatique. Les exemples de code et les identifiants API sont conservés en anglais.",
-    "original": "Lire l'original anglais"
+    "original": "Lire l'original anglais",
+    "og_locale": "fr_FR",
+    "play": "Jouer à"
   },
   "bn": {
     "code": "bn",
@@ -291,15 +303,17 @@
     "scroll_table": "স্ক্রোলযোগ্য ডকুমেন্টেশন টেবিল",
     "scroll_diagram": "স্ক্রলযোগ্য ডায়াগ্রাম",
     "translation_notice": "মেশিন অনুবাদ। কোড উদাহরণ এবং API শনাক্তকারী ইংরেজিতে সংরক্ষিত আছে।",
-    "original": "ইংরেজি মূল পড়ুন"
+    "original": "ইংরেজি মূল পড়ুন",
+    "og_locale": "bn_BD",
+    "play": "খেলুন"
   },
   "pt": {
     "code": "pt",
-    "name": "Português",
+    "name": "Português (Brasil)",
     "flag": "/img/flags/br.svg",
     "dir": "ltr",
     "prefix": "/pt",
-    "language": "Linguagem",
+    "language": "Idioma",
     "skip": "Pular para o conteúdo",
     "brand": "Wiki do desenvolvedor",
     "platform": "Plataforma",
@@ -333,7 +347,9 @@
     "scroll_table": "Tabela de documentação rolável",
     "scroll_diagram": "Diagrama rolável",
     "translation_notice": "Tradução automática. Exemplos de código e identificadores de API são preservados em inglês.",
-    "original": "Leia o original em inglês"
+    "original": "Leia o original em inglês",
+    "og_locale": "pt_BR",
+    "play": "Jogar"
   },
   "id": {
     "code": "id",
@@ -375,7 +391,9 @@
     "scroll_table": "Tabel dokumentasi yang dapat digulir",
     "scroll_diagram": "Diagram yang dapat digulir",
     "translation_notice": "Terjemahan mesin. Contoh kode dan pengidentifikasi API dipertahankan dalam bahasa Inggris.",
-    "original": "Baca aslinya dalam bahasa Inggris"
+    "original": "Baca aslinya dalam bahasa Inggris",
+    "og_locale": "id_ID",
+    "play": "Mainkan"
   },
   "ur": {
     "code": "ur",
@@ -417,6 +435,490 @@
     "scroll_table": "سکرول کے قابل دستاویزات کی میز",
     "scroll_diagram": "اسکرول کے قابل خاکہ",
     "translation_notice": "مشینی ترجمہ۔ کوڈ کی مثالیں اور API شناخت کنندگان انگریزی میں محفوظ ہیں۔",
-    "original": "اصل انگریزی پڑھیں"
+    "original": "اصل انگریزی پڑھیں",
+    "og_locale": "ur_PK",
+    "play": "کھیلیں"
+  },
+  "de": {
+    "code": "de",
+    "name": "Deutsch",
+    "flag": "/img/flags/de.svg",
+    "dir": "ltr",
+    "prefix": "/de",
+    "language": "Sprache",
+    "play": "Spielen",
+    "og_locale": "de_DE"
+  },
+  "ja": {
+    "code": "ja",
+    "name": "日本語",
+    "flag": "/img/flags/jp.svg",
+    "dir": "ltr",
+    "prefix": "/ja",
+    "language": "言語",
+    "play": "プレイ",
+    "og_locale": "ja_JP"
+  },
+  "nl": {
+    "code": "nl",
+    "name": "Nederlands",
+    "flag": "/img/flags/nl.svg",
+    "dir": "ltr",
+    "prefix": "/nl",
+    "language": "Taal",
+    "play": "Speel",
+    "og_locale": "nl_NL"
+  },
+  "it": {
+    "code": "it",
+    "name": "Italiano",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/it",
+    "language": "Lingua",
+    "play": "Gioca",
+    "og_locale": "it_IT"
+  },
+  "fi": {
+    "code": "fi",
+    "name": "Suomi",
+    "flag": "/img/flags/fi.svg",
+    "dir": "ltr",
+    "prefix": "/fi",
+    "language": "Kieli",
+    "play": "Pelaa",
+    "og_locale": "fi_FI"
+  },
+  "sv": {
+    "code": "sv",
+    "name": "Svenska",
+    "flag": "/img/flags/fi.svg",
+    "dir": "ltr",
+    "prefix": "/sv",
+    "language": "Språk",
+    "play": "Spela",
+    "og_locale": "sv_FI"
+  },
+  "et": {
+    "code": "et",
+    "name": "Eesti",
+    "flag": "/img/flags/ee.svg",
+    "dir": "ltr",
+    "prefix": "/et",
+    "language": "Keel",
+    "play": "Mängi",
+    "og_locale": "et_EE"
+  },
+  "vi": {
+    "code": "vi",
+    "name": "Tiếng Việt",
+    "flag": "/img/flags/vn.svg",
+    "dir": "ltr",
+    "prefix": "/vi",
+    "language": "Ngôn ngữ",
+    "play": "Chơi",
+    "og_locale": "vi_VN"
+  },
+  "ms": {
+    "code": "ms",
+    "name": "Bahasa Melayu",
+    "flag": "/img/flags/sg.svg",
+    "dir": "ltr",
+    "prefix": "/ms",
+    "language": "Bahasa",
+    "play": "Main",
+    "og_locale": "ms_SG"
+  },
+  "ta": {
+    "code": "ta",
+    "name": "தமிழ்",
+    "flag": "/img/flags/sg.svg",
+    "dir": "ltr",
+    "prefix": "/ta",
+    "language": "மொழி",
+    "play": "விளையாடு",
+    "og_locale": "ta_SG"
+  },
+  "zh-HK": {
+    "code": "zh-HK",
+    "name": "繁體中文（香港）",
+    "flag": "/img/flags/hk.svg",
+    "dir": "ltr",
+    "prefix": "/zh-HK",
+    "language": "語言",
+    "play": "遊玩",
+    "og_locale": "zh_HK",
+    "translate_code": "zh-TW"
+  },
+  "yue-HK": {
+    "code": "yue-HK",
+    "name": "粵語（香港）",
+    "flag": "/img/flags/hk.svg",
+    "dir": "ltr",
+    "prefix": "/yue-HK",
+    "language": "語言",
+    "play": "玩",
+    "og_locale": "yue_HK",
+    "translate_code": "yue"
+  },
+  "ca": {
+    "code": "ca",
+    "name": "Català / Valencià",
+    "flag": "/img/flags/es.svg",
+    "dir": "ltr",
+    "prefix": "/ca",
+    "language": "Llengua",
+    "play": "Juga",
+    "og_locale": "ca_ES"
+  },
+  "eu": {
+    "code": "eu",
+    "name": "Euskara",
+    "flag": "/img/flags/es.svg",
+    "dir": "ltr",
+    "prefix": "/eu",
+    "language": "Hizkuntza",
+    "play": "Jokatu",
+    "og_locale": "eu_ES"
+  },
+  "gl": {
+    "code": "gl",
+    "name": "Galego",
+    "flag": "/img/flags/es.svg",
+    "dir": "ltr",
+    "prefix": "/gl",
+    "language": "Lingua",
+    "play": "Xogar",
+    "og_locale": "gl_ES"
+  },
+  "oc": {
+    "code": "oc",
+    "name": "Occitan",
+    "flag": "/img/flags/fr.svg",
+    "dir": "ltr",
+    "prefix": "/oc",
+    "language": "Lenga",
+    "play": "Jogar",
+    "og_locale": "oc_FR"
+  },
+  "fy": {
+    "code": "fy",
+    "name": "Frysk",
+    "flag": "/img/flags/nl.svg",
+    "dir": "ltr",
+    "prefix": "/fy",
+    "language": "Taal",
+    "play": "Spylje",
+    "og_locale": "fy_NL"
+  },
+  "li": {
+    "code": "li",
+    "name": "Limburgs",
+    "flag": "/img/flags/nl.svg",
+    "dir": "ltr",
+    "prefix": "/li",
+    "language": "Taal",
+    "play": "Speel",
+    "og_locale": "li_NL"
+  },
+  "da": {
+    "code": "da",
+    "name": "Dansk",
+    "flag": "/img/flags/de.svg",
+    "dir": "ltr",
+    "prefix": "/da",
+    "language": "Sprog",
+    "play": "Spil",
+    "og_locale": "da_DE"
+  },
+  "br": {
+    "code": "br",
+    "name": "Brezhoneg",
+    "flag": "/img/flags/fr.svg",
+    "dir": "ltr",
+    "prefix": "/br",
+    "language": "Yezh",
+    "play": "C'hoari",
+    "og_locale": "br_FR"
+  },
+  "co": {
+    "code": "co",
+    "name": "Corsu",
+    "flag": "/img/flags/fr.svg",
+    "dir": "ltr",
+    "prefix": "/co",
+    "language": "Lingua",
+    "play": "Ghjucà",
+    "og_locale": "co_FR"
+  },
+  "fur": {
+    "code": "fur",
+    "name": "Furlan",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/fur",
+    "language": "Lenghe",
+    "play": "Zuie",
+    "og_locale": "fur_IT"
+  },
+  "sl": {
+    "code": "sl",
+    "name": "Slovenščina",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/sl",
+    "language": "Jezik",
+    "play": "Igraj",
+    "og_locale": "sl_IT"
+  },
+  "el": {
+    "code": "el",
+    "name": "Ελληνικά",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/el",
+    "language": "Γλώσσα",
+    "play": "Παίξε",
+    "og_locale": "el_IT"
+  },
+  "sq": {
+    "code": "sq",
+    "name": "Shqip",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/sq",
+    "language": "Gjuha",
+    "play": "Luaj",
+    "og_locale": "sq_IT"
+  },
+  "hr": {
+    "code": "hr",
+    "name": "Hrvatski",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/hr",
+    "language": "Jezik",
+    "play": "Igraj",
+    "og_locale": "hr_IT"
+  },
+  "rom": {
+    "code": "rom",
+    "name": "Romani",
+    "flag": "/img/flags/de.svg",
+    "dir": "ltr",
+    "prefix": "/rom",
+    "language": "Ćhib",
+    "play": "Khel",
+    "og_locale": "rom_DE"
+  },
+  "se": {
+    "code": "se",
+    "name": "Davvisámegiella",
+    "flag": "/img/flags/fi.svg",
+    "dir": "ltr",
+    "prefix": "/se",
+    "language": "Giella",
+    "play": "Speala",
+    "og_locale": "se_FI"
+  },
+  "jv": {
+    "code": "jv",
+    "name": "Basa Jawa",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/jv",
+    "language": "Basa",
+    "play": "Dolanan",
+    "og_locale": "jv_ID"
+  },
+  "su": {
+    "code": "su",
+    "name": "Basa Sunda",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/su",
+    "language": "Basa",
+    "play": "Ulin",
+    "og_locale": "su_ID"
+  },
+  "mad": {
+    "code": "mad",
+    "name": "Bhâsa Madhurâ",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/mad",
+    "language": "Bhâsa",
+    "play": "Maèn",
+    "og_locale": "mad_ID"
+  },
+  "min": {
+    "code": "min",
+    "name": "Baso Minangkabau",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/min",
+    "language": "Bahaso",
+    "play": "Main",
+    "og_locale": "min_ID"
+  },
+  "ban": {
+    "code": "ban",
+    "name": "Basa Bali",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/ban",
+    "language": "Basa",
+    "play": "Mainang",
+    "og_locale": "ban_ID"
+  },
+  "ace": {
+    "code": "ace",
+    "name": "Bahsa Acèh",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/ace",
+    "language": "Bahsa",
+    "play": "Meu'en",
+    "og_locale": "ace_ID"
+  },
+  "bbc": {
+    "code": "bbc",
+    "name": "Hata Batak Toba",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/bbc",
+    "language": "Hata",
+    "play": "Marmeam",
+    "og_locale": "bbc_ID"
+  },
+  "mak": {
+    "code": "mak",
+    "name": "Basa Mangkasaraʼ",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/mak",
+    "language": "Basa",
+    "play": "A'balle",
+    "og_locale": "mak_ID"
+  },
+  "bew": {
+    "code": "bew",
+    "name": "Bahasa Betawi",
+    "flag": "/img/flags/id.svg",
+    "dir": "ltr",
+    "prefix": "/bew",
+    "language": "Bahasa",
+    "play": "Main",
+    "og_locale": "bew_ID"
+  },
+  "hmn": {
+    "code": "hmn",
+    "name": "Hmoob",
+    "flag": "/img/flags/vn.svg",
+    "dir": "ltr",
+    "prefix": "/hmn",
+    "language": "Lus",
+    "play": "Ua si",
+    "og_locale": "hmn_VN"
+  },
+  "km": {
+    "code": "km",
+    "name": "ខ្មែរ",
+    "flag": "/img/flags/vn.svg",
+    "dir": "ltr",
+    "prefix": "/km",
+    "language": "ភាសា",
+    "play": "លេង",
+    "og_locale": "km_VN"
+  },
+  "qu": {
+    "code": "qu",
+    "name": "Runasimi",
+    "flag": "/img/flags/cl.svg",
+    "dir": "ltr",
+    "prefix": "/qu",
+    "language": "Simi",
+    "play": "Pukllay",
+    "og_locale": "qu_CL"
+  },
+  "gn": {
+    "code": "gn",
+    "name": "Avañeʼẽ",
+    "flag": "/img/flags/ar.svg",
+    "dir": "ltr",
+    "prefix": "/gn",
+    "language": "Ñe'ẽ",
+    "play": "Eñembosarái",
+    "og_locale": "gn_AR"
+  },
+  "ay": {
+    "code": "ay",
+    "name": "Aymar aru",
+    "flag": "/img/flags/cl.svg",
+    "dir": "ltr",
+    "prefix": "/ay",
+    "language": "Aru",
+    "play": "Anataña",
+    "og_locale": "ay_CL"
+  },
+  "vec": {
+    "code": "vec",
+    "name": "Vèneto",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/vec",
+    "language": "Léngua",
+    "play": "Zoga",
+    "og_locale": "vec_IT"
+  },
+  "lij": {
+    "code": "lij",
+    "name": "Ligure",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/lij",
+    "language": "Lengua",
+    "play": "Zeuga",
+    "og_locale": "lij_IT"
+  },
+  "lmo": {
+    "code": "lmo",
+    "name": "Lombard",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/lmo",
+    "language": "Lengua",
+    "play": "Giœuga",
+    "og_locale": "lmo_IT"
+  },
+  "scn": {
+    "code": "scn",
+    "name": "Sicilianu",
+    "flag": "/img/flags/it.svg",
+    "dir": "ltr",
+    "prefix": "/scn",
+    "language": "Lingua",
+    "play": "Joca",
+    "og_locale": "scn_IT"
+  },
+  "lb": {
+    "code": "lb",
+    "name": "Lëtzebuergesch",
+    "flag": "/img/flags/fr.svg",
+    "dir": "ltr",
+    "prefix": "/lb",
+    "language": "Sprooch",
+    "play": "Spill",
+    "og_locale": "lb_FR"
+  },
+  "ru": {
+    "code": "ru",
+    "name": "Русский",
+    "flag": "/img/flags/ee.svg",
+    "dir": "ltr",
+    "prefix": "/ru",
+    "language": "Язык",
+    "play": "Играть",
+    "og_locale": "ru_EE"
   }
 }

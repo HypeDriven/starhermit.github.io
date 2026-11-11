@@ -4,7 +4,7 @@
   "scripts": {
     "localize": "python3 tools/localize.py",
     "localize:refresh": "python3 tools/localize.py --translate",
-    "test": "node tools/check-localization.mjs",
+    "test": "node tools/check-localization.mjs && python3 tools/test_localize.py",
     "test:browser": "node tools/localization-browser.mjs"
   },
   "devDependencies": {

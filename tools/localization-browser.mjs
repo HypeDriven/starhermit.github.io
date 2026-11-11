@@ -4,6 +4,13 @@ import { createServer } from 'node:http';
 import { resolve, extname } from 'node:path';
 import { chromium } from 'playwright-core';
 import { root, languages } from './localize.mjs';
+const localeCodes=process.env.LOCALES?.split(',')||Object.keys(languages);
+const widths=process.env.WIDTHS?.split(',').map(Number)||[1440,390];
+const variants=process.env.PRIVACY_ONLY==='1'?[]:['control','crown','variety','quick_start'];
+const locales=localeCodes.map(code=>{
+ if(!languages[code])throw new Error(`Unknown test locale: ${code}`);
+ return languages[code];
+});
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp','.json':'application/json'};
 const server=createServer(async(req,res)=>{
  try{
@@ -17,17 +24,17 @@ const base=`http://127.0.0.1:${server.address().port}`;
 const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 const errors=[],failures=[];
 try{
- for(const width of [1440,390]){
+ for(const width of widths){
   const context=await browser.newContext({viewport:{width,height:950},reducedMotion:'reduce'});
   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
   page.on('response',r=>{if(r.url().startsWith(base)&&r.status()>=400)failures.push(r.url());});
   await page.route('https://www.googletagmanager.com/**',r=>r.fulfill({body:''}));
-  for(const locale of Object.values(languages)){
+  for(const locale of locales){
    const prefix=locale.code==='en'?'':'/'+locale.code;
-   for(const variant of ['control','crown','variety','quick_start']){
+   for(const variant of variants){
     await page.goto(base+prefix+'/?ab_preview='+variant);
     assert.equal(await page.locator('html').getAttribute('lang'),locale.code);
-    assert.equal(await page.locator('.language-option').count(),10);
+    assert.equal(await page.locator('.language-option').count(),Object.keys(languages).length);
     assert.equal(await page.locator('.language-picker summary img').getAttribute('src'),locale.flag);
     assert.deepEqual(await page.locator('.language-picker summary img').evaluate(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height})),{width:21,height:14});
     assert.equal(await page.locator('.hero-feature-art').count(),variant==='crown'?1:0);
@@ -42,7 +49,8 @@ try{
    }
    await page.goto(base+prefix+'/privacy.html');
    assert.equal(await page.locator('html').getAttribute('lang'),locale.code);
-   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`${locale.code} privacy ${width} overflow`);
+   console.log(`${width}px: ${locale.code} ${variants.length?'homepage variants and ':''}privacy passed`);
   }
   await page.goto(base+'/ar/?ab_preview=variety#play');
   await page.locator('.language-picker summary').focus();await page.keyboard.press('Enter');
@@ -62,5 +70,5 @@ try{
  await page.goto(base+'/es/');assert.ok((await page.locator('.hero-sub').textContent()).trim());
  await page.locator('.language-picker summary').click();await page.locator('.language-option[data-language="ar"]').click();await page.waitForURL('**/ar/');
  await noJS.close();assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
- console.log('Desktop/mobile passed: all ten languages and all four heroes, privacy, image flags, preference, query/hash preservation, no-JS content and switching, no runtime errors or missing assets.');
+ console.log(`Browser checks passed at ${widths.join('/')}px: ${locales.length} selected languages, ${variants.length} hero variants, privacy, image flags, preference, query/hash preservation, no-JS content and switching, no runtime errors or missing assets.`);
 }finally{await browser.close();await new Promise(r=>server.close(r));}

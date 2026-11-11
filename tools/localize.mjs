@@ -8,7 +8,13 @@ export const root=resolve(import.meta.dirname,'..');
 export const normalize=s=>s.trim().replace(/\s+/g,' ');
 export const sha=s=>createHash('sha256').update(s).digest('hex');
 export const languages=JSON.parse(await readFile(resolve(root,'localization/languages.json'),'utf8'));
-const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux']);
+export const regions=JSON.parse(await readFile(resolve(root,'localization/regions.json'),'utf8'));
+const overrides=JSON.parse(await readFile(resolve(root,'localization/overrides.json'),'utf8'));
+// The separately deployed wiki currently provides only the original ten languages.
+const wikiLanguages=new Set(['en','zh-CN','hi','es','ar','fr','bn','pt','id','ur']);
+const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','WebAssembly','OAuth']);
+// Registered company/address lines are identifiers, not prose to paraphrase.
+for(const name of ['StarHermit — Hype Driven Development Inc., Vancouver, BC.','102-1275 West 7th Avenue','Vancouver, British Columbia V6H 1B7'])protectedNames.add(name);
 const ui={notice:'Machine-translated from English.',original:'Read the English original'};
 export const clean=s=>s.replace(/(<head>)\n(?=<!-- localization:head -->)/i,'$1').replace(/<!-- localization:[\w-]+ -->[\s\S]*?<!-- \/localization:[\w-]+ -->\n?/g,'');
 function fields(document){
@@ -36,6 +42,7 @@ export async function corpus(){
  for(const path of ['index.html','privacy.html']){
   const source=clean(await readFile(resolve(root,path),'utf8'));
   const {document}=parseHTML(source);
+  for(const title of document.querySelectorAll('.game-tile-name'))protectedNames.add(normalize(title.textContent));
   pages.push({path,url:path==='index.html'?'/':'/privacy.html',source,hash:sha(source),document,fields:fields(document)});
  }
  const dynamic=[];
@@ -69,7 +76,7 @@ function decorate(source,lang,url,strings,t){
  const data={code:lang,dir:languages[lang].dir,source:url,languages:Object.keys(languages),strings};
  // Preference restoration runs before analytics and experiment enrollment on the English homepage.
  const preference=lang==='en'&&url==='/'?`<script>try { var preferred=localStorage.getItem('starhermit-language'); if (${JSON.stringify(Object.keys(languages).filter(c=>c!=='en'))}.includes(preferred) && (location.pathname==='/'||location.pathname==='/index.html')) location.replace('/'+preferred+'/'+location.search+location.hash); } catch (_) {}</script>`:'';
- const head=`${lang!=='en'?'<base href="/">':''}${preference}\n${alternates}\n<link rel="alternate" hreflang="x-default" href="https://starhermit.com${url}">\n<link rel="stylesheet" href="/localization.css?v=1">\n<script id="locale-data" type="application/json">${JSON.stringify(data).replaceAll('<','\\u003c')}</script>`;
+ const head=`${lang!=='en'?'<base href="/">':''}${preference}\n${alternates}\n<link rel="alternate" hreflang="x-default" href="https://starhermit.com${url}">\n<link rel="stylesheet" href="/localization.css?v=2">\n<script id="locale-data" type="application/json">${JSON.stringify(data).replaceAll('<','\\u003c')}</script>`;
  // Keep the charset declaration within the first 1024 bytes, ahead of the dictionaries.
  source=source.replace(/<meta charset="UTF-8">/i,match=>match+block('head',head));
  const navStart=source.indexOf('<nav class="nav-links"');
@@ -86,7 +93,7 @@ function decorate(source,lang,url,strings,t){
 const [mode,location]=process.argv.slice(2);
 if(mode==='prepare'){
  const {pages,strings}=await corpus();
- await writeFile(location,JSON.stringify({languages:Object.values(languages).filter(l=>l.code!=='en'),strings},null,2)+'\n');
+ await writeFile(location,JSON.stringify({languages:Object.values(languages).filter(l=>l.code!=='en'),strings,protected_names:[...protectedNames].filter(name=>!['STAR','HERMIT'].includes(name)).sort()},null,2)+'\n');
  console.log(`${pages.length} public pages plus all four hero variants: ${strings.length} translation segments (${strings.join('').length} characters)`);
 }else if(mode==='render'){
  const cache=JSON.parse(await readFile(location,'utf8'));
@@ -96,8 +103,10 @@ if(mode==='prepare'){
   const t=value=>{
    const original=normalize(value);if(lang==='en'||protectedNames.has(original))return value;
    const game=original.match(/^Play (Crown & Chasm|Blind Magus|Null Range)$/);
-   if(game){const play={'zh-CN':'游玩',hi:'खेलें',es:'Jugar',ar:'العب',fr:'Jouer à',bn:'খেলুন',pt:'Jogar',id:'Mainkan',ur:'کھیلیں'};return play[lang]+' '+game[1];}
-   const result=cache[lang]?.[sha(original)];
+   if(game)return languages[lang].play+' '+game[1];
+   const freeGame=original.match(/^Play (.+) free$/);
+   if(freeGame&&protectedNames.has(freeGame[1]))return t('Play free')+' '+freeGame[1];
+   const result=overrides[lang]?.[original]??cache[lang]?.[sha(original)];
    if(typeof result!=='string'||(!result.trim()&&!/^(the|a|an)$/i.test(original)))throw new Error(`Missing ${lang}: ${original}`);
    return result;
   };
@@ -111,14 +120,15 @@ if(mode==='prepare'){
     document.documentElement.lang=lang;document.documentElement.setAttribute('dir',languages[lang].dir);
     document.querySelector('link[rel=canonical]').setAttribute('href','https://starhermit.com'+localizedURL(lang,page.url));
     document.querySelector('meta[property="og:url"]').setAttribute('content','https://starhermit.com'+localizedURL(lang,page.url));
-    const regions={'zh-CN':'zh_CN',hi:'hi_IN',es:'es_ES',ar:'ar_SA',fr:'fr_FR',bn:'bn_BD',pt:'pt_BR',id:'id_ID',ur:'ur_PK'};
-    document.querySelector('meta[property="og:locale"]').setAttribute('content',regions[lang]);
+    document.querySelector('meta[property="og:locale"]').setAttribute('content',languages[lang].og_locale);
     // Keep every asset, download and fragment rooted correctly when pages live under /<language>/.
     for(const element of document.querySelectorAll('[href],[src],[poster]'))for(const attr of ['href','src','poster']){
      if(element.tagName==='LINK'&&element.getAttribute('rel')==='canonical')continue;
      const value=element.getAttribute(attr);if(!value)continue;
      const target=new URL(value,'https://starhermit.com'+page.url);
-     if(target.hostname==='wiki.starhermit.com')target.pathname='/'+lang+(target.pathname==='/'?'/':target.pathname);
+     if(target.hostname==='wiki.starhermit.com'){
+      if(wikiLanguages.has(lang))target.pathname='/'+lang+(target.pathname==='/'?'/':target.pathname);
+     }
      else if(target.origin!=='https://starhermit.com')continue;
      else if(['/', '/index.html','/privacy.html'].includes(target.pathname))target.pathname=localizedURL(lang,target.pathname==='/index.html'?'/':target.pathname);
      element.setAttribute(attr,target.origin==='https://starhermit.com'?target.pathname+target.search+target.hash:target.href);
@@ -143,5 +153,5 @@ if(mode==='prepare'){
  await writeFile(resolve(root,'localization/manifest.json'),JSON.stringify(manifest,null,2)+'\n');
  const urls=Object.keys(languages).flatMap(l=>pages.map(p=>'https://starhermit.com'+localizedURL(l,p.url)));
  await writeFile(resolve(root,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>`  <url><loc>${u}</loc></url>`).join('\n')+'\n</urlset>\n');
- console.log('Generated 18 static translated pages, shared flag dropdowns, localized metadata, and all four hero dictionaries.');
+ console.log(`Generated ${(Object.keys(languages).length-1)*pages.length} static translated pages across ${Object.keys(languages).length} languages, shared flag dropdowns, localized metadata, and all four hero dictionaries.`);
 }else if(mode)throw new Error('Usage: node tools/localize.mjs prepare|render CACHE_PATH');
