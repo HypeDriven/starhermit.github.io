@@ -6,109 +6,66 @@
 
 The public marketing site for StarHermit, served at **starhermit.com** (GitHub Pages; `CNAME` carries
 the hostname). It is the front door: it pitches the platform to players and to developers, hands out the
-Windows and Linux clients, and links to the web dashboard and the developer wiki. It holds no account state and
+Windows, Linux and macOS clients, and links to the web dashboard and the developer wiki. It holds no account state and
 calls no API of its own; the only third-party runtime dependency is Google Analytics.
 
 ## What's in the repo
 
 | Path | What it is |
 |---|---|
-| `index.html` | The marketing site: one page, seven sections including a public FAQ, no framework |
+| `index.html` | The player-first homepage, with game discovery, publishing and optional downloads |
 | `privacy.html` | The privacy policy, linked from the footer — same shell (nav, background, styles), prose only |
-| `style.css` | All styling — the "HUD" card look, the gradient accents, the reveal transitions |
+| `style.css` | Shared styling and the privacy page shell |
+| `home.css` | Homepage layout, art-led hero, game cards, publishing panel and responsive styling |
 | `robots.txt` | Allows public pages and assets to search engines and AI search crawlers; excludes development tools and workspace documentation, and advertises the sitemap. |
 | `sitemap.xml` | Lists the English homepage/privacy policy and all 114 translated URLs (58 languages, 116 URLs); excludes prototypes, downloads, fragment links and authenticated subdomains. |
 | `llms.txt` | A concise public site guide with factual playing/publishing information and official links, including sign-in, age requirements and the payment roadmap. Supplementary discovery information, not an indexing or ranking guarantee. |
 | `img/starhermit-social.svg`, `img/starhermit-social.png` | Native brand artwork and its 1200 × 630 PNG export for social previews. Regenerate with `rsvg-convert img/starhermit-social.svg -o img/starhermit-social.png`. |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
-| `img/*.webp` | Artwork for the six featured games in `#play` — cover art for Crown & Chasm, captured title screens for Blind Magus and Null Range, and official square covers for Turds, Sky Lobby and Iron Curtain: 1983. The square covers retain their full composition in the second row. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
-| `img/games/*.webp` | The 24 game-wall covers, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
+| `img/*.webp` | Featured artwork for Crown & Chasm, Blind Magus, Turds, Sky Lobby and Iron Curtain: 1983, plus a retained Null Range asset. The hero preserves the artwork’s aspect ratio. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
+| `img/games/*.webp` | Game-wall cover assets, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-client/starhermit-windows-client`), committed here so the download link is a static asset |
 | `downloads/StarHermit-linux-x86_64.tar.gz` | The published production build of the Linux client (`../starhermit-client/starhermit-linux-client`) as a tarball, which keeps the executable bit a browser download would drop. This is what the Linux download card links to. |
 | `downloads/starhermit-client-linux-x86_64` | The same Linux build as a bare executable: the file the Linux client's self-updater downloads and swaps in. Not linked from the page. |
 | `downloads/StarHermit-macos-universal.zip` | The published production build of the macOS client (`../starhermit-client/starhermit-osx-client`, `tools/bundle.sh --production` on a Mac): `StarHermit.app`, universal (Apple silicon and Intel), ad-hoc signed, zipped with `ditto`. It has no entry in `version.json` yet, so the macOS client does not update itself. |
 | `downloads/version.json` | The clients' self-update manifest, written by the production deploy script with each build: `{"version","url","size","sha256"}` for `StarHermit.exe` at the top level (all the older C++ Windows clients can read), plus the same four members per platform under `platforms` (`windows-x86_64`, `linux-x86_64`), which the current clients read. A production client checks it at start and periodically; when its platform's entry names a newer version it downloads the build, checks size and SHA-256, and replaces itself. Publish manifest and builds together: an entry whose hash does not match its file is ignored until they agree. |
-| `tools/stamp_client_version.py` | Run by the deploy script with each build: writes each platform's version and size into its download card's `<span class="client-build" data-platform="windows">v0.2.0 · 4.5</span>` (and `data-platform="linux"`, `data-platform="macos"`) on `index.html`; the Linux size is the tarball's — digits and dots only, so the localizer never treats it as prose — then re-renders the translated pages offline from the cache (`tools/localize.py`), so no translation service is called. |
+| `tools/stamp_client_version.py` | Compatibility entry point for the production deploy script. Validates arguments without stamping the homepage. |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
 
 ## Sections
 
-1. **Hero** — the platform pitch. Its primary action is **Create Free Account** →
-   `dashboard.starhermit.com`; **Play Free Games** jumps to `#play`, **Publish a Game** to `#developers`.
-   The pitch names free browser games and publishing from GitHub or a local build. A note under the
-   buttons explains supported sign-in providers, with no payment card or installation needed,
-   then three headline stats that are true of the shipped platform rather than
-   invented catalog figures.
-2. **In the library now** (`#play`) — real games hosted on StarHermit, each one a single click from
-   playing. It has six featured cards (art, name, pitch, **Play Free Now**), then a wall of 24 more
-   cover tiles ("Play free" on hover; a ▶ badge on touch screens, where only the first 12 show). It
-   closes on *Browse the Full Library* → the dashboard, citing the library's size (130+). This
-   section is the site's only pre-signup proof of the catalog: the dashboard is a hard sign-in gate
-   and `GET /api/v1/github-games` is 401 anonymously.
+1. **Hero** — “Free online games” leads with a featured game’s artwork, a direct play link, and
+   **Browse Games** to jump to the library. The header offers Games, Developers, Sign In, and the language picker.
+2. **Game library** (`#play`) — five fixed covers plus nine more games in a native disclosure.
+   The list is a November 18, 2026 snapshot filtered to live games with a production average of at least 2/5 and at least one rating.
+   Every game link goes through `https://dashboard.starhermit.com/play/<game-id>`, which preserves the
+   destination through sign-in and the Terms gate.
+3. **Publishing** (`#developers`) — a short pitch for vibe-coded games, free server access, and creator-chosen
+   monetization. The steps are sign in and click **Add Game**. Platform and integration details live in the wiki.
+4. **Desktop clients** (`#download`) — an initially expanded disclosure with blue Windows, Linux and macOS download buttons and platform requirements.
 
-   **Every game link is a dashboard play link, never the game's own address.** Each card's button
-   and art, and each tile, go to `https://dashboard.starhermit.com/play/<game-id>`. The dashboard
-   holds that link through provider sign-in and its Terms gate, shows the game's cover on the sign-in
-   card, then launches the game (`../starhermit-com-dashboard/spec.md`, *Play links*). The games
-   are also reachable anonymously at `<game-id>.starhermit.com`, and this site deliberately does
-   not hand those out: a visitor who plays without an account is a visitor who never makes one. The
-   play link gets them into the game *and* the account in one motion. Never link a game's own host.
-
-   Null Range is the exception that does not auto-launch: it runs on its own site rather than a
-   StarHermit host, so its play link opens its page in the library, one click from a new tab.
-3. **For players** (`#players`) — free browser game discovery, web/Windows/Linux access, friends, chat,
-   voice and shared game services. Closes on a dashboard CTA. Descriptions avoid unsupported claims
-   about AAA releases, sales, refunds, mods, streaming and family sharing.
-4. **For creators** (`#developers`) — repository/local-build publishing, GitHub ownership, deployment
-   management and shared game services. Paid checkout and publisher payouts are explicitly labelled
-   as a roadmap, including the planned cards and cryptocurrency capabilities. Closes on a dashboard
-   CTA plus the developer docs.
-5. **Download** (`#download`) — four launchpads in a two-by-two grid, **web dashboard first** and
-   carrying the primary button, then the native **Windows** client (`downloads/StarHermit.exe`), the
-   native **Linux** client (`downloads/StarHermit-linux-x86_64.tar.gz`) and the early native **macOS**
-   client (`downloads/StarHermit-macos-universal.zip`), each with its real cost disclosed (version,
-   size, OS; Windows: unsigned build → SmartScreen prompt; Linux: x86_64, glibc 2.35+, extract and run
-   `./starhermit-client`; macOS: 11+, universal, ad-hoc signed only → Control-click Open the first
-   time). The versions and sizes are stamped per build by `tools/stamp_client_version.py`.
-6. **FAQ** (`#faq`) — visible HTML answers about the platform/operator, free featured games, sign-in
-   and Terms gate, optional installation, publishing, payment availability and account eligibility.
-   It links to games, downloads, dashboard, docs and legal documents, and is linked from the footer.
-7. **Join** (`#join`) — open the dashboard (provider sign-in *is* the account creation; the
-   dashboard has no separate sign-up form), or read the developer docs at `wiki.starhermit.com`.
-
-The footer links off-page — dashboard, developer docs, Windows and Linux clients, Terms of Service — and names
-the operating company.
+The footer links to the dashboard, developer wiki, desktop clients, Discord, and legal and security pages.
 
 ### Search and AI discoverability
 
 Both English production pages and their translations have unique titles/descriptions, absolute HTTPS canonical URLs, index/follow
 directives with large image previews, Open Graph/Twitter metadata and static JSON-LD. The homepage
-describes the Organization, WebSite, CollectionPage and six featured VideoGame items in an ItemList;
-the privacy page describes the same Organization/WebSite and its WebPage. Game names, descriptions,
-artwork and dashboard play URLs in the ItemList must stay synchronized with the visible cards.
+describes the Organization, WebSite, CollectionPage and five featured VideoGame items in an ItemList;
+the privacy page describes the same Organization/WebSite and its WebPage. Game names, artwork and dashboard play URLs in the ItemList must stay synchronized with the featured selection.
 No invented ratings, offers or unsupported rich-result claims are included.
 
 The canonical homepage is `https://starhermit.com/`; the privacy policy remains
 `https://starhermit.com/privacy.html`. Privacy-page home links use `/` rather than `index.html`.
-Primary content, the FAQ and JSON-LD are present in the initial HTML and need no JavaScript to read.
+Primary content and JSON-LD are present in the initial HTML and need no JavaScript to read.
 The sitemap and `llms.txt` remain static files, without build dependencies. The wildcard robots policy
 allows AI search crawling along with conventional search; it does not introduce separate training
 permissions. Google AI search uses the same SEO fundamentals rather than special AI markup.
 
-### Every path leads to sign-up
+### Dashboard handoff
 
-The page's single conversion goal is an account on `dashboard.starhermit.com`, so no part of it is a
-link dead end and nothing offers a way around the gate. The fixed nav carries a filled **Play Now**
-pill at all widths — deliberately not sign-up wording, because the persistent nav is the one control
-a *returning* account holder uses, and "Sign Up Free" reads as not-for-me to them; it still lands on
-the same gate, which signs up and signs in through the supported provider picker. The hero, which speaks to
-first-time visitors, carries the explicit ask instead: **Create Free Account**. `#play`, `#players`
-and `#developers` each close on a `.section-cta` band; the footer's first link is
-**Sign Up / Sign In**.
-Every outbound link on the page goes to the dashboard (its home, or a game's `/play/<game-id>`)
-except the developer docs (`wiki.starhermit.com`) and the Windows, macOS and Linux client downloads, which need an
-account of their own.
+Game links take players directly to the chosen game's dashboard entry. The dashboard manages sign-in,
+account creation and Terms acceptance. The public homepage does not call the catalog API.
 
 **Discord lives in the footer, never the hero.** It was a hero button once, on an invite
 (`discord.gg/shugC9fMg`) that had expired — so the loudest control on the page led to Discord's
@@ -128,22 +85,14 @@ It must return a guild object with `"expires_at": null` — not a non-null date,
 
 ## Homepage A/B experiment
 
-`experiment.js?v=2` runs before `main.js` and assigns new eligible visitors equally to four
-`hero_v2` treatments: `control` (original), `crown` (Crown & Chasm and direct play), `variety`
-(three linked games), and `quick_start` (simple account benefits). Each receives 25% of traffic.
-Existing exposed `hero_v1` browsers retain their original treatment and attribution without
-entering the new experiment. Namespaced `sh2_` events keep new data separate from legacy `sh_`.
-The shared parent-domain cookie persists for 90 days; known signed-in browsers are excluded
-from new enrollment. Enrollment closes November 9, 2026 UTC and attribution lasts seven days
-from first exposure. Preview any arm with `?ab_preview=<variant>`; `game_first` aliases `crown`.
-Previews emit no experiment events and write no assignment cookies. Without JS the original
-hero remains. Stylesheets use version 10. Dashboard conversion requires an authenticated
-profile and Terms acceptance. Account creation dates separate new and existing-account sign-ins.
-Focused time uses 15-second ticks; launch events confirm iframe URL assignment. Privacy
-continues to disclose experiment cookies and the signed-in marker. `experiments.md` describes
-reporting, Bonferroni correction for three treatment-vs-control comparisons, a planned 11,000
-visitors per arm, and rollback. `tools/analyze-experiment.py` analyzes four-arm GA4 CSV exports;
-`--experiment hero_v1` handles the retired two-arm experiment separately.
+The homepage uses solid navy surfaces with blue and violet accents and a filled light-blue Sign In button.
+The remastered layout keeps a compact library and publishing panel. The privacy page retains the WebGL background.
+
+`experiment.js` gives all 14 homepage games an equal chance of appearing in the featured slot.
+Eligible browsers keep their assignment while other visitors get a random pick on each page load. The art, title, and direct play link change as a unit while the rest of the page
+is fixed. The dashboard copy must ship first to record new-account conversion and game launches.
+The historical `hero_v2` enrollment closed November 9, 2026. See `experiments.md` for the current
+test window, preview URLs, GA4 events, rollout and analysis. Standard GA4 remains active.
 
 ## Localization
 
@@ -176,8 +125,8 @@ or endangered language. All generated translations are machine translations, not
 
 The header uses a keyboard-accessible disclosure dropdown with local SVG flags under `img/flags/`.
 It works without JavaScript. Language switching preserves the current page, query parameters
-(including `ab_preview`), and section anchor. `localization.js` saves the selection; an early script
-restores it on the English homepage before analytics and experiment enrollment. Explicit deep links
+and section anchor. `localization.js` saves the selection; an early script
+restores it on the English homepage before analytics initialization. Explicit deep links
 retain their language. Translated footers identify machine translation and link to the English original.
 Arabic and Urdu use right-to-left layouts; country flags are image assets, independent of emoji fonts.
 
@@ -197,12 +146,8 @@ The separately deployed developer wiki still has the original ten language editi
 existing localized routes for those languages and its English root for other editions; this change
 does not invent missing wiki routes or add translations to the dashboard/client repositories.
 
-All four homepage hero variants and the legacy game-first hero are localized. The shared
-`experiment.js` remains unchanged and byte-identical to the dashboard's copy. A translation dictionary
-and a scoped text/attribute observer localize copy that the experiment inserts; they do not alter
-assignment cookies, enrollment, attribution, event names, or dashboard destinations. Relative artwork
-paths still resolve to the original root assets on translated pages. No browser translation service,
-API key, or new third-party runtime dependency is required.
+Localized homepages use the same static game links, artwork and layout. The generated dictionaries
+retain the historical hero strings. Translation runs at build time, with no browser translation service.
 
 Development tooling uses Node.js 22+, Python 3, and `npm ci`. `npm run localize` rebuilds offline from
 the cache; `npm run localize:refresh` sends changed public prose to Google Translate and updates it.
@@ -211,8 +156,7 @@ configured service identifier (Traditional Chinese uses `zh-TW`; Cantonese uses 
 URLs, document language, preferences, dashboard handoff and hreflang retain `zh-HK` and `yue-HK`.
 `npm test` checks all pages, links, anchors, downloads, metadata, game names, source freshness, and
 unchanged analytics/experiment code, plus region coverage, locale metadata, picker entries and sitemap
-parity. `npm run test:browser` checks desktop/mobile, all languages and
-hero variants, privacy, image flags, keyboard controls, saved preferences, and no-JavaScript access.
+parity. `npm run test:browser` checks desktop/mobile, all languages, the homepage, privacy, image flags, keyboard controls, saved preferences, and no-JavaScript access.
 Commit generated translations with any public copy changes. The site still publishes static files
 through GitHub Pages without an application build.
 
@@ -220,7 +164,7 @@ The test command also runs offline translation-service regression checks for opa
 altered identifiers, dropped-name recovery, and unsupported-language errors without network calls.
 Translated legal copy allows long compound words to wrap on mobile screens. Browser checks can be
 narrowed with `LOCALES=se,ru`, `WIDTHS=390`, or
-`PRIVACY_ONLY=1` for focused regression checks; the default covers every locale and all four heroes.
+`PRIVACY_ONLY=1` for focused regression checks; the default covers every locale.
 
 ## Constraints
 
@@ -239,12 +183,11 @@ narrowed with `LOCALES=se,ru`, `WIDTHS=390`, or
 - **Outbound links rot silently.** Nothing here has a build step that could fail on a dead link —
   an expired Discord invite shipped as the hero's loudest button and stayed there. Re-check every
   outbound link whenever the site is touched.
-- **The `#play` games can go stale.** The 30 games and their IDs are a committed snapshot of the
+- **The `#play` games can go stale.** The 14 games and their IDs are a committed snapshot of the
   catalog. A removed or redeployed-as-new game leaves a play link that ends on a "no longer in the
   library" toast, and nothing here will notice. Re-check them when the catalog changes against
   `GET /api/v1/github-games`, which needs a session. Every linked game must be `deployStatus: live`
-  on its own `<game-id>.starhermit.com` host, except Null Range (see `#play` above). The "130+"
-  library figure comes from the same snapshot.
+  on its own `<game-id>.starhermit.com` host.
 - **Keep search and AI-facing copy factual.** Planned checkout, payment methods, refunds and payouts
   must remain labelled as planned in visible copy. Metadata, structured data and `llms.txt` describe
   available functionality. Keep the *platform's* specs (`../starhermit/spec.md` and the sibling clients')

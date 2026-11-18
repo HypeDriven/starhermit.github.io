@@ -39,6 +39,74 @@
     }
   }
 
+  // The featured game is a separate experiment. The rest of the homepage is fixed.
+  var FEATURE_KEY = 'sh_ab_feature_v2';
+  var FEATURE_START = Date.parse('2026-11-19T00:00:00Z');
+  var FEATURE_END = Date.parse('2026-12-17T00:00:00Z');
+  var FEATURE_RETENTION = 90 * DAY;
+  var featurePreview = new URLSearchParams(location.search).get('feature_preview');
+
+  function featureAssignment() {
+    var assignment = cookie(FEATURE_KEY), now = Date.now();
+    return assignment && typeof assignment.arm === 'string' && /^[a-z][a-z0-9_]{0,22}$/.test(assignment.arm) &&
+      Number.isFinite(assignment.at) && assignment.at >= FEATURE_START &&
+      assignment.at < FEATURE_END && assignment.at <= now &&
+      now - assignment.at < FEATURE_RETENTION ? assignment : null;
+  }
+
+  function saveFeature(assignment) {
+    write(FEATURE_KEY, assignment, Math.floor((assignment.at + FEATURE_RETENTION - Date.now()) / 1000));
+  }
+
+  function featureEvent(action, arm) {
+    if (!production || featurePreview !== null || typeof window.gtag !== 'function') return;
+    try { window.gtag('event', 'shf2_' + action + '_' + arm, {transport_type: 'beacon'}); }
+    catch (_) { /* Measurement is optional. */ }
+  }
+
+  function recordFeature(action) {
+    if (!production || featurePreview !== null) return;
+    var assignment = featureAssignment();
+    if (!assignment || Date.now() - assignment.at >= WINDOW || assignment[action]) return;
+    assignment[action] = true;
+    saveFeature(assignment);
+    featureEvent(action, assignment.arm);
+  }
+
+  function initFeaturedGame(link) {
+    var games = new Map(Array.from(document.querySelectorAll('[data-feature-arm]'), function (source) {
+      return [source.dataset.featureArm, source];
+    }));
+    if (!games.size) return;
+    var previewArm = ({crown: 'crown_and_chasm', magus: 'blind_magus'})[featurePreview] || featurePreview;
+    var assignment = featureAssignment();
+    var now = Date.now();
+    var arms = Array.from(games.keys());
+    var pick = arms[Math.floor(Math.random() * arms.length)];
+    if (!assignment && featurePreview === null && production && now >= FEATURE_START &&
+        now < FEATURE_END && !cookie(SIGNED) && typeof window.gtag === 'function') {
+      saveFeature({arm: pick, at: now});
+      assignment = featureAssignment();
+      if (assignment) featureEvent('exposure', assignment.arm);
+    }
+    var arm = games.has(previewArm) ? previewArm : assignment && games.has(assignment.arm) ? assignment.arm : pick;
+    var source = games.get(arm);
+    if (arm !== link.dataset.featuredGame) {
+      var artwork = source.querySelector('img');
+      var image = link.querySelector('.hero-visual img');
+      image.src = artwork.getAttribute('src');
+      image.setAttribute('width', artwork.getAttribute('width'));
+      image.setAttribute('height', artwork.getAttribute('height'));
+      link.querySelector('strong').textContent = source.querySelector('h3, .game-tile-name').textContent;
+      link.href = (source.matches('a') ? source : source.querySelector('a')).href;
+      link.dataset.featuredGame = arm;
+    }
+    if (assignment && arm === assignment.arm) {
+      link.addEventListener('click', function () { recordFeature('click'); });
+      link.addEventListener('auxclick', function (e) { if (e.button === 1) recordFeature('click'); });
+    }
+  }
+
   function event(name, extra) {
     if (!production || isPreview || typeof window.gtag !== 'function') return;
     var data = Object.assign({ site_surface: surface, transport_type: 'beacon' }, extra || {});
@@ -170,15 +238,22 @@
       if (isPreview) return;
       var returning = !!cookie(SIGNED);
       write(SIGNED, true, 365 * 86400);
+      var created = Date.parse(me.createdAt);
+      var featured = featureAssignment();
+      if (featured && Number.isFinite(created) && created >= featured.at) recordFeature('signup');
       if (!eligible() || state.converted) return;
       state.converted = true; save();
       event('sh_conversion');
-      var created = Date.parse(me.createdAt);
       if (Number.isFinite(created) && created >= state.at) event('sh_signup');
       else if (Number.isFinite(created) || returning) event('sh_returning_signin');
       else event('sh_unclassified_signin');
     },
-    gameLaunched: function () { if (eligible()) event('sh_game_launch'); }
+    gameLaunched: function () {
+      recordFeature('game_launch');
+      if (eligible()) event('sh_game_launch');
+    }
   };
-  if (document.querySelector('.hero')) home();
+  var featuredLink = document.querySelector('[data-featured-game]');
+  if (featuredLink) initFeaturedGame(featuredLink);
+  else if (document.querySelector('.hero')) home();
 })();

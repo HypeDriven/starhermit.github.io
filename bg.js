@@ -7,7 +7,7 @@
   "use strict";
 
   var canvas = document.getElementById("bg");
-  if (!canvas) return;
+  if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   // Low-intensity mode for phones/tablets: cheaper shader, smaller render
   // target, capped frame rate that drops further when idle. Desktop gets

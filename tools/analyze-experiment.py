@@ -4,6 +4,7 @@ import argparse
 import csv
 import datetime as dt
 import math
+import re
 from pathlib import Path
 
 
@@ -30,7 +31,7 @@ def read_export(path):
     for raw in rows:
         row = {(k or '').strip(): (v or '').strip() for k, v in raw.items()}
         name = row.get('Event name', '')
-        if not name.startswith(('sh_', 'sh2_')):
+        if not name.startswith(('sh_', 'sh2_', 'shf_', 'shf2_')):
             continue
         if name in events:
             raise ValueError(f'Duplicate event row {name}; export a table grouped only by Event name.')
@@ -41,13 +42,19 @@ def read_export(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('csv')
-    parser.add_argument('--experiment', choices=['hero_v1', 'hero_v2'], default='hero_v2')
+    parser.add_argument('--experiment', choices=['hero_v1', 'hero_v2', 'feature_v1', 'feature_v2'], default='hero_v2')
     parser.add_argument('--minimum-per-arm', type=int, help='Prespecified sample size; do not lower after inspecting results.')
     args = parser.parse_args()
-    variants = ('control', 'crown', 'variety', 'quick_start') if args.experiment == 'hero_v2' else ('control', 'game_first')
-    namespace = 'sh2_' if args.experiment == 'hero_v2' else 'sh_'
+    featured = args.experiment.startswith('feature_')
+    homepage = Path(__file__).resolve().parent.parent / 'index.html'
+    variants, namespace = {
+        'hero_v1': (('control', 'game_first'), 'sh_'),
+        'hero_v2': (('control', 'crown', 'variety', 'quick_start'), 'sh2_'),
+        'feature_v1': (('crown', 'magus'), 'shf_'),
+        'feature_v2': (tuple(re.findall(r'data-feature-arm="([a-z0-9_]+)"', homepage.read_text())), 'shf2_'),
+    }[args.experiment]
     if args.minimum_per_arm is None:
-        args.minimum_per_arm = 11000 if args.experiment == 'hero_v2' else 8200
+        args.minimum_per_arm = {'hero_v2': 11000, 'feature_v2': 14478}.get(args.experiment, 8200)
     if args.minimum_per_arm <= 0:
         parser.error('Sample size must be positive.')
     events = read_export(args.csv)
@@ -66,18 +73,29 @@ def main():
         successes.append(k)
         low, high = wilson(k, n)
         print(f'{variant}: {k:g}/{n:g} new accounts = {k/n:.2%} (95% interval {low:.2%}–{high:.2%})')
-        for prefix, label in [('sh_conversion', 'all first sign-ins'), ('sh_returning_signin', 'existing accounts'), ('sh_game_launch', 'game launch users'), ('sh_return_visit', 'return visitors')]:
+        if featured:
+            secondary = [('sh_click', 'featured-game click users'), ('sh_game_launch', 'any game launch users')]
+        else:
+            secondary = [('sh_conversion', 'all first sign-ins'), ('sh_returning_signin', 'existing accounts'),
+                         ('sh_game_launch', 'game launch users'), ('sh_return_visit', 'return visitors')]
+        for prefix, label in secondary:
             value = count(prefix, variant)
             print(f'  {label}: {value:g} ({value/n:.2%} of exposure users)')
-        for prefix, label in [('sh_home_tick', 'homepage'), ('sh_app_tick', 'dashboard')]:
-            seconds = count(prefix, variant, 'Event count') * 15
-            print(f'  {label}: approximately {seconds/n:.1f} focused seconds per exposed visitor')
+        if not featured:
+            for prefix, label in [('sh_home_tick', 'homepage'), ('sh_app_tick', 'dashboard')]:
+                seconds = count(prefix, variant, 'Event count') * 15
+                print(f'  {label}: approximately {seconds/n:.1f} focused seconds per exposed visitor')
 
     expected = sum(samples) / len(samples)
     imbalance = sum((n-expected)**2/expected for n in samples)
-    srm_p = math.erfc(math.sqrt(imbalance/2))
-    if len(samples) == 4:  # Chi-square survival probability for three degrees of freedom.
-        srm_p += math.sqrt(2*imbalance/math.pi)*math.exp(-imbalance/2)
+    # Chi-square survival function by recurrence from one degree of freedom.
+    # All supported tests have an even number of arms, hence odd degrees of freedom.
+    x = imbalance / 2
+    srm_p = math.erfc(math.sqrt(x))
+    if x:
+        for df in range(1, len(samples) - 1, 2):
+            shape = df / 2
+            srm_p += math.exp(shape * math.log(x) - x - math.lgamma(shape + 1))
     n0, k0 = samples[0], successes[0]
     p0 = k0/n0
     comparisons = []
@@ -88,16 +106,16 @@ def main():
         raw_p = math.erfc(abs(p1-p0)/error/math.sqrt(2)) if error else 1.0
         adjusted_p = min(1.0, raw_p*(len(variants)-1))
         comparisons.append((variant, p1, adjusted_p))
-        print(f'\n{variant} vs control: {(p1-p0)*100:+.2f} percentage points')
+        print(f'\n{variant} vs {variants[0]}: {(p1-p0)*100:+.2f} percentage points')
         if p0:
             print(f'Relative change: {(p1/p0-1):+.1%}')
         print(f'Two-sided p-value: {raw_p:.5g}; Bonferroni-adjusted p-value: {adjusted_p:.5g}')
     print(f'\nAssignment-balance p-value: {srm_p:.5g}')
 
     reasons = []
-    mature = dt.datetime.now(dt.timezone.utc) >= dt.datetime(2026, 11, 16, tzinfo=dt.timezone.utc)
-    if not mature:
-        reasons.append('conversion window has not matured (November 16 UTC)')
+    maturity = dt.datetime(2026, 12, 24, tzinfo=dt.timezone.utc) if featured else dt.datetime(2026, 11, 16, tzinfo=dt.timezone.utc)
+    if dt.datetime.now(dt.timezone.utc) < maturity:
+        reasons.append(f'conversion window has not matured ({maturity.date()} UTC)')
     if min(samples) < args.minimum_per_arm:
         reasons.append(f'fewer than {args.minimum_per_arm:,} exposed users in an arm')
     if srm_p < .001:

@@ -1,5 +1,47 @@
 # Homepage experiment
 
+## Featured-game test
+
+`feature_v2` gives all 14 homepage games an equal chance of filling the featured slot.
+The hero format, game library, and other links stay fixed. Enrolled browsers keep their
+assignment for 90 days. Outside the experiment, the homepage picks a game on each load.
+Known signed-in browsers, browsers that block the assignment cookie, and previews do not enroll.
+Preview any catalog entry with its `data-feature-arm` slug, for example
+`?feature_preview=jewel_cascade`. The former `crown` and `magus` preview aliases still work.
+
+Enrollment runs November 19 through December 16, 2026 UTC. Measure seven days from
+first exposure and analyze after December 24 UTC, allowing GA4 time to process the last events.
+Use a new experiment ID if this window is missed or treatments change.
+
+| GA4 prefix | Measurement |
+| --- | --- |
+| `shf2_exposure` | First assignment on the public homepage |
+| `shf2_click` | First click on the featured game link within seven days |
+| `shf2_signup` | First new account to enter the dashboard after Terms acceptance within seven days |
+| `shf2_game_launch` | First iframe launch attempt for any game within seven days |
+
+Each event name ends in the game’s slug. Signup per exposed visitor is primary.
+Clicks and launch attempts per exposed visitor are secondary. Compare each game against
+the Crown & Chasm control with a Bonferroni correction across 13 comparisons and a
+family significance threshold of 5%. The planning target is 14,478 exposed visitors per arm
+for an increase from 5% to 6% at 80% power. Report low-traffic rankings as directional only.
+Export `shf2_` event names, Total users and Event count for November 19–December 23 UTC,
+using the property timezone to cover the full window. Run
+`python3 tools/analyze-experiment.py export.csv --experiment feature_v2` from the revision
+deployed for the test. Keep the pool fixed through enrollment. The analyzer checks every
+configured arm and treats missing exposure rows as incomplete data.
+
+**Deploy the dashboard first.** Copy this repository’s `experiment.js` to the dashboard’s
+`wwwroot/js/experiment.js`, bump the dashboard’s script asset version, and release it.
+The existing dashboard hooks send signup and launch events. Verify a test account’s
+signup reaches GA4 before relying on the data. Then release the public site. Without
+the dashboard update, the homepage can only measure exposures and clicks.
+
+## Historical hero test
+
+The old `?ab_preview` variants are no longer rendered on the current homepage.
+The following setup describes the historical test and how to analyze its GA4 data.
+
 Experiment `hero_v2` compares four hero designs simultaneously, with 25% of new visitors per arm:
 
 | Variant | Hero |

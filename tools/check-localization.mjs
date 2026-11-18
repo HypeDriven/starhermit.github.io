@@ -4,7 +4,7 @@ import { parseHTML } from 'linkedom';
 import { resolve } from 'node:path';
 import { root, languages, regions, corpus, sha } from './localize.mjs';
 const {pages,strings}=await corpus();
-const gameTitles=[...pages[0].document.querySelectorAll('#play .grid-3 h3,.game-tile-name')].map(e=>e.textContent.trim());
+const gameTitles=[...pages[0].document.querySelectorAll('.featured-card h3,.game-tile-name')].map(e=>e.textContent.trim());
 const preservedNames=['StarHermit','STARHERMIT','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','WebAssembly','OAuth',...gameTitles];
 const manifest=JSON.parse(await readFile(resolve(root,'localization/manifest.json'),'utf8'));
 const byURL=new Map();
@@ -64,7 +64,7 @@ for(const lang of Object.keys(languages))for(const page of pages){
  assert.deepEqual(inline(document),inline(page.document),'Analytics code changed');
  const dashboard=doc=>[...doc.querySelectorAll('a[href*="dashboard.starhermit.com"]')].map(e=>e.getAttribute('href'));
  assert.deepEqual(dashboard(document),dashboard(page.document),'Dashboard destinations changed');
- const gameNames=doc=>[...doc.querySelectorAll('#play .grid-3 h3,.game-tile-name')].map(e=>e.textContent);
+ const gameNames=doc=>[...doc.querySelectorAll('.featured-card h3,.game-tile-name')].map(e=>e.textContent);
  assert.deepEqual(gameNames(document),gameNames(page.document));
  const addressLines=doc=>[...doc.querySelectorAll('address')].flatMap(e=>[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent.trim()).filter(s=>/West 7th Avenue|V6H 1B7/.test(s)));
  assert.deepEqual(addressLines(document),addressLines(page.document),'Registered mailing address changed');
