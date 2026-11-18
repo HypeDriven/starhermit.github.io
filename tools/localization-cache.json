@@ -346,7 +346,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "你的宇宙一角。",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · 未签名版本，因此 SmartScreen 会要求您确认",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64、glibc 2.35+ · 提取",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未签名构建，因此第一次按住 Control 键单击应用程序并选择“打开”"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未签名构建，因此第一次按住 Control 键单击应用程序并选择“打开”",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "桌面客户端可实现更好的帧速率！"
   },
   "hi": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "अंग्रेजी से मशीन-अनुवादित।",
@@ -695,7 +696,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "ब्रह्मांड का आपका कोना.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · अहस्ताक्षरित निर्माण, इसलिए स्मार्टस्क्रीन आपसे पुष्टि करने के लिए कहेगी",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · साथ निकालें",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · अहस्ताक्षरित बिल्ड, इसलिए पहली बार ऐप पर कंट्रोल-क्लिक करें और ओपन चुनें"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · अहस्ताक्षरित बिल्ड, इसलिए पहली बार ऐप पर कंट्रोल-क्लिक करें और ओपन चुनें",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "बेहतर फ्रैमरेट्स के लिए डेस्कटॉप क्लाइंट!"
   },
   "es": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traducido automáticamente del inglés.",
@@ -1044,7 +1046,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Tu rincón del cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · compilación sin firmar, por lo que SmartScreen le pedirá que confirme",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extraer con",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilación sin firmar, por lo que la primera vez presiona Control y haz clic en la aplicación y elige Abrir"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilación sin firmar, por lo que la primera vez presiona Control y haz clic en la aplicación y elige Abrir",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "¡Clientes de escritorio para mejores framerates!"
   },
   "ar": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "مترجم آليًا من الإنجليزية.",
@@ -1393,7 +1396,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "ركنك من الكون.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · إصدار غير موقع، لذا سيطلب منك SmartScreen التأكيد",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · استخراج مع",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · تصميم غير موقّع، لذلك في المرة الأولى، انقر مع الضغط على مفتاح التحكم على التطبيق واختر فتح"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · تصميم غير موقّع، لذلك في المرة الأولى، انقر مع الضغط على مفتاح التحكم على التطبيق واختر فتح",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "عملاء سطح المكتب للحصول على معدل إطارات أفضل!"
   },
   "fr": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduit automatiquement de l'anglais.",
@@ -1742,7 +1746,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Votre coin du cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · build non signé, donc SmartScreen vous demandera de confirmer",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extraire avec",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build non signé, donc la première fois Ctrl-cliquez sur l'application et choisissez Ouvrir"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build non signé, donc la première fois Ctrl-cliquez sur l'application et choisissez Ouvrir",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clients de bureau pour de meilleurs framerates !"
   },
   "bn": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "ইংরেজি থেকে মেশিন-অনুবাদিত।",
@@ -2091,7 +2096,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "মহাজাগতিক আপনার কোণে.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · স্বাক্ষরবিহীন বিল্ড, তাই স্মার্টস্ক্রিন আপনাকে নিশ্চিত করতে বলবে",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · এর সাথে নির্যাস",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · স্বাক্ষরবিহীন বিল্ড, তাই প্রথমবার অ্যাপে কন্ট্রোল-ক্লিক করুন এবং ওপেন নির্বাচন করুন"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · স্বাক্ষরবিহীন বিল্ড, তাই প্রথমবার অ্যাপে কন্ট্রোল-ক্লিক করুন এবং ওপেন নির্বাচন করুন",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "উন্নত ফ্রেমরেটের জন্য ডেস্কটপ ক্লায়েন্ট!"
   },
   "pt": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduzido automaticamente do inglês.",
@@ -2440,7 +2446,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Seu canto do cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · compilação não assinada, então o SmartScreen solicitará que você confirme",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extrair com",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilação não assinada, portanto, na primeira vez, clique com a tecla Control pressionada no aplicativo e escolha Abrir"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilação não assinada, portanto, na primeira vez, clique com a tecla Control pressionada no aplicativo e escolha Abrir",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clientes de desktop para melhores taxas de quadros!"
   },
   "id": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Diterjemahkan mesin dari bahasa Inggris.",
@@ -2789,7 +2796,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudut kosmos Anda.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · build tidak ditandatangani, jadi SmartScreen akan meminta Anda untuk mengonfirmasi",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak dengan",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jadi pertama kali Control-klik aplikasi dan pilih Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jadi pertama kali Control-klik aplikasi dan pilih Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop untuk Framerate Lebih Baik!"
   },
   "ur": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "انگریزی سے مشین کا ترجمہ۔",
@@ -3138,7 +3146,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "کائنات کا آپ کا کونا۔",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · غیر دستخط شدہ تعمیر، لہذا اسمارٹ اسکرین آپ سے تصدیق کرنے کو کہے گی۔",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64، glibc 2.35+ · اقتباس کے ساتھ",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · بغیر دستخط شدہ تعمیر، اس لیے پہلی بار ایپ کو کنٹرول پر کلک کریں اور اوپن کا انتخاب کریں۔"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · بغیر دستخط شدہ تعمیر، اس لیے پہلی بار ایپ کو کنٹرول پر کلک کریں اور اوپن کا انتخاب کریں۔",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "بہتر فریمریٹس کے لیے ڈیسک ٹاپ کلائنٹس!"
   },
   "de": {
     "2975104784a401e3880e2215550e9490eda7e67db5fc2b35e1a244acb092ced3": "Web",
@@ -3476,7 +3485,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Deine Ecke des Kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · unsignierter Build, daher fordert SmartScreen Sie zur Bestätigung auf",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · Extrahieren mit",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsignierter Build, also beim ersten Mal bei gedrückter Strg-Taste auf die App klicken und „Öffnen“ wählen"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsignierter Build, also beim ersten Mal bei gedrückter Strg-Taste auf die App klicken und „Öffnen“ wählen",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop-Clients für bessere Frameraten!"
   },
   "ja": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "英語からの機械翻訳。",
@@ -3814,7 +3824,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "あなたの宇宙の一角。",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · 未署名のビルドのため、SmartScreen は確認を求めます",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64、glibc 2.35+ · で抽出",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未署名のビルドなので、初回は Control キーを押しながらアプリをクリックし、[開く] を選択します"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未署名のビルドなので、初回は Control キーを押しながらアプリをクリックし、[開く] を選択します",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "デスクトップクライアントでフレームレートを向上!"
   },
   "nl": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Machinaal vertaald uit het Engels.",
@@ -4152,7 +4163,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Jouw hoekje van de kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · niet-ondertekende build, dus SmartScreen zal u vragen om te bevestigen",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · uitpakken met",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · niet-ondertekende build, dus de eerste keer Control-klik op de app en kies Openen"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · niet-ondertekende build, dus de eerste keer Control-klik op de app en kies Openen",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktopclients voor betere framerates!"
   },
   "it": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tradotto automaticamente dall'inglese.",
@@ -4490,7 +4502,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Il tuo angolo di cosmo.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · build non firmata, quindi SmartScreen ti chiederà di confermare",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · estrai con",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build non firmata, quindi la prima volta fai clic tenendo premuto il tasto Control sull'app e scegli Apri"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build non firmata, quindi la prima volta fai clic tenendo premuto il tasto Control sull'app e scegli Apri",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Client desktop per framerate migliori!"
   },
   "fi": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Konekäännetty englannista.",
@@ -4828,7 +4841,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sinun kulmasi kosmoksessa.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · allekirjoittamaton koontiversio, joten SmartScreen pyytää sinua vahvistamaan",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · pura",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · allekirjoittamaton koontiversio, joten ensimmäistä kertaa Control-osoita sovellusta ja valitse Avaa"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · allekirjoittamaton koontiversio, joten ensimmäistä kertaa Control-osoita sovellusta ja valitse Avaa",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop-asiakkaat parempiin kehysten toistoon!"
   },
   "sv": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Maskinöversatt från engelska.",
@@ -5166,7 +5180,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Ditt hörn av kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · osignerad build, så SmartScreen kommer att be dig bekräfta",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extrahera med",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · osignerad build, så första gången Control-klicka på appen och välj Öppna"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · osignerad build, så första gången Control-klicka på appen och välj Öppna",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop-klienter för bättre ramhastigheter!"
   },
   "et": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Inglise keelest masintõlge.",
@@ -5504,7 +5519,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sinu kosmose nurk.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · allkirjastamata järg, nii et SmartScreen palub teil kinnitada",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstraktida koos",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · allkirjastamata järg, nii et esimest korda klõpsake rakendusel Control-klahvi ja valige Ava"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · allkirjastamata järg, nii et esimest korda klõpsake rakendusel Control-klahvi ja valige Ava",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Lauaarvutikliendid paremate kaadrite jaoks!"
   },
   "vi": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Máy dịch từ tiếng Anh.",
@@ -5842,7 +5858,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Góc vũ trụ của bạn.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 11/10 · bản dựng chưa được ký, vì vậy SmartScreen sẽ yêu cầu bạn xác nhận",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · giải nén bằng",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bản dựng chưa được ký, vì vậy lần đầu tiên Control-nhấp vào ứng dụng và chọn Mở"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bản dựng chưa được ký, vì vậy lần đầu tiên Control-nhấp vào ứng dụng và chọn Mở",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Máy khách để bàn để có tốc độ khung hình tốt hơn!"
   },
   "ms": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Diterjemah mesin daripada bahasa Inggeris.",
@@ -6180,7 +6197,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudut kosmos anda.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · binaan tidak ditandatangani, jadi SmartScreen akan meminta anda mengesahkan",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak dengan",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · binaan tidak ditandatangani, jadi pada kali pertama Control-klik apl dan pilih Buka"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · binaan tidak ditandatangani, jadi pada kali pertama Control-klik apl dan pilih Buka",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Pelanggan Desktop untuk Kadar Bingkai yang Lebih Baik!"
   },
   "ta": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "இயந்திரம் ஆங்கிலத்தில் இருந்து மொழிபெயர்க்கப்பட்டது.",
@@ -6518,7 +6536,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "பிரபஞ்சத்தின் உங்கள் மூலை.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · கையொப்பமிடப்படாத உருவாக்கம், எனவே SmartScreen உங்களை உறுதிப்படுத்தும்படி கேட்கும்",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · உடன் பிரித்தெடுக்கவும்",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · கையொப்பமிடப்படாத உருவாக்கம், எனவே முதல் முறையாக பயன்பாட்டைக் கண்ட்ரோல் கிளிக் செய்து திற என்பதைத் தேர்ந்தெடுக்கவும்"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · கையொப்பமிடப்படாத உருவாக்கம், எனவே முதல் முறையாக பயன்பாட்டைக் கண்ட்ரோல் கிளிக் செய்து திற என்பதைத் தேர்ந்தெடுக்கவும்",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "சிறந்த ஃப்ரேமரேட்டுகளுக்கான டெஸ்க்டாப் கிளையண்ட்கள்!"
   },
   "zh-HK": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "從英語機器翻譯。",
@@ -6856,7 +6875,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "你的宇宙一角。",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · 未簽名版本，因此 SmartScreen 會要求您確認",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64、glibc 2.35+ · 提取",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未簽名構建，因此第一次按住 Control 鍵單擊應用程式並選擇“打開”"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未簽名構建，因此第一次按住 Control 鍵單擊應用程式並選擇“打開”",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "桌面用戶端可實現更好的幀速率！"
   },
   "yue-HK": {
     "2975104784a401e3880e2215550e9490eda7e67db5fc2b35e1a244acb092ced3": "網絡",
@@ -7194,7 +7214,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "你嘅宇宙角落。",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · 未簽名砌機，所以 SmartScreen 會問你確認",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86 _ 64， glibc 2.35 + · 提取与",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未簽名版本，所以第一次按住 Control 鍵按一下應用程式，然後選擇開啟"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · 未簽名版本，所以第一次按住 Control 鍵按一下應用程式，然後選擇開啟",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "桌面客戶端為更好嘅框架！"
   },
   "ca": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduït automàticament de l'anglès.",
@@ -7532,7 +7553,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "El teu racó del cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · compilació sense signar, de manera que SmartScreen us demanarà que confirmeu",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extracte amb",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilació sense signar, de manera que la primera vegada, premeu Control i feu clic a l'aplicació i trieu Obre"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilació sense signar, de manera que la primera vegada, premeu Control i feu clic a l'aplicació i trieu Obre",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clients d'escriptori per a millors freqüències de fotogrames!"
   },
   "eu": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Ingelesetik automatikoki itzulita.",
@@ -7870,7 +7892,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Zure kosmoseko txokoa.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · sinatutako eraikuntza, beraz, SmartScreen-ek berresteko eskatuko dizu",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · atera batekin",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · sinadurarik gabeko eraikuntza, beraz, lehen aldian, egin klik aplikazioan Kontrol eta egin klik Ireki"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · sinadurarik gabeko eraikuntza, beraz, lehen aldian, egin klik aplikazioan Kontrol eta egin klik Ireki",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Mahaigaineko bezeroak fotograma-tasa hobeetarako!"
   },
   "gl": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tradución automática do inglés.",
@@ -8208,7 +8231,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "O teu recuncho do cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · compilación sen asinar, polo que SmartScreen che pedirá que confirmes",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extraer con",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilación sen asinar, polo que a primeira vez prema Control-clic na aplicación e escolla Abrir"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilación sen asinar, polo que a primeira vez prema Control-clic na aplicación e escolla Abrir",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clientes de escritorio para mellores velocidades de fotogramas!"
   },
   "oc": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduch automatic de l'anglés.",
@@ -8546,7 +8570,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Lo vòstre canton del cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · version non signada, doncas SmartScreen vos demandarà de confirmar",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extraire amb",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · version non signada, doncas lo primièr còp contraròtle clicatz sus l'aplicacion e causissètz Dobrir"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · version non signada, doncas lo primièr còp contraròtle clicatz sus l'aplicacion e causissètz Dobrir",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clients de burèu per de melhoras frequéncias d'imatges!"
   },
   "fy": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Machine-oerset út it Ingelsk.",
@@ -8884,7 +8909,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Jo hoeke fan 'e kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · net ûndertekene build, dus SmartScreen sil jo freegje om te befêstigjen",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · útpakke mei",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · net ûndertekene build, dus de earste kear Control-klikje op de app en kies Iepenje"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · net ûndertekene build, dus de earste kear Control-klikje op de app en kies Iepenje",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Buroblêdkliïnten foar bettere framerates!"
   },
   "li": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Masjien vertaald oet ‘t Ingels.",
@@ -9222,7 +9248,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Uw hook vaan de kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · unsigned build, dus SmartScreen zal uch vraoge um te bevestige",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extract mit",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, dus de ierste keer Control-klik op de app en kies Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, dus de ierste keer Control-klik op de app en kies Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktopcliënte veur baeter framerates!"
   },
   "da": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Maskinoversat fra engelsk.",
@@ -9560,7 +9587,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Dit hjørne af kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · usigneret build, så SmartScreen vil bede dig om at bekræfte",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · udtræk med",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · usigneret build, så første gang Ctrl-klik på appen og vælg Åbn"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · usigneret build, så første gang Ctrl-klik på appen og vælg Åbn",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop-klienter for bedre framerates!"
   },
   "br": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Troet dre ardivink diwar ar saozneg.",
@@ -9898,7 +9926,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Ho korn eus ar c'hosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · sevel hep sin, setu e c'houlenno SmartScreen diganeoc'h kadarnaat",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · tennañ gant",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · sevel hep sin, setu ar wech kentañ klikañ war an arload ha dibab Digeriñ"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · sevel hep sin, setu ar wech kentañ klikañ war an arload ha dibab Digeriñ",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Kliented burev evit gwelloc'h frekañsoù frammoù !"
   },
   "co": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduttu in macchina da l'inglese.",
@@ -10236,7 +10265,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "U vostru angulu di u cosmu.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · custruzione senza firma, cusì SmartScreen vi dumandarà di cunfirmà",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extract with",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build senza firmatu, cusì a prima volta Control-cliccate l'app è sceglite Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build senza firmatu, cusì a prima volta Control-cliccate l'app è sceglite Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clienti Desktop per Framerate megliu!"
   },
   "fur": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tradusût a machine dal inglês.",
@@ -10574,7 +10604,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Il to cjanton dal cosmi.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 11/10 · compilazion cence firma, cussì SmartScreen al domandarà di confermâ",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · estrai cun",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilazion cence firma, cussì la prime volte Control-clic su la aplicazion e sielzi Viert"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilazion cence firma, cussì la prime volte Control-clic su la aplicazion e sielzi Viert",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clients dal schermi par miôrs cuadris!"
   },
   "sl": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Strojno prevedeno iz angleščine.",
@@ -10912,7 +10943,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Vaš kotiček vesolja.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · nepodpisana zgradba, zato vas bo SmartScreen prosil za potrditev",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrakt z",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · nepodpisana zgradba, tako da prvič, ko pritisnete tipko Control, kliknite aplikacijo in izberite Odpri"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · nepodpisana zgradba, tako da prvič, ko pritisnete tipko Control, kliknite aplikacijo in izberite Odpri",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Namizni odjemalci za boljše število sličic!"
   },
   "el": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Μηχανική μετάφραση από τα αγγλικά.",
@@ -11250,7 +11282,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Η γωνιά σου του σύμπαντος.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ανυπόγραφη κατασκευή, οπότε το SmartScreen θα σας ζητήσει να επιβεβαιώσετε",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · εξαγωγή με",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ανυπόγραφη κατασκευή, οπότε την πρώτη φορά κάντε Control-κλικ στην εφαρμογή και επιλέξτε Άνοιγμα"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ανυπόγραφη κατασκευή, οπότε την πρώτη φορά κάντε Control-κλικ στην εφαρμογή και επιλέξτε Άνοιγμα",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Πελάτες για επιτραπέζιους υπολογιστές για καλύτερα καρέ!"
   },
   "sq": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Përkthyer me makinë nga anglishtja.",
@@ -11588,7 +11621,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Këndi juaj i kozmosit.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ndërtim i panënshkruar, kështu që SmartScreen do t'ju kërkojë të konfirmoni",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrakt me",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ndërtim i panënshkruar, kështu që herën e parë Kontrollo-kliko aplikacionin dhe zgjidh Hap"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ndërtim i panënshkruar, kështu që herën e parë Kontrollo-kliko aplikacionin dhe zgjidh Hap",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klientë desktop për korniza më të mira!"
   },
   "hr": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Strojni prijevod s engleskog.",
@@ -11926,7 +11960,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Vaš kutak kosmosa.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · nepotpisana verzija, pa će SmartScreen tražiti potvrdu",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrakt s",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · nepotpisana verzija, tako da prvi put Control-kliknite aplikaciju i odaberite Otvori"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · nepotpisana verzija, tako da prvi put Control-kliknite aplikaciju i odaberite Otvori",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klijenti za stolna računala za bolji broj sličica u sekundi!"
   },
   "rom": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Mašinako-traducime katar i anglikani ćhib.",
@@ -12264,7 +12299,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Tumaro kotor e kosmososko.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · bi-xramosardo kerdo, odolesqe o SmartScreen ka mangel tut te konfirmisares",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · te lel pes avri",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bi-xramosardo kerdo, odolesqe kana o angluno drom Control-klik pe app thaj alosar Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bi-xramosardo kerdo, odolesqe kana o angluno drom Control-klik pe app thaj alosar Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop Klientia vash maj lache Framerates!"
   },
   "se": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Mašiidnajorgaluvvon eaŋgalasgielas.",
@@ -12602,7 +12638,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Du čoarvi kosmosas.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · signed build, nu ahte SmartScreen bivdá du duođaštit",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · čoaggit",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · signed build, nu ahte vuosttaš geardde Control-deaddilat áppa ja válljet Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · signed build, nu ahte vuosttaš geardde Control-deaddilat áppa ja válljet Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Dihtorklieanttat buoret rámmaid várás!"
   },
   "jv": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Mesin-diterjemahake saka Inggris.",
@@ -12940,7 +12977,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Panjenengan pojok kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · mbangun tanpa tandha, mula SmartScreen bakal njaluk sampeyan konfirmasi",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak karo",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mbangun unsigned, supaya pisanan Control-klik app banjur pilih Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mbangun unsigned, supaya pisanan Control-klik app banjur pilih Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop kanggo Framerates Luwih!"
   },
   "su": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Mesin-ditarjamahkeun tina basa Inggris.",
@@ -13278,7 +13316,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudut anjeun tina kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ngawangun teu ditandatanganan, janten SmartScreen bakal naroskeun anjeun pikeun mastikeun",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · sari jeung",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ngawangun unsigned, jadi kahiji waktos Control-klik aplikasi tur pilih Buka"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ngawangun unsigned, jadi kahiji waktos Control-klik aplikasi tur pilih Buka",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klién Desktop pikeun Framerates Langkung Saé!"
   },
   "mad": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "èterjemahaghi mesin dâri bhâsa Inggris.",
@@ -13616,7 +13655,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Pojok kosmos be'na.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ta' ètandatangani, dâddhi SmartScreen bhâkal nyo'on konfirmasi",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak kalabân",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, dâddhi pertama kalè Control-klik app bân pilih Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, dâddhi pertama kalè Control-klik app bân pilih Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop kaangghuy Framerate sè lebbi beccè'!"
   },
   "min": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Ditarjamahan jo masin dari bahaso Inggirih.",
@@ -13954,7 +13994,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Suduik kosmos ko.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · bangunan alun ditandotangani, jadi Layar Pintar akan mamintak Sanak untuak mamastian",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · ekstrak jo",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mambangun indak batando tangan, jadi partamo kali Kontrol-klik aplikasi dan piliah Buka"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mambangun indak batando tangan, jadi partamo kali Kontrol-klik aplikasi dan piliah Buka",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Meja untuak Bingkai nan Labiah Elok!"
   },
   "ban": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Katerjemahang antuk mesin saking basa Inggris.",
@@ -14292,7 +14333,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Bucu kosmos semetone.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · wangunan sané durung madaging tanda tangan, dadosnyané Layar Pintar pacang nunas Sameton mangda mastikayang",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · ekstrak sareng",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · wangunan sane nenten katanda tanganin, dadosnyane kapertama Kontrol-klik aplikasi lan pilih Bukak"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · wangunan sane nenten katanda tanganin, dadosnyane kapertama Kontrol-klik aplikasi lan pilih Bukak",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop anggén Bingkai sané Becikan!"
   },
   "ace": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Meusén-geuterjeumah nibak basa Inggréh.",
@@ -14630,7 +14672,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudut awak kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · bangunan hana tandatangan, jadi SmartScreen akan geulakèe droeneuh neukonfirmasi",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · ekstrak ngon",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build hana tandatangan, jadi phon that Kontrol-klik aplikasi dan pileh Buka ."
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build hana tandatangan, jadi phon that Kontrol-klik aplikasi dan pileh Buka .",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop keu Bingkai nyang Leubeh Get!"
   },
   "bbc": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Diterjemahon mesin sian hata Inggris.",
@@ -14968,7 +15011,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudutmu di kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · bangunan na so ditandatangani, jadi dipangido Layar Pintar ma hamu laho paposhon rohamuna",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "2,35+ · ekstrak dengan",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bangunan na so martanda tangan, jadi parjolo sahali Kontrol-klik ma aplikasi i jala pilih Buka ."
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · bangunan na so martanda tangan, jadi parjolo sahali Kontrol-klik ma aplikasi i jala pilih Buka .",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Meja asa lam denggan bingkai!"
   },
   "mak": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Niterjemahkan mesin battu ri bahasa inggris.",
@@ -15306,7 +15350,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudu'nu ri kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · unsigned build, jari SmartScreen lanapa'kuta'nang ri kau untu' ampa'nassai",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak siagang",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jari uru-uruna Control-klik app na pilei Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jari uru-uruna Control-klik app na pilei Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien desktop untuk framerate yang lebih baik!"
   },
   "bew": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Diterjemahin mesin dari bahasa Inggris.",
@@ -15644,7 +15689,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Sudut dunia lu.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · unsigned build, jadi SmartScreen bakal minta lu buat konfirmasi",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ekstrak dengan",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jadi pertama kali Control-klik aplikasi dan pilih Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned build, jadi pertama kali Control-klik aplikasi dan pilih Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Klien Desktop untuk Framerate yang Lebih Baik!"
   },
   "hmn": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tshuab txhais los ntawm Lus Askiv.",
@@ -15982,7 +16028,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Koj ces kaum ntawm lub cosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · unsigned tsim, yog li SmartScreen yuav nug koj kom paub meej",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · extract with",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned tsim, yog li thawj zaug Tswj-nias lub app thiab xaiv Qhib"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · unsigned tsim, yog li thawj zaug Tswj-nias lub app thiab xaiv Qhib",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Cov neeg siv khoom Desktop rau qhov zoo dua Framerates!"
   },
   "km": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "ម៉ាស៊ីនបកប្រែពីភាសាអង់គ្លេស។",
@@ -16320,7 +16367,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "ជ្រុងរបស់អ្នកនៃ cosmos ។",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ការស្ថាបនាដែលមិនបានចុះហត្ថលេខា ដូច្នេះ SmartScreen នឹងសួរអ្នកឱ្យបញ្ជាក់",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ស្រង់ចេញជាមួយ",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ការបង្កើតដែលមិនបានចុះហត្ថលេខា ដូច្នេះជាលើកដំបូង គ្រប់គ្រង-ចុចកម្មវិធី ហើយជ្រើសរើស បើក"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ការបង្កើតដែលមិនបានចុះហត្ថលេខា ដូច្នេះជាលើកដំបូង គ្រប់គ្រង-ចុចកម្មវិធី ហើយជ្រើសរើស បើក",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "អតិថិជន Desktop សម្រាប់ Framerates កាន់តែប្រសើរ!"
   },
   "qu": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Inglés simimanta makinawan tikrasqa.",
@@ -16658,7 +16706,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Cosmospa k’uchuyki.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · mana firmasqa ruway, chayrayku SmartScreen takyachinaykipaq mañasunki",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · hurquywan",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mana firmasqa ruway, chayrayku ñawpaq kuti Control-click app kaqpi chaymanta akllay Kichay"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · mana firmasqa ruway, chayrayku ñawpaq kuti Control-click app kaqpi chaymanta akllay Kichay",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "¡Allin Enmarcadores nisqapaq Clientes de Escritorio!"
   },
   "gn": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Ombohasa máquina-pe inglés-gui.",
@@ -16996,7 +17045,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Nde esquina cosmos rehegua.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · ñemopu’ã ndojehaipáiva, upévare SmartScreen ojeruréta ndéve emoañete hag̃ua",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ojeipe’a hendive",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ñemopu’ã ndojehaipáiva, upévare peteĩha jey Control-pe eñemboguejy pe app ha eiporavo Eipe’a"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · ñemopu’ã ndojehaipáiva, upévare peteĩha jey Control-pe eñemboguejy pe app ha eiporavo Eipe’a",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "¡Cliente escritorio rehegua umi enmarcador iporãvévape g̃uarã!"
   },
   "ay": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Inglés arut maquinat jaqukipata.",
@@ -17334,7 +17384,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Ukax cosmos ukan esquinapawa.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · jan firmatäki uka lurawi, ukhamax SmartScreen ukax chiqañchañatakiw mayini",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · ukax mä juk’a pachanakanwa",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · jan chimpuntata lurawi, ukhama nayrïri kuti Control-click app ukaru ukatxa Open ukxa ajlliñamawa"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · jan chimpuntata lurawi, ukhama nayrïri kuti Control-click app ukaru ukatxa Open ukxa ajlliñamawa",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "¡Clientes de escritorio ukax juk’amp suma enmarcadores ukanakatakiw utji!"
   },
   "vec": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tradotto automatico da l'inglese.",
@@ -17672,7 +17723,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "El tuo canton del cosmo.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · build sensa firma, quindi SmartScreen el te domandarà de confermar",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · estratto con",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build sensa firma, quindi ła prima volta clicca su l’app e scegli Apri"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · build sensa firma, quindi ła prima volta clicca su l’app e scegli Apri",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clienti desktop pa framerate mèjo!"
   },
   "lij": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduto à machina da l'ingleise.",
@@ -18010,7 +18062,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "O to canto do còsmo.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 11/10 · compilaçion no firmâ, donca SmartScreen o ti domandià de confermâ",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · estræto con",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilaçion no firmâ, donca a primma vòtta Controllo-clic in sce l'app e çerne Aprî"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilaçion no firmâ, donca a primma vòtta Controllo-clic in sce l'app e çerne Aprî",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clienti pe desktop pe megio frame!"
   },
   "lmo": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Tradott a machina dal inglès.",
@@ -18348,7 +18401,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "El tò cantun del univers.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 11/10 · compilaziun minga firmà, donca SmartScreen v’el dumandarà de cunfermar",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · estratt cun",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilaziun minga firmà, donca la prima volta cuntrula clic sü l'app e scegli Apri"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · compilaziun minga firmà, donca la prima volta cuntrula clic sü l'app e scegli Apri",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Client desktop per una frequenza de fotogramm püsee bon!"
   },
   "scn": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Traduttu a màchina di l'inglisi.",
@@ -18686,7 +18740,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Lu to àngulu dû cosmu.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · cumpilazzioni nun firmata, quinni SmartScreen ti dumannarà di cunfirmari",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2,35+ · estrattu cu",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · cumpilazzioni senza firma, quinni la prima vota Cuntrolla-cliccari l'app e scègghiri Apri"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · cumpilazzioni senza firma, quinni la prima vota Cuntrolla-cliccari l'app e scègghiri Apri",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Clienti desktop pi megghiu quatri!"
   },
   "lb": {
     "4f8db846e753b6680ba90896876aff787ad8c917b5f083555bcb850a88f38c76": "Maschinn iwwersat aus Englesch.",
@@ -19024,7 +19079,8 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Ären Eck vum Kosmos.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · net ënnerschriwwen Build, sou datt SmartScreen Iech freet ze bestätegen",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · Extrait mat",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · net ënnerschriwwen Build, also déi éischte Kéier Kontroll-klickt op d'App a wielt Open"
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · net ënnerschriwwen Build, also déi éischte Kéier Kontroll-klickt op d'App a wielt Open",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Desktop Cliente fir Besser Framerates!"
   },
   "_meta": {
     "protected_names_hash": "bc3a3a56f67e413d6f18dc70ea89898ef2bfe5557c58470423706879df08e96f"
@@ -19335,6 +19391,7 @@
     "e292c743a73d3385b17b2e764fd4da491cc01fe5dda7d4e093757ee0b5ee42f9": "Ваш уголок космоса.",
     "854c3d97d900a274a72959d86348cdd00e25ee1733f3de8a4b47928e3ad9bcfc": "Windows 10/11 · сборка неподписанная, поэтому SmartScreen запросит подтверждение",
     "efb2c2143f0faf266e541a9e0f86b85f9dfc358abb9154aefd9726d0658f8447": "x86_64, glibc 2.35+ · извлечь с помощью",
-    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · неподписанная сборка, поэтому в первый раз щелкните приложение, удерживая клавишу Control, и выберите «Открыть»."
+    "f3f7a427ced563d0105ff2b86c5ced81796586cfc916b667e9ddccc96aaa1023": "macOS 11+ · неподписанная сборка, поэтому в первый раз щелкните приложение, удерживая клавишу Control, и выберите «Открыть».",
+    "256707de72a0861173c2ca49a4973383fc4add666bd2634a495b066fdee0fede": "Настольные клиенты для лучшей частоты кадров!"
   }
 }

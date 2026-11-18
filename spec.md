@@ -43,7 +43,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
    destination through sign-in and the Terms gate.
 3. **Publishing** (`#developers`) — a short pitch for vibe-coded games, free server access, and creator-chosen
    monetization. The steps are sign in and click **Add Game**. Platform and integration details live in the wiki.
-4. **Desktop clients** (`#download`) — an initially expanded disclosure with blue Windows, Linux and macOS download buttons and platform requirements.
+4. **Desktop Clients for Better Framerates!** (`#download`) — an initially expanded disclosure with blue Windows, Linux and macOS download buttons and platform requirements.
 
 The footer links to the dashboard, developer wiki, desktop clients, Discord, and legal and security pages.
 
