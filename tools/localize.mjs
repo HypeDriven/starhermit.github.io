@@ -12,7 +12,7 @@ export const regions=JSON.parse(await readFile(resolve(root,'localization/region
 const overrides=JSON.parse(await readFile(resolve(root,'localization/overrides.json'),'utf8'));
 // The separately deployed wiki currently provides only the original ten languages.
 const wikiLanguages=new Set(['en','zh-CN','hi','es','ar','fr','bn','pt','id','ur']);
-const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','WebAssembly','OAuth']);
+const protectedNames=new Set(['STAR','HERMIT','STARHERMIT','StarHermit','Crown & Chasm','Blind Magus','Null Range','Turds','Sky Lobby','Iron Curtain: 1983','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','Android','WebAssembly','OAuth']);
 // Registered company/address lines are identifiers, not prose to paraphrase.
 for(const name of ['StarHermit — Hype Driven Development Inc., Vancouver, BC.','102-1275 West 7th Avenue','Vancouver, British Columbia V6H 1B7'])protectedNames.add(name);
 const ui={notice:'Machine-translated from English.',original:'Read the English original'};

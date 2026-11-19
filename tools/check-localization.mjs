@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { root, languages, regions, corpus, sha } from './localize.mjs';
 const {pages,strings}=await corpus();
 const gameTitles=[...pages[0].document.querySelectorAll('.featured-card h3,.game-tile-name')].map(e=>e.textContent.trim());
-const preservedNames=['StarHermit','STARHERMIT','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','WebAssembly','OAuth',...gameTitles];
+const preservedNames=['StarHermit','STARHERMIT','Hype Driven Development Inc.','Google','GitHub','Discord','Windows','Linux','macOS','Android','WebAssembly','OAuth',...gameTitles];
 const manifest=JSON.parse(await readFile(resolve(root,'localization/manifest.json'),'utf8'));
 const byURL=new Map();
 const languageCodes=Object.keys(languages);

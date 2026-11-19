@@ -30,6 +30,7 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `downloads/StarHermit-linux-x86_64.tar.gz` | The published production build of the Linux client (`../starhermit-client/starhermit-linux-client`) as a tarball, which keeps the executable bit a browser download would drop. This is what the Linux download card links to. |
 | `downloads/starhermit-client-linux-x86_64` | The same Linux build as a bare executable: the file the Linux client's self-updater downloads and swaps in. Not linked from the page. |
 | `downloads/StarHermit-macos-universal.zip` | The published production build of the macOS client (`../starhermit-client/starhermit-osx-client`, `tools/bundle.sh --production` on a Mac): `StarHermit.app`, universal (Apple silicon and Intel), ad-hoc signed, zipped with `ditto`. It has no entry in `version.json` yet, so the macOS client does not update itself. |
+| `downloads/StarHermit-android.apk` | The published production build of the Android client (`../starhermit-client/starhermit-android-client`, `tools/build-apk.sh`): arm64-v8a and x86_64, Android 9+ (API 28), the engine's Android runtime bundled, signed with the StarHermit release key (`~/.android/starhermit-release.keystore` on the deploy machine; every later APK must use the same key or installed copies cannot update). It has no `version.json` entry: an APK cannot replace itself, so players install a newer one over it. |
 | `downloads/version.json` | The clients' self-update manifest, written by the production deploy script with each build: `{"version","url","size","sha256"}` for `StarHermit.exe` at the top level (all the older C++ Windows clients can read), plus the same four members per platform under `platforms` (`windows-x86_64`, `linux-x86_64`), which the current clients read. A production client checks it at start and periodically; when its platform's entry names a newer version it downloads the build, checks size and SHA-256, and replaces itself. Publish manifest and builds together: an entry whose hash does not match its file is ignored until they agree. |
 | `tools/stamp_client_version.py` | Compatibility entry point for the production deploy script. Validates arguments without stamping the homepage. |
 | `StarHermit_Terms_of_Service.docx` | The authoritative Terms of Service document. The web dashboard's `terms.txt` is generated from this file (`../starhermit-com-dashboard/tools/extract_terms.py`) — changing the terms here changes the dashboard's hash and re-prompts every user. |
@@ -46,9 +47,9 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
    destination through sign-in and the Terms gate.
 3. **Publishing** (`#developers`) — a short pitch for vibe-coded games, free server access, and creator-chosen
    monetization. The steps are sign in and click **Add Game**. Platform and integration details live in the wiki.
-4. **Desktop Clients for Better Framerates!** (`#download`) — an initially expanded disclosure with amber Windows, Linux and macOS download buttons and platform requirements.
+4. **Native Clients for Better Framerates!** (`#download`) — an initially expanded disclosure with amber Windows, Linux, macOS and Android download buttons and platform requirements.
 
-The footer links to the dashboard, developer wiki, desktop clients, Discord, and legal and security pages.
+The footer links to the dashboard, developer wiki, native clients, Discord, and legal and security pages.
 
 ### Search and AI discoverability
 

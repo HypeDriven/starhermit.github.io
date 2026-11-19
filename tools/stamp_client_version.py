@@ -9,7 +9,7 @@ publishes the separate downloads/version.json manifest for the self-updater.
 import re
 import sys
 
-PLATFORMS = ("windows", "linux", "macos")
+PLATFORMS = ("windows", "linux", "macos", "android")
 
 
 def main() -> int:
