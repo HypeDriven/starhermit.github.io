@@ -37,6 +37,15 @@ try{
     assert.equal(await page.locator('.language-option').count(),Object.keys(languages).length);
     assert.equal(await page.locator('.language-picker summary img').getAttribute('src'),locale.flag);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`${locale.code} homepage ${width} overflow`);
+    assert.equal(await page.locator('.hero-title').evaluate(heading=>heading.scrollWidth<=heading.clientWidth+2),true,`${locale.code} hero title ${width} overflow`);
+    const observatoryArtwork = await page.locator('.observatory-art img').evaluate(img => ({
+     loaded: img.complete && img.naturalWidth > 0,
+     path: new URL(img.currentSrc).pathname,
+    }));
+    assert.deepEqual(observatoryArtwork, {
+     loaded: true,
+     path: width <= 680 ? '/img/observatory-mobile.webp' : '/img/observatory.webp',
+    });
     assert.equal(await page.locator('.hero-visual img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
     assert.match(await page.locator('.hero-feature').getAttribute('href'),/^https:\/\/dashboard\.starhermit\.com\/play\//);
     assert.equal(await page.locator('.featured-card a').count(),5);
@@ -49,6 +58,8 @@ try{
    console.log(`${width}px: ${locale.code} ${checkHomepage?'homepage and ':''}privacy passed`);
   }
   if(checkHomepage){
+   await page.evaluate(()=>localStorage.setItem('starhermit-language','en'));
+   await page.goto(base+'/');
    const arms=await page.locator('[data-feature-arm]').evaluateAll(items=>items.map(item=>item.dataset.featureArm));
    assert.equal(new Set(arms).size,14);
    for(const arm of arms){

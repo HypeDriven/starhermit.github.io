@@ -63,11 +63,11 @@
   "pages": {
     "index.html": {
       "url": "/",
-      "hash": "15da6cb9e09b94c28325a28d93aed9b0a82622a44d704cbf00aa05bf035e45e5"
+      "hash": "463859ab32bcb185e0c132b5a3655f30db6cdc8f2c122fb72f3e5df7bd04f761"
     },
     "privacy.html": {
       "url": "/privacy.html",
-      "hash": "a22446963b7785dd82177093b64feb40214dad7297bc77f1fde2537b3d40076a"
+      "hash": "8f0d28e65e515e6e02a6d7e7ba5b3d56548fc5151398c9abd758a52741c54345"
     }
   },
   "experiment_hash": "9c73854aa78b064b6619d7d38912b9864c68a089dc56f7a499a5862524b551b3"

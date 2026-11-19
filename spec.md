@@ -20,10 +20,11 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 | `robots.txt` | Allows public pages and assets to search engines and AI search crawlers; excludes development tools and workspace documentation, and advertises the sitemap. |
 | `sitemap.xml` | Lists the English homepage/privacy policy and all 114 translated URLs (58 languages, 116 URLs); excludes prototypes, downloads, fragment links and authenticated subdomains. |
 | `llms.txt` | A concise public site guide with factual playing/publishing information and official links, including sign-in, age requirements and the payment roadmap. Supplementary discovery information, not an indexing or ranking guarantee. |
-| `img/starhermit-social.svg`, `img/starhermit-social.png` | Native brand artwork and its 1200 × 630 PNG export for social previews. Regenerate with `rsvg-convert img/starhermit-social.svg -o img/starhermit-social.png`. |
+| `img/observatory.webp`, `img/observatory-mobile.webp`, `img/observatory-mark.svg` | Wide hero artwork, a closer mobile crop, and the observatory mark used for navigation and favicons. |
+| `img/starhermit-social.svg`, `img/starhermit-social.png` | The observatory artwork and StarHermit wordmark composed into a 1200 × 630 social preview. Regenerate with `rsvg-convert img/starhermit-social.svg -o img/starhermit-social.png`. |
 | `main.js` | UI behaviour only: a `js` class stamped on `<html>` as its first act (see below), reveal-on-scroll via `IntersectionObserver` (with a no-observer fallback that reveals everything), a `scrolled` class on the nav past the hero fold, and the footer year |
 | `bg.js` | The deep-space background: a single fullscreen WebGL shader pass — Hubble-palette nebula, parallax starfields, a spiral galaxy, and a black hole with accretion disk and gravitational lensing. The camera pans as the page scrolls and keeps gliding while idle. A **lite mode** for coarse-pointer or small screens uses a cheaper shader, a smaller render target and a capped frame rate that drops further when idle. Absent WebGL, the canvas simply stays out of the way. |
-| `img/*.webp` | Featured artwork for Crown & Chasm, Blind Magus, Turds, Sky Lobby and Iron Curtain: 1983, plus a retained Null Range asset. The hero preserves the artwork’s aspect ratio. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
+| `img/*.webp` | Featured artwork for Crown & Chasm, Blind Magus, Turds, Sky Lobby and Iron Curtain: 1983, plus a retained Null Range asset. Committed as static assets rather than hotlinked from the API: the API's `/cover` falls back to a favicon or a placeholder for games without one, and original covers can be large PNGs. |
 | `img/games/*.webp` | Game-wall cover assets, 320px square (~16 KB each), named after the game's folder. They were cut from each game's own `cover=` art, or from its uploaded cover where the repo has none. |
 | `downloads/StarHermit.exe` | The published production build of the Windows client (`../starhermit-client/starhermit-windows-client`), committed here so the download link is a static asset |
 | `downloads/StarHermit-linux-x86_64.tar.gz` | The published production build of the Linux client (`../starhermit-client/starhermit-linux-client`) as a tarball, which keeps the executable bit a browser download would drop. This is what the Linux download card links to. |
@@ -35,15 +36,17 @@ calls no API of its own; the only third-party runtime dependency is Google Analy
 
 ## Sections
 
-1. **Hero** — “Free online games” leads with a featured game’s artwork, a direct play link, and
-   **Browse Games** to jump to the library. The header offers Games, Developers, Sign In, and the language picker.
+1. **Hero** — a remote observatory tower takes its cues from a lighthouse keeper’s station. Midnight blue,
+   ivory serif headings and the warmth of the tower’s amber window carry through to the library and publishing panel.
+   “Free online games” and **Browse Games** lead into the library, with a compact direct link to the featured game.
+   The header offers Games, Developers, Sign In, and the language picker.
 2. **Game library** (`#play`) — five fixed covers plus nine more games in a native disclosure.
    The list is a November 18, 2026 snapshot filtered to live games with a production average of at least 2/5 and at least one rating.
    Every game link goes through `https://dashboard.starhermit.com/play/<game-id>`, which preserves the
    destination through sign-in and the Terms gate.
 3. **Publishing** (`#developers`) — a short pitch for vibe-coded games, free server access, and creator-chosen
    monetization. The steps are sign in and click **Add Game**. Platform and integration details live in the wiki.
-4. **Desktop Clients for Better Framerates!** (`#download`) — an initially expanded disclosure with blue Windows, Linux and macOS download buttons and platform requirements.
+4. **Desktop Clients for Better Framerates!** (`#download`) — an initially expanded disclosure with amber Windows, Linux and macOS download buttons and platform requirements.
 
 The footer links to the dashboard, developer wiki, desktop clients, Discord, and legal and security pages.
 
