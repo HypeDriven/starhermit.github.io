@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.starhermit.client",
+      "sha256_cert_fingerprints": [
+        "63:AE:CA:57:65:A7:27:56:16:D8:45:BD:04:CF:93:5C:B3:70:00:3A:4B:04:08:12:15:47:48:27:FB:5C:45:61"
+      ]
+    }
+  }
+]

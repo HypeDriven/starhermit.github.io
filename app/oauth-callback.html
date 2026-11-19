@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Return to StarHermit</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #15161a; color: #d6d7dc; margin: 0; padding: 2em 16px; }
+  main { max-width: 32em; margin: 0 auto; }
+  a.button { display: inline-block; margin-top: 1em; padding: .8em 1.4em; border-radius: 6px;
+             background: #2196f3; color: #fff; text-decoration: none; font-weight: 600; }
+</style>
+<main>
+  <h1>Return to StarHermit</h1>
+  <p id="text">Open the StarHermit app to finish signing in.</p>
+  <p><a class="button" id="open" href="/">Open StarHermit</a></p>
+</main>
+<script>
+// The Android client's sign-in ends at this address (an app link). When the
+// browser shows the page instead of opening the app, the button hands the
+// tokens to the app by an intent. No analytics or other scripts on this
+// page: the address carries sign-in tokens.
+(function () {
+  var hash = window.location.hash;
+  var open = document.getElementById('open');
+  if (hash.length > 1) {
+    open.href = 'intent://starhermit.com/app/oauth-callback?' + hash.substring(1) +
+      '#Intent;scheme=https;package=com.starhermit.client;end';
+    // Keep the tokens out of the history and the address bar.
+    history.replaceState(null, '', window.location.pathname);
+  } else {
+    document.getElementById('text').textContent =
+      'No sign-in data found at this address. Return to the StarHermit app and try again.';
+    open.style.display = 'none';
+  }
+})();
+</script>
+</html>
