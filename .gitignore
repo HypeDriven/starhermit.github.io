@@ -21,5 +21,7 @@ GEMINI.md
 node_modules/
 __pycache__/
 
-# Too big for git (GitHub 100 MB limit): published as a release asset by deploy_starhermit_production.sh
+# Release-only downloads: published as GitHub release assets by deploy_starhermit_production.sh
+# (the APK is also over GitHub's 100 MB per-file git limit)
 downloads/StarHermit-android.apk
+downloads/StarHermit-linux-x86_64.tar.gz
